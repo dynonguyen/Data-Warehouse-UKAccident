@@ -26,17 +26,37 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MINHTRI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuRAGIGHKHkGjGmica799+QAAAAACAAAAAAAQZgAAAAEAACAAAAB8qvzaNOCH+D8RijTVF28GBvR1BNF0O/mPdSMMvvkdhAAAAAAOgAAAAAIAACAAAAAvR9RvOc8GQ2JwKGkgU2H9C4BKkN9nDjqoCEWTlO8ReZAAAAAZZBxAAY8YWOlhoMv2Fk2xiYd7lzo+s9+MNE/qG9iRguhIjhZH+ZqIf/AN7KA1rcXm5KBpBbeVJqAhhkQhMz2nsq/S7cEsjHoBIBWglTk3soCCxxZs1DBQVjEtZFOlz63xQJxWlo5u+93Cl3DdWnLwawrzydRH9k+76Ei+MRk1G0b13aniQvlcduBFLo6grXNAAAAANyKrgJLY152G6esQBVqSz0ULRXpJtOhQUyCCRaVCSXPI+poqcD3Re5e0VH1w8ZZh1PrEO9VH2s7w4GD00wB0Nw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuRAGIGHKHkGjGmica799+QAAAAACAAAAAAAQZgAAAAEAACAAAAArm29DWKzqnXQqRsdimlkm3Ktb2eDWNTGZso8YyJXMAQAAAAAOgAAAAAIAACAAAACULEbC1z53pK2/yVfjjSldBdDVvITT0/WxYiOPks2Q25AAAACQpeaZ2PfeMenWnvWExdrEAdHhF37OnS3TgZpY18wVs2dPUQX2ke++OFOn6MtwM0h+gjI/sU8lhWyB8Bbc5/sEd/AHS1lFTxp+sPNo5Ah8BYHXdM//bqRpJQGnA/q3N5jht9PatDTA01NWGdBpl2lCN8sMrqMQzqQDv/kc21jSVdbk4CBqsPRYJzagfCPM1i9AAAAAysRU4FgpvBbIHNY8E73nH2YN68xWnyKe6PmbuPxNbhE0ERY1GpKgmqVGxxvZqxxdbg+KdDznwlxiMBMnfl/qtQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="UKCarAccidents_Stage.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Main_Package.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="LSOA_Postcode_Stage.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="UKPostcodes_Stage.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters />
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="UKCarAccidents_Stage.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{8A8ABF40-E34A-445E-966A-4A42819D1C75}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B5EBBBC8-16D1-41A5-A7FB-23192C6D6B7A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Main_Package.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{02D3EC02-8C44-4CEC-B7B0-B9D7FA1D7A6E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
@@ -46,6 +66,40 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{1ECF8AE0-75DF-43A8-817B-7E47FB04A1E9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="LSOA_Postcode_Stage.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9D3EEFFF-381F-49A5-90F1-19026AAF6654}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">LSOA_Postcode_Stage</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CDAA5A46-49CB-4898-8FFD-6366503C890D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="UKPostcodes_Stage.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{3BFE2D68-63EF-4A33-862E-A173F31C0199}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">UKPostcodes_Stage</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CC4DC8BD-BB60-4BE9-8A8C-CB9A38729CE5}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
