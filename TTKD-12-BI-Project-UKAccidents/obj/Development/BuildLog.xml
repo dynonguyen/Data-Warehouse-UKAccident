@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>TTKD-12-BI-Project-UKAccidents</Name>
-    <LastWriteTime>2021-10-22T10:35:10.9404945Z</LastWriteTime>
+    <LastWriteTime>2021-10-22T12:33:05.1462522Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>UKCarAccidents_Stage.dtsx</Name>
-      <LastWriteTime>2021-10-21T06:55:00.1344588Z</LastWriteTime>
+      <LastWriteTime>2021-10-22T12:36:52.3376965Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -18,12 +18,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LSOA_Postcode_Stage.dtsx</Name>
-      <LastWriteTime>2021-10-22T10:35:09.309582Z</LastWriteTime>
+      <LastWriteTime>2021-10-22T11:25:20.6599792Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>UKPostcodes_Stage.dtsx</Name>
-      <LastWriteTime>2021-10-22T09:51:34.7784314Z</LastWriteTime>
+      <LastWriteTime>2021-10-22T12:10:35.0666956Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
