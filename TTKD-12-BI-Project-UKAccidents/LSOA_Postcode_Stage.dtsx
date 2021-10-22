@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LSOA_Postcode_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{C026FED3-32E0-4C68-99BB-47F2388F2592}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{AEEE3715-9A7A-48AE-A3A6-559AF987220F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -179,13 +179,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\LSOA Postcode -&gt; Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{551AD4D6-11D4-42B5-AAF3-214185CDE685}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="LSOA Postcode -&gt; Stage"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -193,7 +193,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source"
+              refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -213,25 +213,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Connections[FlatFileConnection]"
+                  refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source]"
                   connectionManagerRefId="Package.ConnectionManagers[PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output]"
+                  refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd7]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd7]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd7]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd7]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd7]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd7]"
                       name="pcd7"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -246,14 +246,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd8]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd8]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd8]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd8]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd8]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd8]"
                       name="pcd8"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -268,14 +268,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcds]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcds]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcds]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcds]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcds]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcds]"
                       name="pcds"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -290,14 +290,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[dointr]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[dointr]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[dointr]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[dointr]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[dointr]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[dointr]"
                       name="dointr"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -312,14 +312,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[doterm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[doterm]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[doterm]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[doterm]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[doterm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[doterm]"
                       name="doterm"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -334,14 +334,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[usertype]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[usertype]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[usertype]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[usertype]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[usertype]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[usertype]"
                       name="usertype"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -356,14 +356,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[oa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[oa11cd]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[oa11cd]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[oa11cd]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[oa11cd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[oa11cd]"
                       name="oa11cd"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -378,14 +378,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11cd]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11cd]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
                       name="lsoa11cd"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -400,14 +400,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11cd]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11cd]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11cd]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11cd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11cd]"
                       name="msoa11cd"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -422,14 +422,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladcd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladcd]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladcd]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladcd]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladcd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladcd]"
                       name="ladcd"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -444,14 +444,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11nm]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11nm]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11nm]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11nm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11nm]"
                       name="lsoa11nm"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -466,14 +466,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11nm]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11nm]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11nm]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11nm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11nm]"
                       name="msoa11nm"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -488,14 +488,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladnm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladnm]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladnm]"
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladnm]"
                       length="50"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladnm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladnm]"
                       name="ladnm"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -513,85 +513,85 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd7]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd7]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="pcd7" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd8]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcd8]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="pcd8" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcds]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[pcds]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="pcds" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[dointr]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[dointr]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="dointr" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[doterm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[doterm]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="doterm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[usertype]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[usertype]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="usertype" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[oa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[oa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="oa11cd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="lsoa11cd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="msoa11cd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladcd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladcd]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="ladcd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11nm]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="lsoa11nm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[msoa11nm]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="msoa11nm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladnm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladnm]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="ladnm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladnmw]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].ExternalColumns[ladnmw]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -599,27 +599,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1253"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -628,7 +628,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage"
+              refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -685,7 +685,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Connections[OleDbConnection]"
+                  refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
                   description="The OLE DB runtime connection used to access the database."
@@ -693,193 +693,193 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input]"
+                  refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[pcd7]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[pcd7]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="pcd7"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd7]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd7]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[pcd8]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[pcd8]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="pcd8"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd8]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcd8]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[pcds]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[pcds]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="pcds"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcds]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[pcds]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[dointr]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[dointr]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="dointr"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[dointr]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[dointr]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[doterm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[doterm]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="doterm"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[doterm]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[doterm]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[usertype]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[usertype]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="usertype"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[usertype]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[usertype]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[oa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[oa11cd]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="oa11cd"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[oa11cd]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[oa11cd]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="lsoa11cd"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11cd]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11cd]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[msoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[msoa11cd]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="msoa11cd"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11cd]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11cd]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[ladcd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[ladcd]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ladcd"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladcd]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladcd]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[lsoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[lsoa11nm]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="lsoa11nm"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11nm]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[lsoa11nm]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[msoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[msoa11nm]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="msoa11nm"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11nm]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[msoa11nm]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[ladnm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].Columns[ladnm]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ladnm"
-                      externalMetadataColumnId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladnm]" />
+                      externalMetadataColumnId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output].Columns[ladnm]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
                       codePage="1252"
                       dataType="str"
                       length="9"
                       name="pcd7" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="pcd8" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="pcds" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
                       codePage="1252"
                       dataType="str"
                       length="8"
                       name="dointr" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
                       codePage="1252"
                       dataType="str"
                       length="8"
                       name="doterm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
                       codePage="1252"
                       dataType="str"
                       length="3"
                       name="usertype" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="oa11cd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="lsoa11cd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="msoa11cd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="ladcd" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="lsoa11nm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="msoa11nm" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
                       codePage="1252"
                       dataType="str"
                       length="30"
@@ -889,22 +889,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -915,10 +915,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input]"
+              refId="Package\LSOA Postcode -&gt; Stage.Paths[Flat File Source Output]"
+              endId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output]" />
+              startId="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -937,27 +937,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="153,42"
-          Id="Package\Data Flow Task"
+          Size="202,42"
+          Id="Package\LSOA Postcode -&gt; Stage"
           TopLeft="525,140" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\LSOA Postcode -&gt; Stage">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="347,42"
-          Id="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source"
+          Id="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Source"
           TopLeft="480.5,54.5" />
         <NodeLayout
           Size="341,42"
-          Id="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage"
+          Id="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage"
           TopLeft="473,200" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          Id="Package\LSOA Postcode -&gt; Stage.Paths[Flat File Source Output]"
           TopLeft="654,96.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -994,7 +994,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage">
+    design-time-name="Package\LSOA Postcode -&gt; Stage\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
