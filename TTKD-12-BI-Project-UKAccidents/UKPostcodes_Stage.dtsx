@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="UKPostcodes_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{6E7D03F6-F87D-4ECA-98A1-47AA51A2026C}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{2B146992-6D22-4ABA-AE1B-D27C6173497F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -148,7 +148,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{BE54E4B9-8FF7-4EAF-B9D8-0E62A7777A82}"
+      DTS:DTSID="{C5B13B29-81CF-4601-A1BD-0CC2A0C350BA}"
       DTS:ObjectName="LocalHost.TTKD12_DB_UKAccidents">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -590,7 +590,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[UKPostcodes_Stage]</property>
+                  name="OpenRowset">[UKPostcodes]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -749,73 +749,73 @@
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="4"
                       name="postcode" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="7"
                       name="easting" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="7"
                       name="northing" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="9"
                       name="latitude" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="9"
                       name="longitude" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="40"
                       name="city" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="40"
                       name="county" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="3"
                       name="country_code" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="country_name" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="iso3166-2" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="10"
                       name="region_code" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="40"
                       name="region_name" />
                   </externalMetadataColumns>
                 </input>
