@@ -1,0 +1,2191 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}" Name="LocalHost.1712766_DABI_ACCIDENT">
+      <DtsConnectionManagerID>LocalHost.1712766_DABI_ACCIDENT</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{3795F1F6-C3C9-469F-BA97-4690B7C66B81}" Name="New Microsoft Excel Worksheet.xlsx">
+      <DtsConnectionManagerID>New Microsoft Excel Worksheet.xlsx</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table Schema="dbo" Table="Accident" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table Schema="dbo" Table="Accident" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table Schema="dbo" Table="Accident" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table Schema="dbo" Table="Accident" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table Schema="dbo" Table="Accident" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Accident_Index" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Location_Easting_OSGR" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Location_Northing_OSGR" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Longitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Latitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Police_Force" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Accident_Severity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Number_of_Vehicles" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Number_of_Casualties" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Day_of_Week" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Time" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>25</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Local_Authority_(District)" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Local_Authority_(Highway)" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="1st_Road_Class" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="1st_Road_Number" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Road_Type" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Speed_limit" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Junction_Detail" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Junction_Control" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="2nd_Road_Class" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="2nd_Road_Number" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Pedestrian_Crossing-Human_Control" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Pedestrian_Crossing-Physical_Facilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Light_Conditions" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Weather_Conditions" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Road_Surface_Conditions" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Special_Conditions_at_Site" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Carriageway_Hazards" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Urban_or_Rural_Area" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Did_Police_Officer_Attend_Scene_of_Accident" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="LSOA_of_Accident_Location" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>38691</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Location_Easting_OSGR" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>65510</MinValue>
+        <MaxValue>655370</MaxValue>
+        <Mean>444418.928661385</Mean>
+        <StdDev>95378.5299514029</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Location_Northing_OSGR" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10290</MinValue>
+        <MaxValue>1198000</MaxValue>
+        <Mean>294216.736970965</Mean>
+        <StdDev>160379.968870602</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Longitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-7.509162</MinValue>
+        <MaxValue>1.759382</MaxValue>
+        <Mean>-1.36679968214533</Mean>
+        <StdDev>1.40146354563814</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Latitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>49.912941</MinValue>
+        <MaxValue>60.662043</MaxValue>
+        <Mean>52.5355873947977</Mean>
+        <StdDev>1.4442326185588</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Police_Force" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>98</MaxValue>
+        <Mean>30.3976138564019</Mean>
+        <StdDev>25.4404303394266</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Accident_Severity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>3</MaxValue>
+        <Mean>2.83576878735866</Mean>
+        <StdDev>0.400352729904267</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Number_of_Vehicles" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>67</MaxValue>
+        <Mean>1.82718671126941</Mean>
+        <StdDev>0.70992774166832</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Number_of_Casualties" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>93</MaxValue>
+        <Mean>1.33639848323188</Mean>
+        <StdDev>0.831398305373695</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2011-01-01T00:00:00.0000000</MinValue>
+        <MaxValue>2014-12-31T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Day_of_Week" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>7</MaxValue>
+        <Mean>4.11308066464271</Mean>
+        <StdDev>1.91627786391753</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Time" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1899-12-30T00:01:00.0000000</MinValue>
+        <MaxValue>1899-12-30T23:59:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Local_Authority_(District)" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>941</MaxValue>
+        <Mean>348.647708783269</Mean>
+        <StdDev>259.73628760923</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="1st_Road_Class" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>6</MaxValue>
+        <Mean>4.07525252264929</Mean>
+        <StdDev>1.41502914402889</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="1st_Road_Number" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>9999</MaxValue>
+        <Mean>1010.86628111754</Mean>
+        <StdDev>1806.77579285206</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Road_Type" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>9</MaxValue>
+        <Mean>5.17022406177033</Mean>
+        <StdDev>1.63903600724167</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Speed_limit" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10</MinValue>
+        <MaxValue>70</MaxValue>
+        <Mean>38.4501578105483</Mean>
+        <StdDev>13.8874747382383</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Junction_Detail" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>9</MaxValue>
+        <Mean>2.34231058009336</Mean>
+        <StdDev>2.52038853854704</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Junction_Control" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>4</MaxValue>
+        <Mean>1.83462966494682</Mean>
+        <StdDev>2.33952198118016</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="2nd_Road_Class" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>6</MaxValue>
+        <Mean>2.7494033781938</Mean>
+        <StdDev>3.19371539368657</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="2nd_Road_Number" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>9999</MaxValue>
+        <Mean>377.02113819462</Mean>
+        <StdDev>1286.35467394815</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Pedestrian_Crossing-Human_Control" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>2</MaxValue>
+        <Mean>0.00834840995349013</Mean>
+        <StdDev>0.119290938186025</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Pedestrian_Crossing-Physical_Facilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>8</MaxValue>
+        <Mean>0.818393304777957</Mean>
+        <StdDev>1.90850953310201</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Light_Conditions" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>7</MaxValue>
+        <Mean>1.94250782180208</Mean>
+        <StdDev>1.65046523055685</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Weather_Conditions" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>9</MaxValue>
+        <Mean>1.52671096014446</Mean>
+        <StdDev>1.55772654204281</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Road_Surface_Conditions" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>5</MaxValue>
+        <Mean>1.34010449687042</Mean>
+        <StdDev>0.605133292826053</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Special_Conditions_at_Site" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>7</MaxValue>
+        <Mean>0.101295987986812</Mean>
+        <StdDev>0.704896322843789</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Carriageway_Hazards" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>7</MaxValue>
+        <Mean>0.0716667783453345</Mean>
+        <StdDev>0.625621433301001</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Urban_or_Rural_Area" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>2</MaxValue>
+        <Mean>1.34545132785936</Mean>
+        <StdDev>0.475515202637692</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Did_Police_Officer_Attend_Scene_of_Accident" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1</MinValue>
+        <MaxValue>3</MaxValue>
+        <Mean>1.1839708467133</Mean>
+        <StdDev>0.387872591292828</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Accident_Index" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>8</MinLength>
+        <MaxLength>13</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>359115</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>245</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>222667</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Local_Authority_(Highway)" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>9</MinLength>
+        <MaxLength>9</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>582027</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="LSOA_of_Accident_Location" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>9</MinLength>
+        <MaxLength>9</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>543336</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Accident_Index" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>359339</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2.01E+12</Value>
+            <Count>222586</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Date" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1461</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2011-12-12T00:00:00.0000000</Value>
+            <Count>637</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2012-05-25T00:00:00.0000000</Value>
+            <Count>612</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2011-12-09T00:00:00.0000000</Value>
+            <Count>600</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2011-11-25T00:00:00.0000000</Value>
+            <Count>589</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2011-12-02T00:00:00.0000000</Value>
+            <Count>617</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-12-20T00:00:00.0000000</Value>
+            <Count>617</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2011-04-08T00:00:00.0000000</Value>
+            <Count>592</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2011-11-04T00:00:00.0000000</Value>
+            <Count>594</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2011-09-28T00:00:00.0000000</Value>
+            <Count>626</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Time" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1439</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:05:00.0000000</Value>
+            <Count>931</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:05:00.0000000</Value>
+            <Count>1091</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:00:00.0000000</Value>
+            <Count>5220</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:45:00.0000000</Value>
+            <Count>2837</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T23:20:00.0000000</Value>
+            <Count>594</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:00:00.0000000</Value>
+            <Count>1645</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:20:00.0000000</Value>
+            <Count>2823</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:30:00.0000000</Value>
+            <Count>3570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:25:00.0000000</Value>
+            <Count>704</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T06:30:00.0000000</Value>
+            <Count>989</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:50:00.0000000</Value>
+            <Count>2930</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:25:00.0000000</Value>
+            <Count>932</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:55:00.0000000</Value>
+            <Count>621</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:50:00.0000000</Value>
+            <Count>1609</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T00:30:00.0000000</Value>
+            <Count>726</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:25:00.0000000</Value>
+            <Count>1185</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:45:00.0000000</Value>
+            <Count>3141</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:40:00.0000000</Value>
+            <Count>2765</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:00:00.0000000</Value>
+            <Count>3731</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:10:00.0000000</Value>
+            <Count>1152</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:15:00.0000000</Value>
+            <Count>2054</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:20:00.0000000</Value>
+            <Count>2707</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:00:00.0000000</Value>
+            <Count>2822</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:40:00.0000000</Value>
+            <Count>1873</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:50:00.0000000</Value>
+            <Count>2834</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:15:00.0000000</Value>
+            <Count>1870</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:45:00.0000000</Value>
+            <Count>2006</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:50:00.0000000</Value>
+            <Count>1363</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:35:00.0000000</Value>
+            <Count>875</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:35:00.0000000</Value>
+            <Count>1729</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:10:00.0000000</Value>
+            <Count>2229</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:40:00.0000000</Value>
+            <Count>833</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:30:00.0000000</Value>
+            <Count>2694</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:00:00.0000000</Value>
+            <Count>5819</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:25:00.0000000</Value>
+            <Count>917</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:00:00.0000000</Value>
+            <Count>1555</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:05:00.0000000</Value>
+            <Count>1801</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:20:00.0000000</Value>
+            <Count>1714</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:05:00.0000000</Value>
+            <Count>1356</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:10:00.0000000</Value>
+            <Count>2114</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:25:00.0000000</Value>
+            <Count>1017</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:45:00.0000000</Value>
+            <Count>2186</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:45:00.0000000</Value>
+            <Count>1962</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:30:00.0000000</Value>
+            <Count>1607</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:30:00.0000000</Value>
+            <Count>4468</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:25:00.0000000</Value>
+            <Count>1917</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:00:00.0000000</Value>
+            <Count>4572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:00:00.0000000</Value>
+            <Count>2624</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:15:00.0000000</Value>
+            <Count>809</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:05:00.0000000</Value>
+            <Count>1082</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:35:00.0000000</Value>
+            <Count>919</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:25:00.0000000</Value>
+            <Count>1140</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:10:00.0000000</Value>
+            <Count>1259</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:50:00.0000000</Value>
+            <Count>702</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:55:00.0000000</Value>
+            <Count>1573</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:15:00.0000000</Value>
+            <Count>2721</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:20:00.0000000</Value>
+            <Count>1702</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:30:00.0000000</Value>
+            <Count>4186</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:35:00.0000000</Value>
+            <Count>1206</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:55:00.0000000</Value>
+            <Count>1113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:50:00.0000000</Value>
+            <Count>1924</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:10:00.0000000</Value>
+            <Count>2401</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:40:00.0000000</Value>
+            <Count>1861</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:45:00.0000000</Value>
+            <Count>671</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:00:00.0000000</Value>
+            <Count>3728</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:15:00.0000000</Value>
+            <Count>1713</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:35:00.0000000</Value>
+            <Count>1125</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:55:00.0000000</Value>
+            <Count>769</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:40:00.0000000</Value>
+            <Count>2555</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:50:00.0000000</Value>
+            <Count>2129</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:25:00.0000000</Value>
+            <Count>1654</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:10:00.0000000</Value>
+            <Count>1711</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:15:00.0000000</Value>
+            <Count>2104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:00:00.0000000</Value>
+            <Count>3694</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:30:00.0000000</Value>
+            <Count>2510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:05:00.0000000</Value>
+            <Count>1342</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:20:00.0000000</Value>
+            <Count>817</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:20:00.0000000</Value>
+            <Count>1722</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:45:00.0000000</Value>
+            <Count>1840</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T06:55:00.0000000</Value>
+            <Count>632</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:35:00.0000000</Value>
+            <Count>1569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:50:00.0000000</Value>
+            <Count>964</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T06:00:00.0000000</Value>
+            <Count>624</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:40:00.0000000</Value>
+            <Count>1707</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:15:00.0000000</Value>
+            <Count>2515</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:50:00.0000000</Value>
+            <Count>2548</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:20:00.0000000</Value>
+            <Count>3270</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:05:00.0000000</Value>
+            <Count>820</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:00:00.0000000</Value>
+            <Count>3111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:35:00.0000000</Value>
+            <Count>997</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:30:00.0000000</Value>
+            <Count>3469</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:40:00.0000000</Value>
+            <Count>969</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:45:00.0000000</Value>
+            <Count>3102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:15:00.0000000</Value>
+            <Count>3463</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:50:00.0000000</Value>
+            <Count>2049</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:10:00.0000000</Value>
+            <Count>2908</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:00:00.0000000</Value>
+            <Count>3576</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:35:00.0000000</Value>
+            <Count>1131</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:30:00.0000000</Value>
+            <Count>2902</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:35:00.0000000</Value>
+            <Count>944</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:55:00.0000000</Value>
+            <Count>1311</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:40:00.0000000</Value>
+            <Count>1763</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:20:00.0000000</Value>
+            <Count>1480</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T01:00:00.0000000</Value>
+            <Count>746</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:55:00.0000000</Value>
+            <Count>1266</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:40:00.0000000</Value>
+            <Count>1382</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:50:00.0000000</Value>
+            <Count>817</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:15:00.0000000</Value>
+            <Count>1543</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:45:00.0000000</Value>
+            <Count>905</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T00:01:00.0000000</Value>
+            <Count>690</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:40:00.0000000</Value>
+            <Count>1649</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:45:00.0000000</Value>
+            <Count>1090</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:30:00.0000000</Value>
+            <Count>4908</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:15:00.0000000</Value>
+            <Count>1787</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:10:00.0000000</Value>
+            <Count>2275</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:50:00.0000000</Value>
+            <Count>1893</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:55:00.0000000</Value>
+            <Count>1385</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:15:00.0000000</Value>
+            <Count>1981</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:20:00.0000000</Value>
+            <Count>1987</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:55:00.0000000</Value>
+            <Count>1006</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T06:50:00.0000000</Value>
+            <Count>1018</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:35:00.0000000</Value>
+            <Count>673</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:10:00.0000000</Value>
+            <Count>1381</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:30:00.0000000</Value>
+            <Count>2091</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:55:00.0000000</Value>
+            <Count>1640</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:55:00.0000000</Value>
+            <Count>922</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T23:15:00.0000000</Value>
+            <Count>604</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:50:00.0000000</Value>
+            <Count>2793</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:30:00.0000000</Value>
+            <Count>3603</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:10:00.0000000</Value>
+            <Count>1000</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:40:00.0000000</Value>
+            <Count>1428</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T23:30:00.0000000</Value>
+            <Count>1042</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:20:00.0000000</Value>
+            <Count>2773</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:05:00.0000000</Value>
+            <Count>1151</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:45:00.0000000</Value>
+            <Count>2178</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:15:00.0000000</Value>
+            <Count>1281</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:35:00.0000000</Value>
+            <Count>825</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:00:00.0000000</Value>
+            <Count>3932</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:10:00.0000000</Value>
+            <Count>884</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:55:00.0000000</Value>
+            <Count>1172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:40:00.0000000</Value>
+            <Count>651</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:25:00.0000000</Value>
+            <Count>1684</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:15:00.0000000</Value>
+            <Count>1223</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:45:00.0000000</Value>
+            <Count>1508</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:10:00.0000000</Value>
+            <Count>855</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:00:00.0000000</Value>
+            <Count>3934</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:40:00.0000000</Value>
+            <Count>1451</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:00:00.0000000</Value>
+            <Count>1907</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T19:10:00.0000000</Value>
+            <Count>1653</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:50:00.0000000</Value>
+            <Count>1856</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:15:00.0000000</Value>
+            <Count>2764</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:25:00.0000000</Value>
+            <Count>1236</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:05:00.0000000</Value>
+            <Count>657</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:30:00.0000000</Value>
+            <Count>2749</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:15:00.0000000</Value>
+            <Count>2432</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:25:00.0000000</Value>
+            <Count>1655</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:30:00.0000000</Value>
+            <Count>5021</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T22:30:00.0000000</Value>
+            <Count>1359</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:05:00.0000000</Value>
+            <Count>781</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:20:00.0000000</Value>
+            <Count>1983</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:15:00.0000000</Value>
+            <Count>918</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:40:00.0000000</Value>
+            <Count>2700</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:55:00.0000000</Value>
+            <Count>1162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T15:35:00.0000000</Value>
+            <Count>1535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:10:00.0000000</Value>
+            <Count>1830</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:50:00.0000000</Value>
+            <Count>1984</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:20:00.0000000</Value>
+            <Count>1422</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T10:45:00.0000000</Value>
+            <Count>1598</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T21:20:00.0000000</Value>
+            <Count>965</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:55:00.0000000</Value>
+            <Count>1131</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:05:00.0000000</Value>
+            <Count>1171</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:35:00.0000000</Value>
+            <Count>1607</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T07:25:00.0000000</Value>
+            <Count>864</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:55:00.0000000</Value>
+            <Count>1519</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:50:00.0000000</Value>
+            <Count>1526</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:45:00.0000000</Value>
+            <Count>1618</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T14:35:00.0000000</Value>
+            <Count>1127</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T20:20:00.0000000</Value>
+            <Count>1201</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:40:00.0000000</Value>
+            <Count>2580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:10:00.0000000</Value>
+            <Count>1670</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:05:00.0000000</Value>
+            <Count>1402</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:20:00.0000000</Value>
+            <Count>2459</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:10:00.0000000</Value>
+            <Count>1663</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:25:00.0000000</Value>
+            <Count>1434</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T23:00:00.0000000</Value>
+            <Count>1272</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:30:00.0000000</Value>
+            <Count>3007</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T09:05:00.0000000</Value>
+            <Count>1228</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T13:45:00.0000000</Value>
+            <Count>2049</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T16:00:00.0000000</Value>
+            <Count>5162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T11:25:00.0000000</Value>
+            <Count>1042</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T06:45:00.0000000</Value>
+            <Count>911</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T06:40:00.0000000</Value>
+            <Count>762</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T08:45:00.0000000</Value>
+            <Count>3065</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T17:30:00.0000000</Value>
+            <Count>5438</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:40:00.0000000</Value>
+            <Count>1972</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T18:05:00.0000000</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1899-12-30T12:20:00.0000000</Value>
+            <Count>1953</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="Local_Authority_(Highway)" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>207</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>E10000002</Value>
+            <Count>4602</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000034</Value>
+            <Count>1927</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000056</Value>
+            <Count>2497</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000029</Value>
+            <Count>7098</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000028</Value>
+            <Count>2166</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000042</Value>
+            <Count>2740</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000043</Value>
+            <Count>4909</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000022</Value>
+            <Count>1047</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000013</Value>
+            <Count>953</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000022</Value>
+            <Count>1678</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000031</Value>
+            <Count>2432</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000033</Value>
+            <Count>1358</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000015</Value>
+            <Count>1701</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000034</Value>
+            <Count>3678</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000031</Value>
+            <Count>1838</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000041</Value>
+            <Count>1077</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000009</Value>
+            <Count>1282</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000014</Value>
+            <Count>1985</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000014</Value>
+            <Count>1009</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000008</Value>
+            <Count>704</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000028</Value>
+            <Count>3822</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000010</Value>
+            <Count>3197</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000015</Value>
+            <Count>2749</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000018</Value>
+            <Count>5647</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000020</Value>
+            <Count>2744</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000011</Value>
+            <Count>1162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000011</Value>
+            <Count>2003</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000012</Value>
+            <Count>1051</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000017</Value>
+            <Count>1817</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000027</Value>
+            <Count>1208</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000018</Value>
+            <Count>3165</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000015</Value>
+            <Count>1598</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000006</Value>
+            <Count>1596</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000038</Value>
+            <Count>1449</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000035</Value>
+            <Count>2552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000026</Value>
+            <Count>2524</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000012</Value>
+            <Count>1988</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000034</Value>
+            <Count>1569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000018</Value>
+            <Count>799</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000006</Value>
+            <Count>1243</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000055</Value>
+            <Count>1626</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000005</Value>
+            <Count>938</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000011</Value>
+            <Count>5188</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000020</Value>
+            <Count>1978</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000002</Value>
+            <Count>1167</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000007</Value>
+            <Count>2342</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000019</Value>
+            <Count>1651</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000031</Value>
+            <Count>6128</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000010</Value>
+            <Count>659</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000023</Value>
+            <Count>1549</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000031</Value>
+            <Count>2589</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000029</Value>
+            <Count>1546</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000017</Value>
+            <Count>12270</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000045</Value>
+            <Count>2549</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000023</Value>
+            <Count>4077</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000028</Value>
+            <Count>806</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000013</Value>
+            <Count>1347</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000030</Value>
+            <Count>1657</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000026</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000009</Value>
+            <Count>1745</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000021</Value>
+            <Count>2849</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000048</Value>
+            <Count>2991</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000002</Value>
+            <Count>1146</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000002</Value>
+            <Count>1850</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000033</Value>
+            <Count>1713</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000016</Value>
+            <Count>3828</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000036</Value>
+            <Count>843</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000002</Value>
+            <Count>1075</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000017</Value>
+            <Count>3418</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000044</Value>
+            <Count>2067</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000010</Value>
+            <Count>1835</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000006</Value>
+            <Count>5124</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000019</Value>
+            <Count>743</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000016</Value>
+            <Count>2323</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000015</Value>
+            <Count>10246</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000010</Value>
+            <Count>1542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000054</Value>
+            <Count>4216</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000035</Value>
+            <Count>842</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000021</Value>
+            <Count>805</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000038</Value>
+            <Count>1199</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000003</Value>
+            <Count>832</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000025</Value>
+            <Count>2984</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000017</Value>
+            <Count>2794</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000020</Value>
+            <Count>1162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000011</Value>
+            <Count>2582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000025</Value>
+            <Count>6510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000027</Value>
+            <Count>4546</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000022</Value>
+            <Count>1322</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000024</Value>
+            <Count>1096</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000019</Value>
+            <Count>3256</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000028</Value>
+            <Count>2115</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000014</Value>
+            <Count>1749</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000012</Value>
+            <Count>4843</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000044</Value>
+            <Count>2514</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000008</Value>
+            <Count>1630</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000006</Value>
+            <Count>2769</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000011</Value>
+            <Count>3291</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000030</Value>
+            <Count>15745</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000016</Value>
+            <Count>17244</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000042</Value>
+            <Count>805</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000040</Value>
+            <Count>1445</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000007</Value>
+            <Count>3300</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000051</Value>
+            <Count>2554</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000040</Value>
+            <Count>1477</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000029</Value>
+            <Count>1539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000033</Value>
+            <Count>6109</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000004</Value>
+            <Count>1750</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000007</Value>
+            <Count>1423</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000030</Value>
+            <Count>1693</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000013</Value>
+            <Count>2588</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000027</Value>
+            <Count>1877</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000047</Value>
+            <Count>4115</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000027</Value>
+            <Count>1749</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000008</Value>
+            <Count>774</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000023</Value>
+            <Count>1079</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000007</Value>
+            <Count>7282</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000012</Value>
+            <Count>12666</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000033</Value>
+            <Count>1692</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000041</Value>
+            <Count>741</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000036</Value>
+            <Count>4762</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000012</Value>
+            <Count>3375</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000034</Value>
+            <Count>4609</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000037</Value>
+            <Count>1383</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000008</Value>
+            <Count>7144</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000006</Value>
+            <Count>1117</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000005</Value>
+            <Count>3280</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000001</Value>
+            <Count>1387</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000003</Value>
+            <Count>4547</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000019</Value>
+            <Count>9151</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000046</Value>
+            <Count>1450</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000021</Value>
+            <Count>1510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000021</Value>
+            <Count>2781</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000018</Value>
+            <Count>3684</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000014</Value>
+            <Count>889</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000013</Value>
+            <Count>3845</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000010</Value>
+            <Count>3201</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000009</Value>
+            <Count>3742</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000006</Value>
+            <Count>1102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000049</Value>
+            <Count>4125</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000004</Value>
+            <Count>1261</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000005</Value>
+            <Count>1335</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000008</Value>
+            <Count>3785</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000025</Value>
+            <Count>9797</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000015</Value>
+            <Count>2222</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000021</Value>
+            <Count>4957</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000016</Value>
+            <Count>2104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000016</Value>
+            <Count>1711</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000023</Value>
+            <Count>3458</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000022</Value>
+            <Count>4618</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000025</Value>
+            <Count>1917</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000024</Value>
+            <Count>1637</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000014</Value>
+            <Count>3152</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000003</Value>
+            <Count>4109</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000032</Value>
+            <Count>1808</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000039</Value>
+            <Count>1678</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000004</Value>
+            <Count>940</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000003</Value>
+            <Count>1088</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000030</Value>
+            <Count>3854</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000024</Value>
+            <Count>1799</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000005</Value>
+            <Count>1248</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000001</Value>
+            <Count>1892</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000014</Value>
+            <Count>12230</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000029</Value>
+            <Count>1280</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000019</Value>
+            <Count>4751</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000032</Value>
+            <Count>3817</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E09000026</Value>
+            <Count>2827</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000036</Value>
+            <Count>2725</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000035</Value>
+            <Count>7590</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000024</Value>
+            <Count>7676</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000043</Value>
+            <Count>3214</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000052</Value>
+            <Count>5271</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000018</Value>
+            <Count>2450</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000015</Value>
+            <Count>2647</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000029</Value>
+            <Count>1926</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000004</Value>
+            <Count>1483</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000008</Value>
+            <Count>1190</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000023</Value>
+            <Count>6409</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000032</Value>
+            <Count>5020</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000026</Value>
+            <Count>2434</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000003</Value>
+            <Count>6419</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000032</Value>
+            <Count>7739</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000009</Value>
+            <Count>3733</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S12000030</Value>
+            <Count>837</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000028</Value>
+            <Count>8722</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E10000020</Value>
+            <Count>7292</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E08000024</Value>
+            <Count>2326</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000050</Value>
+            <Count>3414</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E06000013</Value>
+            <Count>2059</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W06000009</Value>
+            <Count>1141</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{2B5D51B0-143F-4968-B6C8-B7D870C0A43F}</DataSourceID>
+        <Table DataSource="." Database="1712766_DABI_ACCIDENT" Schema="dbo" Table="Accident" RowCount="582027" />
+        <Column Name="LSOA_of_Accident_Location" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34865</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>E01000004</Value>
+            <Count>634</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>E01004736</Value>
+            <Count>616</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
