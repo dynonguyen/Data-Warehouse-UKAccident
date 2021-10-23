@@ -11,17 +11,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="UKPostcodes_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{3B993C97-63F9-443D-91DE-48E1FFA89C78}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{CE7DA430-9ACA-4C07-93D6-7D88F906AA40}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{69FA7FC4-4892-4BBD-B804-AD694C7C4937}"
+      DTS:ObjectName="LocalHost.TTKD12_DB_UKAccidents">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=TTKD12_DB_UKAccidents;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UKPostcodes Source]"
       DTS:CreationName="FLATFILE"
-      DTS:Description="Flat File Connection Manager"
-      DTS:DTSID="{DE456712-28F5-4017-B1EA-19854F691916}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:Description="UKPostcodes Source"
+      DTS:DTSID="{441205BF-87F6-4811-95AF-0FC380BE0EA3}"
+      DTS:ObjectName="UKPostcodes Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -40,7 +52,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="postcode"
-              DTS:DTSID="{339B36B4-045B-45A4-BF28-89F46861D28B}"
+              DTS:DTSID="{BCE6A479-E306-49F8-9696-0906103BD0EF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +61,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="easting"
-              DTS:DTSID="{6E5CB80E-715A-478F-BCA0-0D538C66D7C1}"
+              DTS:DTSID="{60ACA41B-D8EE-4A63-A9A4-2185E76A850D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +70,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="northing"
-              DTS:DTSID="{C1B73AA8-CB65-4A1E-A2CB-C16D3DF9F959}"
+              DTS:DTSID="{205F124E-61A9-442B-BBA2-4186115347CE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +79,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{7D1F2501-6BD4-424F-A6A3-DC65082C81F2}"
+              DTS:DTSID="{311354E6-789E-4190-BB7F-F240C3237324}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +88,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{0BAE42E1-DC58-45D8-BB01-051429E01D39}"
+              DTS:DTSID="{D2A24C69-E665-405C-8B2C-6AD93629809B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +97,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{19B8A305-5957-4DE4-9866-1454D54872C6}"
+              DTS:DTSID="{A056DC05-16D7-4D44-822F-E8F356A0B71F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +106,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="county"
-              DTS:DTSID="{E061C4E6-3CB8-4646-8338-5BD4605E6627}"
+              DTS:DTSID="{E47BD327-DD89-419B-96DE-4890FFED3A16}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +115,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_code"
-              DTS:DTSID="{F1ED40EA-A4A4-43A1-83D0-CD29D8A859B2}"
+              DTS:DTSID="{2FC0B344-0EB8-4F88-97CB-F51E4E2B48C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +124,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_name"
-              DTS:DTSID="{1C151BAF-534D-401C-8439-A9B1E2F82087}"
+              DTS:DTSID="{B1FD7EC7-AEAF-4E19-9BC3-42C1E06843F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +133,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="iso3166-2"
-              DTS:DTSID="{38E7EB84-4FE1-450E-B807-EB5A8E4DDB61}"
+              DTS:DTSID="{5D22A204-4015-492F-BB80-61B5CD065A5A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,7 +142,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region_code"
-              DTS:DTSID="{BA1B235E-B9B6-4872-8483-D3666E241EC8}"
+              DTS:DTSID="{DF193A68-5ED2-495D-8D3A-271A3747A1C5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,22 +151,10 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region_name"
-              DTS:DTSID="{F9CD1289-9663-464A-8A63-8BC8C4BA4083}"
+              DTS:DTSID="{C696C851-C64D-4B65-AF86-1046191B3A4C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{C5B13B29-81CF-4601-A1BD-0CC2A0C350BA}"
-      DTS:ObjectName="LocalHost.TTKD12_DB_UKAccidents">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=TTKD12_DB_UKAccidents;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -195,8 +195,8 @@
               <connections>
                 <connection
                   refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[UKPostcodes Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[UKPostcodes Source]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -753,33 +753,29 @@
                       name="postcode" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="i4"
                       name="easting" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="i4"
                       name="northing" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       codePage="1252"
                       dataType="str"
-                      length="9"
+                      length="10"
                       name="latitude" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       codePage="1252"
                       dataType="str"
-                      length="9"
+                      length="10"
                       name="longitude" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
-                      length="40"
+                      length="50"
                       name="city" />
                     <externalMetadataColumn
                       refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"

@@ -11,27 +11,27 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{58F2AE51-FC8C-4297-B0A8-01ED01EA5190}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{6A21D2A9-259B-426A-A9F3-6894ACB35F6B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Accident1114 Connection]"
+      DTS:refId="Package.ConnectionManagers[Accident1114 Source]"
       DTS:CreationName="FLATFILE"
-      DTS:Description="Accident1114"
-      DTS:DTSID="{9528BAA9-5FE2-4740-99E0-4669C168CD83}"
-      DTS:ObjectName="Accident1114 Connection">
+      DTS:Description="Accident1114 Source"
+      DTS:DTSID="{A37A260C-B592-465C-ACFE-CF613A962FC6}"
+      DTS:ObjectName="Accident1114 Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
-          DTS:LocaleID="2057"
+          DTS:LocaleID="1033"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\codetime\HTTT phuc vu TTKD\2021-2022 - BI Project - UK Accidents\Data\UK Accidents Data 2011-2014\Accidents1114.csv">
+          DTS:ConnectionString="D:\K18-FIT-HCMUS-18120609\Nam04(HK1)\HTTT-PV-TTKD\ThucHanh\_BaiLam_code\raw_data\UK Accidents Data 2011-2014\Accidents1114.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Accident_Index"
-              DTS:DTSID="{69484D3D-9D1E-4497-A2B9-5C3358754AEB}"
+              DTS:DTSID="{DE8013D6-1564-497D-8C1B-9C278349FE54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Location_Easting_OSGR"
-              DTS:DTSID="{7D506403-FE5D-41CB-869F-12CA1AF84E3E}"
+              DTS:DTSID="{3B04481F-0E4C-43B4-B344-EEEF92DEEB94}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Location_Northing_OSGR"
-              DTS:DTSID="{57E13052-5350-43D3-9DC1-43134C029DC5}"
+              DTS:DTSID="{5C2E7542-E644-4E28-8C0A-E0741BEAC063}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Longitude"
-              DTS:DTSID="{B8E34803-A01B-4CD1-89D8-4B9A6300796A}"
+              DTS:DTSID="{2FE32078-BE2F-4A42-BEAE-FE4FA69195F8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Latitude"
-              DTS:DTSID="{33C92621-6C9B-46F5-A0D0-AB3141FC60CE}"
+              DTS:DTSID="{8C5854BE-6BAB-4B49-A6C9-054990DFC7F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +85,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Police_Force"
-              DTS:DTSID="{9D61B6BF-BBE2-410E-8791-A2041B85CF9B}"
+              DTS:DTSID="{551DD12D-7848-4863-A3C3-206DAF8343F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +94,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Accident_Severity"
-              DTS:DTSID="{DC1E6DE3-5852-4B33-929E-735406EF5658}"
+              DTS:DTSID="{3F2E0FB5-D610-4F90-8EF3-E2199931E1ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +103,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Number_of_Vehicles"
-              DTS:DTSID="{4985EF2F-E478-45D4-AA45-2E537EC550D6}"
+              DTS:DTSID="{8F68B071-1A68-4D63-95C3-4F7B0857766A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Number_of_Casualties"
-              DTS:DTSID="{47A4F457-CB8D-4ED4-B92B-AB51D6188A02}"
+              DTS:DTSID="{EFF39E96-411D-46CE-854A-43C506FE61AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{0C1CC766-C9B6-468D-BEDA-B47334475567}"
+              DTS:DTSID="{B386E67D-2EC8-474E-8CAB-0D46B5F66EF7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Day_of_Week"
-              DTS:DTSID="{CEE6225F-6E3D-4013-8C54-932FC396BA20}"
+              DTS:DTSID="{5CEFB90B-DB3B-4553-96D0-53B0647EAFFB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,7 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Time"
-              DTS:DTSID="{BABED78D-1BB2-43E2-9CE0-163A0EFFD023}"
+              DTS:DTSID="{E7AFC4D3-A5E4-4071-BDA0-F070AD4D2776}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -148,7 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Local_Authority_(District)"
-              DTS:DTSID="{3E5AF5BC-91CD-4F4B-B627-C070A3B549C3}"
+              DTS:DTSID="{3CD7EBFF-A0B6-4A67-85A2-FD5F3A52FCBB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Local_Authority_(Highway)"
-              DTS:DTSID="{89EB34A7-D6AC-4953-8E66-4C1404845CB5}"
+              DTS:DTSID="{EAECF42D-CC1E-4290-B3EB-830E7E807168}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="1st_Road_Class"
-              DTS:DTSID="{203639DF-60A3-4370-94C6-B6B3C87CC28B}"
+              DTS:DTSID="{3FB19D44-AE44-4151-B9CF-7E053EBEE62E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="1st_Road_Number"
-              DTS:DTSID="{CBE30B94-E7E0-4685-93DC-351D65BF6ECF}"
+              DTS:DTSID="{29D4B91C-0EC2-4B4B-8798-7BD76340F39E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Road_Type"
-              DTS:DTSID="{F0407CFC-CD3B-473D-9526-3563FA72CB23}"
+              DTS:DTSID="{33CD6898-9A44-4A97-9AC1-108586B3A415}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Speed_limit"
-              DTS:DTSID="{34F5A2BE-1847-4DB0-9775-D69A71EF39B9}"
+              DTS:DTSID="{E04A8438-4301-497F-93AB-6076C8E6FB1B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Junction_Detail"
-              DTS:DTSID="{C69A8518-1813-49D5-85BC-1B7CCD44048A}"
+              DTS:DTSID="{97D69C0C-BE55-42D7-8331-96BE873C2746}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Junction_Control"
-              DTS:DTSID="{A8DA19BC-8358-48D0-90EE-029F702B8FCC}"
+              DTS:DTSID="{8DF32FC5-4065-407E-B3A0-AC2F9C4F9F69}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="2nd_Road_Class"
-              DTS:DTSID="{2DD9600C-B682-4438-8D4A-807BF83CC73D}"
+              DTS:DTSID="{470C4FF6-C8F9-448D-B1FC-34E637C8CEDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="2nd_Road_Number"
-              DTS:DTSID="{8E38C29B-273F-45CC-BC2B-3C0EB7657C39}"
+              DTS:DTSID="{226E681D-1F1F-43C1-8130-B8634EF9AB6B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -238,7 +238,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pedestrian_Crossing-Human_Control"
-              DTS:DTSID="{1566DC39-7443-4125-AC5E-778AA3540A82}"
+              DTS:DTSID="{4F58D1FB-6AEB-4EBB-8FE9-3A3DC84BF7BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -247,7 +247,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pedestrian_Crossing-Physical_Facilities"
-              DTS:DTSID="{36C363C5-C94B-423F-AA0C-7181A66BB231}"
+              DTS:DTSID="{E6DF67A7-2908-4D25-8CC9-9C07122B1F5F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,7 +256,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Light_Conditions"
-              DTS:DTSID="{773230F2-A640-424F-ADAC-58EFA63E3AB7}"
+              DTS:DTSID="{25886406-1080-4AA5-9A88-6ED75B0D7C2C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -265,7 +265,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Weather_Conditions"
-              DTS:DTSID="{2699B2EA-C18F-44D2-992D-0C50B5F7C781}"
+              DTS:DTSID="{5EFD151D-E5ED-4F07-8FD8-E41290CF213F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -274,7 +274,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Road_Surface_Conditions"
-              DTS:DTSID="{B2A8ADFF-5BCE-4119-86F6-CB51FC75421A}"
+              DTS:DTSID="{EDBBE69F-57DF-467D-AAF0-2241D55F24B4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -283,7 +283,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Special_Conditions_at_Site"
-              DTS:DTSID="{F58E3791-B889-4472-9DA7-CD4081900057}"
+              DTS:DTSID="{F863BD2F-F1B5-4BA0-91CD-A5890D32DD36}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -292,7 +292,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Carriageway_Hazards"
-              DTS:DTSID="{D36266BA-23F5-448B-8B34-8E7C5114051A}"
+              DTS:DTSID="{CD0A9EA1-4E90-4A47-80D7-91D822E39FFB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -301,7 +301,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Urban_or_Rural_Area"
-              DTS:DTSID="{0B45F296-1E25-49BC-B198-0C7436265C3E}"
+              DTS:DTSID="{F35BC3A0-5D2D-4FB0-9CD0-01C9B63BA138}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -310,7 +310,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Did_Police_Officer_Attend_Scene_of_Accident"
-              DTS:DTSID="{F2BD85E9-EC26-4A82-A93A-1FFF5B7C365E}"
+              DTS:DTSID="{8454CEB4-046A-4D5E-8A0E-D8D126ACEDBA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +319,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LSOA_of_Accident_Location"
-              DTS:DTSID="{8F012D47-358D-49E2-8416-8EAB82C932BC}"
+              DTS:DTSID="{0B922953-5172-4BB2-B9CD-A16E89919CE2}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -329,7 +329,7 @@
       DTS:refId="Package.ConnectionManagers[Casualties1114 Source]"
       DTS:CreationName="FLATFILE"
       DTS:Description="Casualties1114 Source"
-      DTS:DTSID="{F0A153FA-7F56-4440-B3DA-E676450B0CF2}"
+      DTS:DTSID="{A72C5FDE-CE29-4FD0-AC6C-30FA8A0440E4}"
       DTS:ObjectName="Casualties1114 Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -349,7 +349,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Accident_Index"
-              DTS:DTSID="{2C1BFF8B-8352-43C3-A0CF-C08A1CF69C81}"
+              DTS:DTSID="{3F55A79D-78FD-4806-9FD4-28F74C711CC5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -358,7 +358,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vehicle_Reference"
-              DTS:DTSID="{ED7320EB-3229-434C-878D-92E894881A76}"
+              DTS:DTSID="{CD052F58-B6C5-45E0-A18D-95AE107F32F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -367,7 +367,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Casualty_Reference"
-              DTS:DTSID="{6C05A67D-AC07-4C5A-B5E9-CFAFF33698A2}"
+              DTS:DTSID="{91E4F7BD-6677-445D-8FFD-6A35CDE8FEF3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -376,7 +376,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Casualty_Class"
-              DTS:DTSID="{58D94931-312B-4C28-8C63-78AC8CF80312}"
+              DTS:DTSID="{C89B6B71-7F9B-41F3-AAE7-60BAF8415FF7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -385,7 +385,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sex_of_Casualty"
-              DTS:DTSID="{C697F7A8-4A1B-4C28-BFE5-1D073EA6ECC3}"
+              DTS:DTSID="{6ED314FA-1D65-4430-8C5A-D82DE9591F95}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -394,7 +394,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age_of_Casualty"
-              DTS:DTSID="{618FF2DF-4C76-48E3-8A3F-209C6A155E19}"
+              DTS:DTSID="{C8ADDBD4-B413-43AF-8C68-DBC576240BA0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -403,7 +403,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age_Band_of_Casualty"
-              DTS:DTSID="{3C8353DA-D869-45F7-9CB4-428B0CA76A27}"
+              DTS:DTSID="{4709F6B4-D998-4760-B954-9863818DA60A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -412,7 +412,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Casualty_Severity"
-              DTS:DTSID="{ADB9C9DF-C215-4760-882C-8A82F48F238F}"
+              DTS:DTSID="{4B5179A7-6876-494D-99CD-D4F197725EEF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -421,7 +421,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pedestrian_Location"
-              DTS:DTSID="{29F207AE-8AD9-4828-A0AE-B33DA2A64EEC}"
+              DTS:DTSID="{9E46EABC-69E9-4DF0-9640-D5CA5DE90B17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -430,7 +430,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pedestrian_Movement"
-              DTS:DTSID="{03B01F4D-B552-444E-B262-0BC790E5E586}"
+              DTS:DTSID="{702CC7C3-6C19-45D2-8E07-14C40B12DCB7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -439,7 +439,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Car_Passenger"
-              DTS:DTSID="{105E086D-8169-49DD-B3B4-97F93CC6713C}"
+              DTS:DTSID="{60AA8B39-0763-4103-85BE-1608702EFE8F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -448,7 +448,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Bus_or_Coach_Passenger"
-              DTS:DTSID="{CF755117-D889-4FD7-9434-5E52B2A6C56B}"
+              DTS:DTSID="{E964583E-EA0C-4645-AF10-EC66D6A4CE33}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -457,7 +457,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Pedestrian_Road_Maintenance_Worker"
-              DTS:DTSID="{B69632E5-FD1C-474A-A6AA-A06BC9E5A464}"
+              DTS:DTSID="{D55F4099-0515-4DB2-A807-F0F968F150E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -466,7 +466,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Casualty_Type"
-              DTS:DTSID="{988C23FF-0E01-4B30-886F-89CDF978FC7D}"
+              DTS:DTSID="{E651769E-C603-4D4B-BBBB-FFD1772663D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -475,28 +475,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Casualty_Home_Area_Type"
-              DTS:DTSID="{75A3FC74-2CBD-4B75-80AB-1D321B4763CB}"
+              DTS:DTSID="{E1C56867-BEC0-48F2-AFD9-F10716E50C05}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.1712766_DABI_ACCIDENT]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{D625AF61-0D6B-44B5-9D81-EF61E36E9B55}"
-      DTS:ObjectName="LocalHost.1712766_DABI_ACCIDENT">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=1712766_DABI_ACCIDENT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2287E766-5EFD-403E-A483-1686F860C715}"
+      DTS:DTSID="{4E90FF3C-8A1E-4CAB-BE85-44CCFCA62B6C}"
       DTS:ObjectName="LocalHost.TTKD12_DB_UKAccidents">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -509,7 +497,7 @@
       DTS:refId="Package.ConnectionManagers[Vehicles1114 Source]"
       DTS:CreationName="FLATFILE"
       DTS:Description="Vehicles1114 Source"
-      DTS:DTSID="{DBBA8781-7630-4BBC-BC95-AD465F33DD2C}"
+      DTS:DTSID="{EC09447A-7BEF-4A48-A4A0-BC8E37C002D0}"
       DTS:ObjectName="Vehicles1114 Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -529,7 +517,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Accident_Index"
-              DTS:DTSID="{3997C178-B5B4-4DC2-A412-F8AE496B3F47}"
+              DTS:DTSID="{E1545F70-862E-4A71-9705-0B946677CFE1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -538,7 +526,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vehicle_Reference"
-              DTS:DTSID="{7BC6982A-ED78-477A-A629-1A919F86ADE4}"
+              DTS:DTSID="{6039753C-CCD2-4B8C-B816-EA92051C17A9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -547,7 +535,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vehicle_Type"
-              DTS:DTSID="{9F428E8A-E8BE-48D5-8708-A7A36721D5B5}"
+              DTS:DTSID="{282B86FB-BC4C-4A53-AF08-C215D3818C65}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -556,7 +544,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Towing_and_Articulation"
-              DTS:DTSID="{6293EE1D-2CD7-49E1-ABF1-D55D49DAA727}"
+              DTS:DTSID="{0D888F43-1B6C-4E57-8B5C-F7F03C6B043C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -565,7 +553,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vehicle_Manoeuvre"
-              DTS:DTSID="{BADC7474-31AB-43BA-95AA-B371687B46F9}"
+              DTS:DTSID="{F4F6AA70-B78A-424D-9AAC-009D17C2DC68}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -574,7 +562,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vehicle_Location-Restricted_Lane"
-              DTS:DTSID="{6547A3D8-A013-4319-9280-618EA1334EAA}"
+              DTS:DTSID="{F0F1E6FD-D85E-473F-BC69-5358F6975A45}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -583,7 +571,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Junction_Location"
-              DTS:DTSID="{D97CD80F-12C1-427A-97FA-EC75F615F508}"
+              DTS:DTSID="{7DFCB7E2-8F5E-4A2E-8895-4EC8BF80C5A7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -592,7 +580,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Skidding_and_Overturning"
-              DTS:DTSID="{4A0EFEB6-879E-48EF-8821-0FD459D6636F}"
+              DTS:DTSID="{3F21EF2F-5371-4BBE-9A71-8663370A0110}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -601,7 +589,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Hit_Object_in_Carriageway"
-              DTS:DTSID="{3F8ECA6B-1BAF-4A44-856B-0D08961FF561}"
+              DTS:DTSID="{71192020-29CE-4819-ACB4-A0C304B5CAF5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -610,7 +598,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vehicle_Leaving_Carriageway"
-              DTS:DTSID="{A3ABA4F9-C658-47F2-986F-C596F479EF90}"
+              DTS:DTSID="{7EF4D198-4ADB-480E-8900-4E49C3FD7775}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -619,7 +607,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Hit_Object_off_Carriageway"
-              DTS:DTSID="{B712801A-A451-48AA-B577-88B07C17DF16}"
+              DTS:DTSID="{BDDED645-85E7-40D6-976D-CA6D982B0307}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -628,7 +616,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="1st_Point_of_Impact"
-              DTS:DTSID="{5D7BE640-01F5-4A53-923B-61F5E222D87B}"
+              DTS:DTSID="{6243F5F1-7673-4E1F-ABE9-CEC05FE0A4D8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -637,7 +625,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Was_Vehicle_Left_Hand_Drive?"
-              DTS:DTSID="{EA02AD28-0EE8-4A37-949B-8EA05F51CFE4}"
+              DTS:DTSID="{776AC8EB-9C2E-456A-AC0F-924AB1D19EA1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -646,7 +634,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Journey_Purpose_of_Driver"
-              DTS:DTSID="{41E06E22-6053-48DB-80C6-D1F32F57FAFB}"
+              DTS:DTSID="{24B32D00-8B72-4F36-B98E-436AB551DF80}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -655,7 +643,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sex_of_Driver"
-              DTS:DTSID="{924C933A-5779-4D9D-9ACC-97C6B09D8531}"
+              DTS:DTSID="{FBB02A63-1D2B-453C-AD7E-EC90D0FE0503}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -664,7 +652,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age_of_Driver"
-              DTS:DTSID="{A6F6EAC9-669C-4BF7-8CC3-6FF9A7F7F76F}"
+              DTS:DTSID="{1CC6BF8D-7E12-4710-BFD6-C9F9FBB79A9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -673,7 +661,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age_Band_of_Driver"
-              DTS:DTSID="{D469139E-576B-41E6-B239-436E2E149DAC}"
+              DTS:DTSID="{F1355AB8-690B-42B8-B7D8-10580AD54B8C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -682,7 +670,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Engine_Capacity_(CC)"
-              DTS:DTSID="{743E5870-0BD4-417B-8315-BC1C20AC811E}"
+              DTS:DTSID="{6DADA484-9CEA-4471-AC55-220B0ECBC766}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -691,7 +679,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Propulsion_Code"
-              DTS:DTSID="{54187810-3464-4877-B0A9-36AAC1B9BCDB}"
+              DTS:DTSID="{35CAE237-7224-4917-9EFE-2D5427224800}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -700,7 +688,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age_of_Vehicle"
-              DTS:DTSID="{5FCB87B5-77B9-461A-A3EB-3587B88A6C77}"
+              DTS:DTSID="{A57F34AE-51A5-4CF2-8570-14082D126E9F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -709,7 +697,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Driver_IMD_Decile"
-              DTS:DTSID="{D5929437-ED9F-472C-8D8B-387811F24728}"
+              DTS:DTSID="{C3D61A57-1FA0-4545-B7AF-EE85F6FECCB5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -718,7 +706,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Driver_Home_Area_Type"
-              DTS:DTSID="{CDBF4569-9360-44FD-83CA-144DFB62A0ED}"
+              DTS:DTSID="{3C0CE0DD-B49C-4C68-9598-18B23028285B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -746,7 +734,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="Accident1114 Source"
               usesDispositions="true"
               version="1">
@@ -763,8 +751,8 @@
               <connections>
                 <connection
                   refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Accident1114 Connection]"
-                  connectionManagerRefId="Package.ConnectionManagers[Accident1114 Connection]"
+                  connectionManagerID="Package.ConnectionManagers[Accident1114 Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[Accident1114 Source]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -782,6 +770,94 @@
                       length="50"
                       lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Accident_Index]"
                       name="Accident_Index"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Location_Easting_OSGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Location_Easting_OSGR]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Location_Easting_OSGR]"
+                      name="Location_Easting_OSGR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Location_Northing_OSGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Location_Northing_OSGR]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Location_Northing_OSGR]"
+                      name="Location_Northing_OSGR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      name="Latitude"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -993,6 +1069,50 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[1st_Road_Class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[1st_Road_Class]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[1st_Road_Class]"
+                      name="1st_Road_Class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[1st_Road_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[1st_Road_Number]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[1st_Road_Number]"
+                      name="1st_Road_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Road_Type]"
                       codePage="1252"
                       dataType="str"
@@ -1024,6 +1144,138 @@
                       length="50"
                       lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Speed_limit]"
                       name="Speed_limit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Junction_Detail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Junction_Detail]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Junction_Detail]"
+                      name="Junction_Detail"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Junction_Control]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Junction_Control]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Junction_Control]"
+                      name="Junction_Control"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[2nd_Road_Class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[2nd_Road_Class]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[2nd_Road_Class]"
+                      name="2nd_Road_Class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[2nd_Road_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[2nd_Road_Number]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[2nd_Road_Number]"
+                      name="2nd_Road_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Pedestrian_Crossing-Human_Control]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Crossing-Human_Control]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Pedestrian_Crossing-Human_Control]"
+                      name="Pedestrian_Crossing-Human_Control"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Pedestrian_Crossing-Physical_Facilities]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Crossing-Physical_Facilities]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Pedestrian_Crossing-Physical_Facilities]"
+                      name="Pedestrian_Crossing-Physical_Facilities"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1156,6 +1408,28 @@
                       length="50"
                       lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Urban_or_Rural_Area]"
                       name="Urban_or_Rural_Area"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].ExternalColumns[Did_Police_Officer_Attend_Scene_of_Accident]"
+                      length="50"
+                      lineageId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
+                      name="Did_Police_Officer_Attend_Scene_of_Accident"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1432,7 +1706,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
+                  name="OpenRowset">[dbo].[Accident1114]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1475,8 +1749,8 @@
               <connections>
                 <connection
                   refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.1712766_DABI_ACCIDENT]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.1712766_DABI_ACCIDENT]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1647,116 +1921,146 @@
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="Accident_Index" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Police_Force]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Police_Force" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Accident_Severity" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Number_of_Vehicles" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Number_of_Casualties" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Day_of_Week]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Day_of_Week" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="10"
                       name="Time" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(District)]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Local_Authority_(District)" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(Highway)]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="Local_Authority_(Highway)" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Road_Type" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Speed_limit]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Speed_limit" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Light_Conditions" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Weather_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Weather_Conditions" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Road_Surface_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Road_Surface_Conditions" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Special_Conditions_at_Site]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Special_Conditions_at_Site" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Carriageway_Hazards]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Carriageway_Hazards" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Urban_or_Rural_Area" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[LSOA_of_Accident_Location]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="LSOA_of_Accident_Location" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Location_Easting_OSGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Location_Easting_OSGR" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Location_Northing_OSGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Location_Northing_OSGR" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Road_Class]"
+                      dataType="i4"
+                      name="1st_Road_Class" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Road_Number]"
+                      dataType="i4"
+                      name="1st_Road_Number" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Detail]"
+                      dataType="i4"
+                      name="Junction_Detail" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Control]"
+                      dataType="i4"
+                      name="Junction_Control" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[2nd_Road_Class]"
+                      dataType="i4"
+                      name="2nd_Road_Class" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[2nd_Road_Number]"
+                      dataType="i4"
+                      name="2nd_Road_Number" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Crossing-Human_Control]"
+                      dataType="i4"
+                      name="Pedestrian_Crossing-Human_Control" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Crossing-Physical_Facilities]"
+                      dataType="i4"
+                      name="Pedestrian_Crossing-Physical_Facilities" />
+                    <externalMetadataColumn
+                      refId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Did_Police_Officer_Attend_Scene_of_Accident]"
+                      dataType="i4"
+                      name="Did_Police_Officer_Attend_Scene_of_Accident" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2469,7 +2773,7 @@
                       refId="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="Accident_Index" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
@@ -3491,7 +3795,7 @@
                       refId="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="Accident_Index" />
                     <externalMetadataColumn
                       refId="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
@@ -3614,14 +3918,14 @@
               startId="Package\UKCarAccidents -&gt; Stage\Casualties1114 Source.Outputs[Flat File Source Output]" />
             <path
               refId="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output1]"
-              endId="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage.Inputs[OLE DB Destination Input]"
-              name="Flat File Source Output"
-              startId="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Source.Outputs[Flat File Source Output]" />
-            <path
-              refId="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output2]"
               endId="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\UKCarAccidents -&gt; Stage\Accident1114 Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output2]"
+              endId="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Source.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3640,7 +3944,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="204,41.6"
+          Size="204,42"
           Id="Package\UKCarAccidents -&gt; Stage"
           TopLeft="340,126" />
       </GraphLayout>
@@ -3652,123 +3956,123 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage"
-          TopLeft="68.7142813838257,276.352941251544" />
-        <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\UKCarAccidents -&gt; Stage\Casualties1114 Source"
-          TopLeft="146,131" />
+          TopLeft="108,53" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage"
-          TopLeft="857.142859648685,319.235293924602" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage"
-          TopLeft="563.400005534717,255.164708080919" />
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Source"
-          TopLeft="875,148" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Source"
-          TopLeft="533.257149377161,115.329412697756" />
-        <EdgeLayout
-          Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output2]"
-          TopLeft="621.657149377161,156.929412697756">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.3428561575561,98.235295383163"
-              Start="0,0"
-              End="27.3428561575561,90.735295383163">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.1176476915815" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.1176476915815"
-                    Point2="0,49.1176476915815"
-                    Point3="4,49.1176476915815" />
-                  <mssgle:LineSegment
-                    End="23.3428561575561,49.1176476915815" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.3428561575561,49.1176476915815"
-                    Point2="27.3428561575561,49.1176476915815"
-                    Point3="27.3428561575561,53.1176476915815" />
-                  <mssgle:LineSegment
-                    End="27.3428561575561,90.735295383163" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output1]"
-          TopLeft="966.6,189.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-21.057140351315,129.635293924602"
-              Start="0,0"
-              End="-21.057140351315,122.135293924602">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.8176469623011" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.8176469623011"
-                    Point2="0,64.8176469623011"
-                    Point3="-4,64.8176469623011" />
-                  <mssgle:LineSegment
-                    End="-17.057140351315,64.8176469623011" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17.057140351315,64.8176469623011"
-                    Point2="-21.057140351315,64.8176469623011"
-                    Point3="-21.057140351315,68.8176469623011" />
-                  <mssgle:LineSegment
-                    End="-21.057140351315,122.135293924602" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="187,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage"
+          TopLeft="163,276" />
         <EdgeLayout
           Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output]"
-          TopLeft="242.4,172.6">
+          TopLeft="204.5,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-80.0857186161743,103.752941251544"
+              EndConnector="52,181"
               Start="0,0"
-              End="-80.0857186161743,96.2529412515436">
+              End="52,173.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.8764706257718" />
+                    End="0,86.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.8764706257718"
-                    Point2="0,51.8764706257718"
-                    Point3="-4,51.8764706257718" />
+                    Point1="0,86.5"
+                    Point2="0,90.5"
+                    Point3="4,90.5" />
                   <mssgle:LineSegment
-                    End="-76.0857186161743,51.8764706257718" />
+                    End="48,90.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-76.0857186161743,51.8764706257718"
-                    Point2="-80.0857186161743,51.8764706257718"
-                    Point3="-80.0857186161743,55.8764706257718" />
+                    Point1="48,90.5"
+                    Point2="52,90.5"
+                    Point3="52,94.5" />
                   <mssgle:LineSegment
-                    End="-80.0857186161743,96.2529412515436" />
+                    End="52,173.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="183,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Source"
+          TopLeft="550,74" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage"
+          TopLeft="511,270" />
+        <EdgeLayout
+          Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output1]"
+          TopLeft="641.5,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,154"
+              Start="0,0"
+              End="-42,146.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73"
+                    Point2="0,77"
+                    Point3="-4,77" />
+                  <mssgle:LineSegment
+                    End="-38,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,77"
+                    Point2="-42,77"
+                    Point3="-42,81" />
+                  <mssgle:LineSegment
+                    End="-42,146.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="183,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Source"
+          TopLeft="946,98" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage"
+          TopLeft="876,280" />
+        <EdgeLayout
+          Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output2]"
+          TopLeft="1037.5,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73,140"
+              Start="0,0"
+              End="-73,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66"
+                    Point2="0,70"
+                    Point3="-4,70" />
+                  <mssgle:LineSegment
+                    End="-69,70" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69,70"
+                    Point2="-73,70"
+                    Point3="-73,74" />
+                  <mssgle:LineSegment
+                    End="-73,132.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3794,7 +4098,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage">
+    design-time-name="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3807,7 +4111,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage">
+    design-time-name="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
