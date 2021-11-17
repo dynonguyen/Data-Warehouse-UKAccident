@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{6A21D2A9-259B-426A-A9F3-6894ACB35F6B}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{A74A0230-3B6E-4331-8CE2-F2794A4B0A4A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3956,55 +3956,29 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="193,42"
-          Id="Package\UKCarAccidents -&gt; Stage\Casualties1114 Source"
-          TopLeft="108,53" />
+          Size="177,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage"
+          TopLeft="876,280" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage"
+          TopLeft="511,270" />
         <NodeLayout
           Size="187,42"
           Id="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage"
           TopLeft="163,276" />
-        <EdgeLayout
-          Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output]"
-          TopLeft="204.5,95">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="52,181"
-              Start="0,0"
-              End="52,173.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,86.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,86.5"
-                    Point2="0,90.5"
-                    Point3="4,90.5" />
-                  <mssgle:LineSegment
-                    End="48,90.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="48,90.5"
-                    Point2="52,90.5"
-                    Point3="52,94.5" />
-                  <mssgle:LineSegment
-                    End="52,173.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="193,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Casualties1114 Source"
+          TopLeft="108,53" />
         <NodeLayout
           Size="183,42"
           Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Source"
           TopLeft="550,74" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\UKCarAccidents -&gt; Stage\Accident1114 Stage"
-          TopLeft="511,270" />
+          Size="183,42"
+          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Source"
+          TopLeft="946,98" />
         <EdgeLayout
           Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output1]"
           TopLeft="641.5,116">
@@ -4039,14 +4013,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Source"
-          TopLeft="946,98" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage"
-          TopLeft="876,280" />
+        <EdgeLayout
+          Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output]"
+          TopLeft="204.5,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,181"
+              Start="0,0"
+              End="52,173.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,86.5"
+                    Point2="0,90.5"
+                    Point3="4,90.5" />
+                  <mssgle:LineSegment
+                    End="48,90.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48,90.5"
+                    Point2="52,90.5"
+                    Point3="52,94.5" />
+                  <mssgle:LineSegment
+                    End="52,173.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\UKCarAccidents -&gt; Stage.Paths[Flat File Source Output2]"
           TopLeft="1037.5,140">
@@ -4085,7 +4085,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage">
+    design-time-name="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4111,7 +4111,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\UKCarAccidents -&gt; Stage\Vehicles1114 Stage">
+    design-time-name="Package\UKCarAccidents -&gt; Stage\Casualties1114 Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

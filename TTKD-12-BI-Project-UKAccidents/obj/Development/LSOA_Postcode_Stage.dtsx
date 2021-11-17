@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LSOA_Postcode_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{74B5DC31-0E44-4927-B32C-549CC6EFF9A7}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{304C20F9-128C-4898-B641-DAF0FFD4739A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

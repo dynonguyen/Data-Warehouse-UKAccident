@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="UKPostcodes_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{CE7DA430-9ACA-4C07-93D6-7D88F906AA40}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{478C23AB-E2C0-4F65-8B1D-BAFA629253E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
