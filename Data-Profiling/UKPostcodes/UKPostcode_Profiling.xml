@@ -11,6 +11,9 @@
     <DtsDataSource ID="{8267BA9A-95E0-4662-8D8A-22DF232A2A82}" Name="LocalHost.TTKD12_DB_UKAccidents 1">
       <DtsConnectionManagerID>LocalHost.TTKD12_DB_UKAccidents 1</DtsConnectionManagerID>
     </DtsDataSource>
+    <DtsDataSource ID="{0D6367F5-1CDA-472D-AC13-B3C61B9F89E4}" Name="LocalHost.TTKD12_DB_UKAccidents 2">
+      <DtsConnectionManagerID>LocalHost.TTKD12_DB_UKAccidents 2</DtsConnectionManagerID>
+    </DtsDataSource>
     <DtsDataSource ID="{C01D7BC3-ABFF-4FFB-B37C-16F5FF2E72BD}" Name="UKPostcode_Profiling.xml">
       <DtsConnectionManagerID>UKPostcode_Profiling.xml</DtsConnectionManagerID>
     </DtsDataSource>
@@ -60,79 +63,79 @@
     <Profiles>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="postcode" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="easting" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="northing" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="latitude" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="longitude" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="city" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="county" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="country_code" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="country_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="iso3166-2" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="region_code" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="region_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="postcode" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -141,21 +144,21 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>3</Length>
-            <Count>1676</Count>
+            <Count>1609</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>4</Length>
-            <Count>1968</Count>
+            <Count>1937</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>2</Length>
-            <Count>108</Count>
+            <Count>95</Count>
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="easting" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -164,7 +167,7 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>3721</Count>
+            <Count>3610</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>5</Length>
@@ -174,7 +177,7 @@
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="northing" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -183,7 +186,7 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>3506</Count>
+            <Count>3396</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>7</Length>
@@ -195,13 +198,13 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>5</Length>
-            <Count>239</Count>
+            <Count>238</Count>
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="latitude" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -214,7 +217,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>7</Length>
-            <Count>362</Count>
+            <Count>350</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>5</Length>
@@ -222,13 +225,13 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>8</Length>
-            <Count>3352</Count>
+            <Count>3253</Count>
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="longitude" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -237,11 +240,11 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>77</Count>
+            <Count>76</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>7</Length>
-            <Count>694</Count>
+            <Count>683</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>4</Length>
@@ -257,13 +260,13 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>8</Length>
-            <Count>2973</Count>
+            <Count>2874</Count>
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="city" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -272,7 +275,7 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>0</Length>
-            <Count>675</Count>
+            <Count>674</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>23</Length>
@@ -280,7 +283,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>9</Length>
-            <Count>393</Count>
+            <Count>391</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>15</Length>
@@ -300,7 +303,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>337</Count>
+            <Count>324</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>21</Length>
@@ -308,7 +311,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>7</Length>
-            <Count>536</Count>
+            <Count>528</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>24</Length>
@@ -324,7 +327,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>10</Length>
-            <Count>429</Count>
+            <Count>382</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>4</Length>
@@ -364,7 +367,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>11</Length>
-            <Count>237</Count>
+            <Count>221</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>20</Length>
@@ -376,13 +379,13 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>8</Length>
-            <Count>480</Count>
+            <Count>456</Count>
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="county" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -399,7 +402,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>9</Length>
-            <Count>236</Count>
+            <Count>234</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>3</Length>
@@ -415,7 +418,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>208</Count>
+            <Count>206</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>21</Length>
@@ -431,7 +434,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>18</Length>
-            <Count>67</Count>
+            <Count>47</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>10</Length>
@@ -483,7 +486,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>14</Length>
-            <Count>678</Count>
+            <Count>591</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>8</Length>
@@ -493,7 +496,7 @@
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="country_code" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -502,13 +505,13 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>3</Length>
-            <Count>3752</Count>
+            <Count>3641</Count>
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="country_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -525,7 +528,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>7</Length>
-            <Count>3020</Count>
+            <Count>2909</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>5</Length>
@@ -547,7 +550,7 @@
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="iso3166-2" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -556,7 +559,7 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>3730</Count>
+            <Count>3619</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>2</Length>
@@ -570,7 +573,7 @@
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="region_code" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -579,7 +582,7 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>9</Length>
-            <Count>1424</Count>
+            <Count>1400</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>3</Length>
@@ -587,7 +590,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>528</Count>
+            <Count>441</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>7</Length>
@@ -613,7 +616,7 @@
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="region_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
@@ -626,7 +629,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>6</Length>
-            <Count>532</Count>
+            <Count>445</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>24</Length>
@@ -634,7 +637,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>10</Length>
-            <Count>1422</Count>
+            <Count>1398</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>4</Length>
@@ -664,13 +667,13 @@
       </ColumnLengthDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="postcode" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>2848</NumberOfDistinctValues>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="easting" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>2107</NumberOfDistinctValues>
         <ValueDistribution>
@@ -707,10 +710,6 @@
             <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>335300</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>335500</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -720,7 +719,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>338900</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>339700</Value>
@@ -732,7 +731,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>341000</Value>
-            <Count>7</Count>
+            <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>341600</Value>
@@ -752,7 +751,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>348000</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>353200</Value>
@@ -843,10 +842,6 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>393900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>394500</Value>
             <Count>7</Count>
           </ValueDistributionItem>
@@ -895,14 +890,6 @@
             <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>408100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>409300</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>409600</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -928,7 +915,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>414000</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>414300</Value>
@@ -951,10 +938,6 @@
             <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>417900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>418000</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -964,14 +947,10 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>418900</Value>
-            <Count>5</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>419000</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>420000</Value>
+            <Value>419000</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -995,20 +974,8 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>425100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>426200</Value>
             <Count>6</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>426700</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>427600</Value>
-            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>427800</Value>
@@ -1016,7 +983,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>427900</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>429300</Value>
@@ -1028,7 +995,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>430600</Value>
-            <Count>6</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>430900</Value>
@@ -1036,15 +1003,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>431100</Value>
-            <Count>5</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>432800</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>433500</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>433900</Value>
@@ -1053,10 +1016,6 @@
           <ValueDistributionItem>
             <Value>434000</Value>
             <Count>5</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>434700</Value>
-            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>435100</Value>
@@ -1068,7 +1027,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>435800</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>436400</Value>
@@ -1091,16 +1050,12 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>439700</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>439800</Value>
             <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>442400</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>443400</Value>
@@ -1128,7 +1083,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>454200</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>454500</Value>
@@ -1140,7 +1095,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>458500</Value>
-            <Count>8</Count>
+            <Count>7</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>459200</Value>
@@ -1159,18 +1114,6 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>472000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>475200</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>475400</Value>
-            <Count>5</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>481000</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -1179,23 +1122,7 @@
             <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>483500</Value>
-            <Count>5</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>483900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>484600</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>485100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>486300</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -1203,27 +1130,7 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>487000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>487600</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>488600</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>489000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>489300</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>489900</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -1240,10 +1147,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>502800</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>504500</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -1284,7 +1187,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>510200</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>510300</Value>
@@ -1363,10 +1266,6 @@
             <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>523600</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>524200</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -1383,10 +1282,6 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>525100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>525200</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -1399,19 +1294,11 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>526100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>526300</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>526400</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>526700</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -1488,7 +1375,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>530100</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>530200</Value>
@@ -1696,7 +1583,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>558000</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>558200</Value>
@@ -1704,14 +1591,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>559000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>561000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>568500</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -1723,42 +1602,14 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>574900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>582200</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>592100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>601900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>621900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>622000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>624000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>629100</Value>
             <Count>4</Count>
           </ValueDistributionItem>
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="northing" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>2209</NumberOfDistinctValues>
         <ValueDistribution>
@@ -1924,11 +1775,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>169500</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>169900</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>170000</Value>
@@ -2048,7 +1899,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>178900</Value>
-            <Count>7</Count>
+            <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>179100</Value>
@@ -2216,7 +2067,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>189300</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>189500</Value>
@@ -2228,7 +2079,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>190300</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>190600</Value>
@@ -2283,10 +2134,6 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>195100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>196100</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -2296,30 +2143,14 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>196800</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>200000</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>200600</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>202300</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>203800</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>204900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>205400</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -2344,10 +2175,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>214400</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>214800</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -2388,7 +2215,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>240700</Value>
-            <Count>5</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>240900</Value>
@@ -2405,10 +2232,6 @@
           <ValueDistributionItem>
             <Value>255400</Value>
             <Count>5</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>263300</Value>
-            <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>283000</Value>
@@ -2433,10 +2256,6 @@
           <ValueDistributionItem>
             <Value>287000</Value>
             <Count>6</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>288200</Value>
-            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>288800</Value>
@@ -2472,31 +2291,15 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>333900</Value>
-            <Count>6</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>336800</Value>
-            <Count>4</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>337500</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>340000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>341500</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>341900</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>344800</Value>
-            <Count>6</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>363900</Value>
@@ -2504,10 +2307,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>376000</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>377600</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -2567,19 +2366,7 @@
             <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>403300</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>405100</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>405700</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>405900</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -2588,7 +2375,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>408400</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>409300</Value>
@@ -2675,10 +2462,6 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>441800</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>442000</Value>
             <Count>4</Count>
           </ValueDistributionItem>
@@ -2700,18 +2483,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>533800</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>561500</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>563700</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>573200</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -2746,7 +2517,7 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="latitude" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>2831</NumberOfDistinctValues>
         <ValueDistribution>
@@ -2760,10 +2531,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>51.13902</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>51.50513</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -2786,7 +2553,7 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="longitude" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>2837</NumberOfDistinctValues>
         <ValueDistribution>
@@ -2818,7 +2585,7 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="city" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>1607</NumberOfDistinctValues>
         <ValueDistribution>
@@ -2865,10 +2632,6 @@
           <ValueDistributionItem>
             <Value>Wansbeck</Value>
             <Count>8</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Whyteleafe</Value>
-            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Ealing</Value>
@@ -3035,20 +2798,12 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>Stafford</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>Lambeth</Value>
             <Count>14</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>High Wycombe</Value>
             <Count>6</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Washington</Value>
-            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Rochester</Value>
@@ -3121,10 +2876,6 @@
           <ValueDistributionItem>
             <Value>Bristol</Value>
             <Count>28</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Oulton Broad</Value>
-            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Ilkeston</Value>
@@ -3204,7 +2955,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value />
-            <Count>852</Count>
+            <Count>812</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Kettering</Value>
@@ -3323,10 +3074,6 @@
             <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>Houghton-le-Spring</Value>
-            <Count>6</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>Cottingham</Value>
             <Count>6</Count>
           </ValueDistributionItem>
@@ -3348,7 +3095,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Kingswood</Value>
-            <Count>6</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Darwen</Value>
@@ -3375,19 +3122,11 @@
             <Count>16</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>Burton upon Trent</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>Barking</Value>
             <Count>10</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Blyth</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Cheadle</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -3423,14 +3162,6 @@
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>Wellington</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Bury St Edmunds</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>Royal Tunbridge Wells</Value>
             <Count>8</Count>
           </ValueDistributionItem>
@@ -3439,15 +3170,7 @@
             <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>Tamworth</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>Loughborough</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Cannock</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -3491,10 +3214,6 @@
             <Count>6</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
-            <Value>Yeovil</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
             <Value>Hastings</Value>
             <Count>8</Count>
           </ValueDistributionItem>
@@ -3516,7 +3235,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Ipswich</Value>
-            <Count>8</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Sutton in Ashfield</Value>
@@ -3528,10 +3247,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Crewe</Value>
-            <Count>4</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>Stone</Value>
             <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
@@ -3586,7 +3301,7 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="county" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>213</NumberOfDistinctValues>
         <ValueDistribution>
@@ -3704,7 +3419,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Stockport</Value>
-            <Count>16</Count>
+            <Count>8</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Denbighshire</Value>
@@ -3740,7 +3455,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Swindon</Value>
-            <Count>16</Count>
+            <Count>8</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Dundee City</Value>
@@ -3904,7 +3619,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Staffordshire</Value>
-            <Count>64</Count>
+            <Count>45</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Norfolk</Value>
@@ -3924,11 +3639,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Surrey</Value>
-            <Count>116</Count>
+            <Count>58</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Sunderland</Value>
-            <Count>22</Count>
+            <Count>11</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Bath and North East Somerset</Value>
@@ -3944,7 +3659,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Tameside</Value>
-            <Count>16</Count>
+            <Count>8</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Aberdeen City</Value>
@@ -4024,7 +3739,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Torbay</Value>
-            <Count>6</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Portsmouth</Value>
@@ -4100,7 +3815,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Suffolk</Value>
-            <Count>70</Count>
+            <Count>35</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Greater London</Value>
@@ -4164,7 +3879,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Stockton-on-Tees</Value>
-            <Count>16</Count>
+            <Count>8</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Jersey</Value>
@@ -4176,7 +3891,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Telford and Wrekin</Value>
-            <Count>18</Count>
+            <Count>9</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Cornwall</Value>
@@ -4296,7 +4011,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Stoke-on-Trent</Value>
-            <Count>10</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Isle Of Wight</Value>
@@ -4308,13 +4023,13 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Thurrock</Value>
-            <Count>14</Count>
+            <Count>7</Count>
           </ValueDistributionItem>
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="country_code" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>8</NumberOfDistinctValues>
         <ValueDistribution>
@@ -4324,7 +4039,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>ENG</Value>
-            <Count>4110</Count>
+            <Count>3918</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>SCT</Value>
@@ -4354,7 +4069,7 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="country_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>8</NumberOfDistinctValues>
         <ValueDistribution>
@@ -4364,7 +4079,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>England</Value>
-            <Count>4175</Count>
+            <Count>3979</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>IMN</Value>
@@ -4394,7 +4109,7 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="iso3166-2" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>8</NumberOfDistinctValues>
         <ValueDistribution>
@@ -4412,7 +4127,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>GB-ENG</Value>
-            <Count>4232</Count>
+            <Count>4041</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Isle of Man</Value>
@@ -4420,7 +4135,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>GG</Value>
-            <Count>12</Count>
+            <Count>9</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>JE</Value>
@@ -4434,13 +4149,13 @@
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="region_code" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>16</NumberOfDistinctValues>
         <ValueDistribution>
           <ValueDistributionItem>
             <Value>NI</Value>
-            <Count>128</Count>
+            <Count>80</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>NORTHEAST</Value>
@@ -4452,7 +4167,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>SOUTHEAST</Value>
-            <Count>748</Count>
+            <Count>701</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>LONDON</Value>
@@ -4460,11 +4175,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>YORKHUMB</Value>
-            <Count>400</Count>
+            <Count>391</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>GGY</Value>
-            <Count>18</Count>
+            <Count>9</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>EAST</Value>
@@ -4472,11 +4187,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>IMN</Value>
-            <Count>8</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>WESTMID</Value>
-            <Count>424</Count>
+            <Count>388</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>EASTMID</Value>
@@ -4484,11 +4199,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>SOUTHWEST</Value>
-            <Count>554</Count>
+            <Count>536</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>NORTHWEST</Value>
-            <Count>544</Count>
+            <Count>522</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>WALES</Value>
@@ -4496,23 +4211,23 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>JEY</Value>
-            <Count>8</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>IM</Value>
-            <Count>10</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{8267BA9A-95E0-4662-8D8A-22DF232A2A82}</DataSourceID>
-        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3578" />
+        <Table DataSource="." Database="TTKD12_DB_UKAccidents" Schema="dbo" Table="UKPostcodes_Stage" RowCount="3514" />
         <Column Name="region_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>17</NumberOfDistinctValues>
         <ValueDistribution>
           <ValueDistributionItem>
             <Value>Guernsey</Value>
-            <Count>18</Count>
+            <Count>9</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>London</Value>
@@ -4524,11 +4239,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>IMN,Isle of Man</Value>
-            <Count>10</Count>
+            <Count>5</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>South East </Value>
-            <Count>748</Count>
+            <Count>742</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>#N/A</Value>
@@ -4536,11 +4251,11 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>West Midlands </Value>
-            <Count>424</Count>
+            <Count>390</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>North West </Value>
-            <Count>544</Count>
+            <Count>531</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>North East </Value>
@@ -4552,19 +4267,19 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Isle of Man</Value>
-            <Count>8</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Jersey</Value>
-            <Count>8</Count>
+            <Count>4</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Northern ireland</Value>
-            <Count>160</Count>
+            <Count>80</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Yorkshire and the Humber </Value>
-            <Count>400</Count>
+            <Count>391</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>South West </Value>
@@ -4572,7 +4287,7 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Scotland</Value>
-            <Count>478</Count>
+            <Count>440</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>Wales</Value>
