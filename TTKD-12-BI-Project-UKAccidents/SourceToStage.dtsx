@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{F8455BAD-D788-455A-B8DA-8248DDBB1364}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{95BF0BBD-5E4E-407B-90A5-B0883807C216}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1480,7 +1480,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU]</property>
+                  name="OpenRowset">[PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1523,8 +1523,8 @@
               <connections>
                 <connection
                   refId="Package\LSOA Postcode -&gt; Stage\LSOA Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.Test_UKAccidents_Stage]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Test_UKAccidents_Stage]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_Stage]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6891,6 +6891,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
+          Size="202,42"
+          Id="Package\LSOA Postcode -&gt; Stage"
+          TopLeft="210,379" />
+        <NodeLayout
           Size="204,42"
           Id="Package\UKCarAccidents -&gt; Stage"
           TopLeft="210,68" />
@@ -6898,13 +6902,110 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Size="190,42"
           Id="Package\UKPostcodes -&gt; Stage"
           TopLeft="684,152" />
-        <NodeLayout
-          Size="202,42"
-          Id="Package\LSOA Postcode -&gt; Stage"
-          TopLeft="210,379" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\LSOA Postcode -&gt; Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\LSOA Postcode -&gt; Stage\Script Component"
+          TopLeft="401.642857179349,212.676471993172" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\LSOA Postcode -&gt; Stage\LSOA Source"
+          TopLeft="331.928571963797,66.5" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\LSOA Postcode -&gt; Stage\LSOA Stage"
+          TopLeft="534.5,344.676473634054" />
+        <EdgeLayout
+          Id="Package\LSOA Postcode -&gt; Stage.Paths[Output 0]"
+          TopLeft="485.142857179349,254.676471993172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.357142820651,90.000001640882"
+              Start="0,0"
+              End="119.357142820651,82.500001640882">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.000000820441" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.000000820441"
+                    Point2="0,45.000000820441"
+                    Point3="4,45.000000820441" />
+                  <mssgle:LineSegment
+                    End="115.357142820651,45.000000820441" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115.357142820651,45.000000820441"
+                    Point2="119.357142820651,45.000000820441"
+                    Point3="119.357142820651,49.000000820441" />
+                  <mssgle:LineSegment
+                    End="119.357142820651,82.500001640882" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LSOA Postcode -&gt; Stage.Paths[Flat File Source Output]"
+          TopLeft="404.928571963797,108.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.214285215552,104.176471993172"
+              Start="0,0"
+              End="80.214285215552,96.676471993172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.088235996586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.088235996586"
+                    Point2="0,52.088235996586"
+                    Point3="4,52.088235996586" />
+                  <mssgle:LineSegment
+                    End="76.214285215552,52.088235996586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.214285215552,52.088235996586"
+                    Point2="80.214285215552,52.088235996586"
+                    Point3="80.214285215552,56.088235996586" />
+                  <mssgle:LineSegment
+                    End="80.214285215552,96.676471993172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\LSOA Postcode -&gt; Stage\LSOA Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\UKCarAccidents -&gt; Stage">
     <LayoutInfo>
@@ -7136,107 +7237,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\LSOA Postcode -&gt; Stage">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="140,42"
-          Id="Package\LSOA Postcode -&gt; Stage\LSOA Stage"
-          TopLeft="534.5,344.676473634054" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\LSOA Postcode -&gt; Stage\Script Component"
-          TopLeft="401.642857179349,212.676471993172" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\LSOA Postcode -&gt; Stage\LSOA Source"
-          TopLeft="331.928571963797,66.5" />
-        <EdgeLayout
-          Id="Package\LSOA Postcode -&gt; Stage.Paths[Output 0]"
-          TopLeft="485.142857179349,254.676471993172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.357142820651,90.000001640882"
-              Start="0,0"
-              End="119.357142820651,82.500001640882">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.000000820441" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.000000820441"
-                    Point2="0,45.000000820441"
-                    Point3="4,45.000000820441" />
-                  <mssgle:LineSegment
-                    End="115.357142820651,45.000000820441" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115.357142820651,45.000000820441"
-                    Point2="119.357142820651,45.000000820441"
-                    Point3="119.357142820651,49.000000820441" />
-                  <mssgle:LineSegment
-                    End="119.357142820651,82.500001640882" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\LSOA Postcode -&gt; Stage.Paths[Flat File Source Output]"
-          TopLeft="404.928571963797,108.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80.214285215552,104.176471993172"
-              Start="0,0"
-              End="80.214285215552,96.676471993172">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.088235996586" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,48.088235996586"
-                    Point2="0,52.088235996586"
-                    Point3="4,52.088235996586" />
-                  <mssgle:LineSegment
-                    End="76.214285215552,52.088235996586" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.214285215552,52.088235996586"
-                    Point2="80.214285215552,52.088235996586"
-                    Point3="80.214285215552,56.088235996586" />
-                  <mssgle:LineSegment
-                    End="80.214285215552,96.676471993172" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\LSOA Postcode -&gt; Stage\LSOA Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
