@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{D4FF9922-225B-446B-916A-D82461137982}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{0155DAC7-B2A5-4F34-8CD9-D734015CB10A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -10584,11 +10584,11 @@ where [refTable].[YearId] = ?</property>
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SET IDENTITY_INSERT dbo.Fact_Accident_Statistic ON
 INSERT INTO dbo.Fact_Accident_Statistic
 (
-    FactAccidentStatsId, RoadTypeId, DayId, BuilduproadId, UrbanRuralAreaId, TownId
+    FactAccidentStatsId, RoadTypeId, DayId, BuilduproadId, UrbanRuralAreaId, TownId, VehicleTypeId
 )
 VALUES
 (   ?,
-    ?,?,?,?,?
+    ?,?,?,?,?,?
 )
 SET IDENTITY_INSERT dbo.Fact_Accident_Statistic OFF</property>
                 <property
@@ -10648,6 +10648,12 @@ SET IDENTITY_INSERT dbo.Fact_Accident_Statistic OFF</property>
                       cachedName="TownId"
                       externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[TownId]" />
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[VehicleTypeId]"
+                      cachedDataType="i4"
+                      cachedName="VehicleTypeId"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output].Columns[VehicleTypeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10710,6 +10716,17 @@ SET IDENTITY_INSERT dbo.Fact_Accident_Statistic OFF</property>
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       dataType="i4"
                       name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -10895,6 +10912,166 @@ where [refTable].[FactAccidentStatsid] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Vehicle NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT AccidentId, VehicleTypeId
+ FROM Vehicle</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT AccidentId, VehicleTypeId
+ FROM Vehicle) [refTable]
+where [refTable].[AccidentId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AccidentId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VehicleTypeId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[AccidentId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input].Columns[AccidentId]"
+                      cachedDataType="i4"
+                      cachedName="AccidentId"
+                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[AccidentId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">AccidentId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output].Columns[VehicleTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output].Columns[VehicleTypeId]"
+                      name="VehicleTypeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">VehicleTypeId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -10912,7 +11089,7 @@ where [refTable].[FactAccidentStatsid] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Accident_Statistic SET RoadTypeId=?, DayId=?, BuilduproadId=?, UrbanRuralAreaId=?, TownId=? WHERE FactAccidentStatsId=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Accident_Statistic SET RoadTypeId=?, DayId=?, BuilduproadId=?, UrbanRuralAreaId=?, TownId=?, VehicleTypeId=? WHERE FactAccidentStatsId=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10970,6 +11147,12 @@ where [refTable].[FactAccidentStatsid] = ?</property>
                       cachedName="AccidentId"
                       externalMetadataColumnId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[AccidentId]" />
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[VehicleTypeId]"
+                      cachedDataType="i4"
+                      cachedName="VehicleTypeId"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output].Columns[VehicleTypeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -11039,6 +11222,17 @@ where [refTable].[FactAccidentStatsid] = ?</property>
                           name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -11087,8 +11281,13 @@ where [refTable].[FactAccidentStatsid] = ?</property>
               name="Lookup Match Output"
               startId="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
+              refId="Package\Fact AccidentStatistic.Paths[Lookup Match Output1]"
               endId="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
+              endId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output]" />
           </paths>
@@ -13277,6 +13476,14 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       DTS:ObjectName="Constraint 18"
       DTS:To="Package\Fact VehicleStatistic" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 19]"
+      DTS:CreationName=""
+      DTS:DTSID="{10CA7827-0CDE-47EC-8657-A7995817D4C6}"
+      DTS:From="Package\Dim VehicleType"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 19"
+      DTS:To="Package\Fact AccidentStatistic" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{7C4B39DC-DE15-41E6-8EC1-A8F0C0D7EA8F}"
@@ -13356,27 +13563,27 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="182,42"
           Id="Package\Dim AgeBandCasualty"
-          TopLeft="17.1428574347983,321.694122237235" />
+          TopLeft="24.1428574347983,372.694122237235" />
         <NodeLayout
           Size="160,42"
           Id="Package\Dim BuildUpRoad"
-          TopLeft="655.714296881034,387.352945262585" />
+          TopLeft="702.714296881034,439.352945262585" />
         <NodeLayout
           Size="178,42"
           Id="Package\Dim CasualtySeverity"
-          TopLeft="20.000000340598,406.176475274934" />
+          TopLeft="30.000000340598,450.176475274934" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dim CasualtyType"
-          TopLeft="22.1428575199478,489.070592771847" />
+          TopLeft="45.1428575199478,552.070592771847" />
         <NodeLayout
           Size="137,42"
           Id="Package\Dim Country"
-          TopLeft="619.285724832087,154.470590401686" />
+          TopLeft="627.285724832087,153.470590401686" />
         <NodeLayout
           Size="134,42"
           Id="Package\Dim County"
-          TopLeft="427.142864417057,68.0588244839111" />
+          TopLeft="451.142864417057,66.0588244839111" />
         <NodeLayout
           Size="118,42"
           Id="Package\Dim Day"
@@ -13384,11 +13591,11 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="203,42"
           Id="Package\Dim JourneyPurposeDriver"
-          TopLeft="1004.5143026712,237.058826854072" />
+          TopLeft="1025.5143026712,371.058826854072" />
         <NodeLayout
           Size="200,42"
           Id="Package\Dim LocalAuthorityDistrict"
-          TopLeft="235.000004002026,489.541179891771" />
+          TopLeft="269.000004002026,537.541179891771" />
         <NodeLayout
           Size="130,42"
           Id="Package\Dim Month"
@@ -13400,11 +13607,11 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="133,42"
           Id="Package\Dim Region"
-          TopLeft="624.285724917237,65.7647068046781" />
+          TopLeft="632.285724917237,64.7647068046781" />
         <NodeLayout
           Size="147,42"
           Id="Package\Dim RoadType"
-          TopLeft="655.714296881034,306.294120596355" />
+          TopLeft="702.714296881034,358.294120596355" />
         <NodeLayout
           Size="157,42"
           Id="Package\Dim SexCasualty"
@@ -13412,31 +13619,31 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="126,42"
           Id="Package\Dim Town"
-          TopLeft="429.285721596407,156.000002187841" />
+          TopLeft="453.285721596407,154.000002187841" />
         <NodeLayout
           Size="174,42"
           Id="Package\Dim UrbanRuralArea"
-          TopLeft="650.000011069434,466.705886149489" />
+          TopLeft="697.000011069434,518.705886149489" />
         <NodeLayout
           Size="157,42"
           Id="Package\Dim VehicleType"
-          TopLeft="1002.54287403895,156.058825213191" />
+          TopLeft="1026.54287403895,154.058825213191" />
         <NodeLayout
           Size="122,42"
           Id="Package\Dim Year"
           TopLeft="227.857146737527,60.4117655531346" />
         <NodeLayout
-          Size="178,42"
+          Size="194,61"
           Id="Package\Fact AccidentStatistic"
-          TopLeft="455.000007748604,375.882356866421" />
+          TopLeft="465.000007748604,406.882356866421" />
         <NodeLayout
-          Size="178,42"
+          Size="185,63"
           Id="Package\Fact CasualtyStatistic"
-          TopLeft="251.428575710375,408.376473634053" />
+          TopLeft="251.428575710375,387.376473634053" />
         <NodeLayout
-          Size="171,42"
+          Size="191,62"
           Id="Package\Fact VehicleStatistic"
-          TopLeft="761.428584395623,237.82353274715" />
+          TopLeft="763.428584395623,218.82353274715" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="227.857146737527,84.2705891254452">
@@ -13483,30 +13690,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="103.742857519948,489.070592771847">
+          TopLeft="126.642857519948,552.070592771847">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="176.485717168633,-39.0941191377937"
+              EndConnector="187.785718190427,-101.694119137794"
               Start="0,0"
-              End="176.485717168633,-31.5941191377937">
+              End="187.785718190427,-94.194119137794">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-15.5470595688968" />
+                    End="0,-56.4932863038325" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-15.5470595688968"
-                    Point2="0,-19.5470595688968"
-                    Point3="4,-19.5470595688968" />
+                    Point1="0,-56.4932863038325"
+                    Point2="0,-60.4932863038325"
+                    Point3="4,-60.4932863038325" />
                   <mssgle:LineSegment
-                    End="172.485717168633,-19.5470595688968" />
+                    End="183.785718190427,-60.4932863038325" />
                   <mssgle:CubicBezierSegment
-                    Point1="172.485717168633,-19.5470595688968"
-                    Point2="176.485717168633,-19.5470595688968"
-                    Point3="176.485717168633,-23.5470595688968" />
+                    Point1="183.785718190427,-60.4932863038325"
+                    Point2="187.785718190427,-60.4932863038325"
+                    Point3="187.785718190427,-64.4932863038325" />
                   <mssgle:LineSegment
-                    End="176.485717168633,-31.5941191377937" />
+                    End="187.785718190427,-94.194119137794" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13517,18 +13724,18 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="336.033337207636,489.541179891771">
+          TopLeft="371.2142898562,537.541179891771">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-39.5647062577178"
+              EndConnector="0,-87.164706257718"
               Start="0,0"
-              End="0,-32.0647062577178">
+              End="0,-79.664706257718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-32.0647062577178" />
+                    End="0,-79.664706257718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13539,30 +13746,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="729.314296881034,347.894120596355">
+          TopLeft="702.714296881034,379.294120596355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-185.51428913243,27.9882362700665"
+              EndConnector="-43.7142891324299,49.2549029367327"
               Start="0,0"
-              End="-185.51428913243,20.4882362700665">
+              End="-36.2142891324299,49.2549029367327">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.99411813503323" />
+                    End="-21.5581946045836,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.99411813503323"
-                    Point2="0,13.9941181350332"
-                    Point3="-4,13.9941181350332" />
+                    Point1="-21.5581946045836,0"
+                    Point2="-25.5581946045836,0"
+                    Point3="-25.5581946045836,4" />
                   <mssgle:LineSegment
-                    End="-181.51428913243,13.9941181350332" />
+                    End="-25.5581946045836,45.2549029367327" />
                   <mssgle:CubicBezierSegment
-                    Point1="-181.51428913243,13.9941181350332"
-                    Point2="-185.51428913243,13.9941181350332"
-                    Point3="-185.51428913243,17.9941181350332" />
+                    Point1="-25.5581946045836,45.2549029367327"
+                    Point2="-25.5581946045836,49.2549029367327"
+                    Point3="-29.5581946045836,49.2549029367327" />
                   <mssgle:LineSegment
-                    End="-185.51428913243,20.4882362700665" />
+                    End="-36.2142891324299,49.2549029367327" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13573,30 +13780,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="655.714296881034,408.152945262585">
+          TopLeft="702.714296881034,460.352945262585">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.1142891324299,-11.4705883961645"
+              EndConnector="-43.7142891324299,-14.1372550628307"
               Start="0,0"
-              End="-15.6142891324299,-11.4705883961645">
+              End="-36.2142891324299,-14.1372550628307">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-7.55714456621496,0" />
+                    End="-21.5581946045836,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.55714456621496,0"
-                    Point2="-11.557144566215,0"
-                    Point3="-11.557144566215,-4" />
+                    Point1="-21.5581946045836,0"
+                    Point2="-25.5581946045836,0"
+                    Point3="-25.5581946045836,-4" />
                   <mssgle:LineSegment
-                    End="-11.557144566215,-7.47058839616449" />
+                    End="-25.5581946045836,-10.1372550628307" />
                   <mssgle:CubicBezierSegment
-                    Point1="-11.557144566215,-7.47058839616449"
-                    Point2="-11.557144566215,-11.4705883961645"
-                    Point3="-15.557144566215,-11.4705883961645" />
+                    Point1="-25.5581946045836,-10.1372550628307"
+                    Point2="-25.5581946045836,-14.1372550628307"
+                    Point3="-29.5581946045836,-14.1372550628307" />
                   <mssgle:LineSegment
-                    End="-15.6142891324299,-11.4705883961645" />
+                    End="-36.2142891324299,-14.1372550628307" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13607,30 +13814,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="737.200011069434,466.705886149489">
+          TopLeft="784.000011069434,518.705886149489">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-193.40000332083,-49.223529283068"
+              EndConnector="-222.00000332083,-50.8235292830681"
               Start="0,0"
-              End="-193.40000332083,-41.723529283068">
+              End="-222.00000332083,-43.3235292830681">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-20.611764641534" />
+                    End="0,-21.411764641534" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-20.611764641534"
-                    Point2="0,-24.611764641534"
-                    Point3="-4,-24.611764641534" />
+                    Point1="0,-21.411764641534"
+                    Point2="0,-25.411764641534"
+                    Point3="-4,-25.411764641534" />
                   <mssgle:LineSegment
-                    End="-189.40000332083,-24.611764641534" />
+                    End="-218.00000332083,-25.411764641534" />
                   <mssgle:CubicBezierSegment
-                    Point1="-189.40000332083,-24.611764641534"
-                    Point2="-193.40000332083,-24.611764641534"
-                    Point3="-193.40000332083,-28.611764641534" />
+                    Point1="-218.00000332083,-25.411764641534"
+                    Point2="-222.00000332083,-25.411764641534"
+                    Point3="-222.00000332083,-29.411764641534" />
                   <mssgle:LineSegment
-                    End="-193.40000332083,-41.723529283068" />
+                    End="-222.00000332083,-43.3235292830681" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13641,18 +13848,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="492.580959715973,197.600002187841">
+          TopLeft="496.61905492974,196.000002187841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,178.28235467858"
+              EndConnector="65.3809528188637,210.88235467858"
               Start="0,0"
-              End="0,170.78235467858">
+              End="65.3809528188637,203.38235467858">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,170.78235467858" />
+                    End="0,81.9395175806125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,81.9395175806125"
+                    Point2="0,85.9395175806125"
+                    Point3="4,85.9395175806125" />
+                  <mssgle:LineSegment
+                    End="61.3809528188637,85.9395175806125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.3809528188637,85.9395175806125"
+                    Point2="65.3809528188637,85.9395175806125"
+                    Point3="65.3809528188637,89.9395175806125" />
+                  <mssgle:LineSegment
+                    End="65.3809528188637,203.38235467858" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13663,30 +13882,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="1080.94287403895,197.658825213191">
+          TopLeft="1129.87620737228,196.058825213191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-206.714289643326,40.1647075339585"
+              EndConnector="-240.44762297666,22.764707533959"
               Start="0,0"
-              End="-206.714289643326,32.6647075339585">
+              End="-240.44762297666,15.264707533959">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.8756872562975" />
+                    End="0,7.40757946381994" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.8756872562975"
-                    Point2="0,23.8756872562975"
-                    Point3="-4,23.8756872562975" />
+                    Point1="0,7.40757946381994"
+                    Point2="0,11.4075794638199"
+                    Point3="-4,11.4075794638199" />
                   <mssgle:LineSegment
-                    End="-202.714289643326,23.8756872562975" />
+                    End="-236.44762297666,11.4075794638199" />
                   <mssgle:CubicBezierSegment
-                    Point1="-202.714289643326,23.8756872562975"
-                    Point2="-206.714289643326,23.8756872562975"
-                    Point3="-206.714289643326,27.8756872562975" />
+                    Point1="-236.44762297666,11.4075794638199"
+                    Point2="-240.44762297666,11.4075794638199"
+                    Point3="-240.44762297666,15.4075794638199" />
                   <mssgle:LineSegment
-                    End="-206.714289643326,32.6647075339585" />
+                    End="-240.44762297666,15.264707533959" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13697,18 +13916,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="1004.5143026712,258.241179800611">
+          TopLeft="1127.0143026712,371.058826854072">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-71.8857182755759,0"
+              EndConnector="-268.085718275577,-90.235294106922"
               Start="0,0"
-              End="-64.3857182755759,0">
+              End="-268.085718275577,-82.735294106922">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-64.3857182755759,0" />
+                    End="0,-41.117647053461" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-41.117647053461"
+                    Point2="0,-45.117647053461"
+                    Point3="-4,-45.117647053461" />
+                  <mssgle:LineSegment
+                    End="-264.085718275577,-45.117647053461" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-264.085718275577,-45.117647053461"
+                    Point2="-268.085718275577,-45.117647053461"
+                    Point3="-268.085718275577,-49.117647053461" />
+                  <mssgle:LineSegment
+                    End="-268.085718275577,-82.735294106922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13719,30 +13950,64 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 18]"
-          TopLeft="512.21905492974,197.600002187841">
+          TopLeft="535.952388263074,196.000002187841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="307.609529465883,40.2235305593088"
+              EndConnector="292.476196132549,22.823530559309"
               Start="0,0"
-              End="307.609529465883,32.7235305593088">
+              End="292.476196132549,15.323530559309">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.1928097543292" />
+                    End="0,7.47182720217901" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.1928097543292"
-                    Point2="0,20.1928097543292"
-                    Point3="4,20.1928097543292" />
+                    Point1="0,7.47182720217901"
+                    Point2="0,11.471827202179"
+                    Point3="4,11.471827202179" />
                   <mssgle:LineSegment
-                    End="303.609529465883,20.1928097543292" />
+                    End="288.476196132549,11.471827202179" />
                   <mssgle:CubicBezierSegment
-                    Point1="303.609529465883,20.1928097543292"
-                    Point2="307.609529465883,20.1928097543292"
-                    Point3="307.609529465883,24.1928097543292" />
+                    Point1="288.476196132549,11.471827202179"
+                    Point2="292.476196132549,11.471827202179"
+                    Point3="292.476196132549,15.471827202179" />
                   <mssgle:LineSegment
-                    End="307.609529465883,32.7235305593088" />
+                    End="292.476196132549,15.323530559309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 19]"
+          TopLeft="1080.20954070562,196.058825213191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-487.209532957013,210.82353165323"
+              Start="0,0"
+              End="-487.209532957013,203.32353165323">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,101.662101855857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,101.662101855857"
+                    Point2="0,105.662101855857"
+                    Point3="-4,105.662101855857" />
+                  <mssgle:LineSegment
+                    End="-483.209532957013,105.662101855857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-483.209532957013,105.662101855857"
+                    Point2="-487.209532957013,105.662101855857"
+                    Point3="-487.209532957013,109.662101855857" />
+                  <mssgle:LineSegment
+                    End="-487.209532957013,203.32353165323" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13775,7 +14040,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="689.185724874662,154.470590401686">
+          TopLeft="697.185724874662,153.470590401686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -13797,18 +14062,18 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="624.285724917237,87.7117656442946">
+          TopLeft="632.285724917237,86.4117656442946">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-63.5428605001802,0"
+              EndConnector="-47.14286050018,0"
               Start="0,0"
-              End="-56.0428605001802,0">
+              End="-39.64286050018,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-56.0428605001802,0" />
+                    End="-39.64286050018,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13819,7 +14084,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="493.214293006732,109.658824483911">
+          TopLeft="517.214293006732,107.658824483911">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -13841,18 +14106,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="339.600004087176,193.776472722453">
+          TopLeft="287.571432463976,194.176472722453">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,214.6000009116"
+              EndConnector="85.8571432463989,193.2000009116"
               Start="0,0"
-              End="0,207.1000009116">
+              End="85.8571432463989,185.7000009116">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,207.1000009116" />
+                    End="0,110.926045558347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,110.926045558347"
+                    Point2="0,114.926045558347"
+                    Point3="4,114.926045558347" />
+                  <mssgle:LineSegment
+                    End="81.8571432463989,114.926045558347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.8571432463989,114.926045558347"
+                    Point2="85.8571432463989,114.926045558347"
+                    Point3="85.8571432463989,118.926045558347" />
+                  <mssgle:LineSegment
+                    End="85.8571432463989,185.7000009116" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13863,30 +14140,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="105.542857605097,278.658826854072">
+          TopLeft="105.642857605097,279.058826854072">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="181.419051012863,129.717646779981"
+              EndConnector="208.785718105278,108.317646779981"
               Start="0,0"
-              End="181.419051012863,122.217646779981">
+              End="208.785718105278,100.817646779981">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5474361976696" />
+                    End="0,60.4333268626897" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.5474361976696"
-                    Point2="0,33.5474361976696"
-                    Point3="4,33.5474361976696" />
+                    Point1="0,60.4333268626897"
+                    Point2="0,64.4333268626897"
+                    Point3="4,64.4333268626897" />
                   <mssgle:LineSegment
-                    End="177.419051012863,33.5474361976696" />
+                    End="204.785718105278,64.4333268626897" />
                   <mssgle:CubicBezierSegment
-                    Point1="177.419051012863,33.5474361976696"
-                    Point2="181.419051012863,33.5474361976696"
-                    Point3="181.419051012863,37.5474361976696" />
+                    Point1="204.785718105278,64.4333268626897"
+                    Point2="208.785718105278,64.4333268626897"
+                    Point3="208.785718105278,68.4333268626897" />
                   <mssgle:LineSegment
-                    End="181.419051012863,122.217646779981" />
+                    End="208.785718105278,100.817646779981" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13897,30 +14174,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="107.942857434798,363.294122237235">
+          TopLeft="206.142857434798,393.694122237235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="155.142859818984,45.082351396818"
+              EndConnector="45.2857182755766,16.0156847301513"
               Start="0,0"
-              End="155.142859818984,37.582351396818">
+              End="37.7857182755766,16.0156847301513">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.541175698409" />
+                    End="22.4984543470093,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.541175698409"
-                    Point2="0,22.541175698409"
-                    Point3="4,22.541175698409" />
+                    Point1="22.4984543470093,0"
+                    Point2="26.4984543470093,0"
+                    Point3="26.4984543470093,4" />
                   <mssgle:LineSegment
-                    End="151.142859818984,22.541175698409" />
+                    End="26.4984543470093,12.0156847301513" />
                   <mssgle:CubicBezierSegment
-                    Point1="151.142859818984,22.541175698409"
-                    Point2="155.142859818984,22.541175698409"
-                    Point3="155.142859818984,26.541175698409" />
+                    Point1="26.4984543470093,12.0156847301513"
+                    Point2="26.4984543470093,16.0156847301513"
+                    Point3="30.4984543470093,16.0156847301513" />
                   <mssgle:LineSegment
-                    End="155.142859818984,37.582351396818" />
+                    End="37.7857182755766,16.0156847301513" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13931,18 +14208,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="197.600000340598,428.076474454494">
+          TopLeft="208.000000340598,471.176475274934">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.8285753697768,0"
+              EndConnector="43.428575369777,-43.1333349742143"
               Start="0,0"
-              End="46.3285753697768,0">
+              End="35.928575369777,-43.1333349742143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="46.3285753697768,0" />
+                    End="21.4117670120367,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.4117670120367,0"
+                    Point2="25.4117670120367,0"
+                    Point3="25.4117670120367,-4" />
+                  <mssgle:LineSegment
+                    End="25.4117670120367,-39.1333349742143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.4117670120367,-39.1333349742143"
+                    Point2="25.4117670120367,-43.1333349742143"
+                    Point3="29.4117670120367,-43.1333349742143" />
+                  <mssgle:LineSegment
+                    End="35.928575369777,-43.1333349742143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13960,21 +14249,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="180,41.6"
-          Id="Package\Dim AgeBandCasualty\AgeBandCasualty nds"
-          TopLeft="312,43" />
-        <NodeLayout
           Size="215.2,41.6"
           Id="Package\Dim AgeBandCasualty\update AgeBandCasualty dds"
           TopLeft="160,325" />
+        <NodeLayout
+          Size="228.8,41.6"
+          Id="Package\Dim AgeBandCasualty\Lookup AgeBandCasualty id dds"
+          TopLeft="332,193.4" />
         <NodeLayout
           Size="208.8,41.6"
           Id="Package\Dim AgeBandCasualty\insert AgeBandCasualty dds"
           TopLeft="461,327.8" />
         <NodeLayout
-          Size="228.8,41.6"
-          Id="Package\Dim AgeBandCasualty\Lookup AgeBandCasualty id dds"
-          TopLeft="332,193.4" />
+          Size="180,41.6"
+          Id="Package\Dim AgeBandCasualty\AgeBandCasualty nds"
+          TopLeft="312,43" />
         <EdgeLayout
           Id="Package\Dim AgeBandCasualty.Paths[OLE DB Source Output]"
           TopLeft="402,84.6">
@@ -14006,7 +14295,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14126,21 +14417,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Dim BuildUpRoad\Builduproad nds"
-          TopLeft="369,59" />
+          Size="190.4,41.6"
+          Id="Package\Dim BuildUpRoad\update Builduproad dds"
+          TopLeft="258,273" />
         <NodeLayout
           Size="200,41.6"
           Id="Package\Dim BuildUpRoad\Lookup Builduproadid dds"
           TopLeft="409,173" />
         <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\Dim BuildUpRoad\update Builduproad dds"
-          TopLeft="258,273" />
-        <NodeLayout
           Size="184,41.6"
           Id="Package\Dim BuildUpRoad\insert Builduproad dds"
           TopLeft="530,282" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Dim BuildUpRoad\Builduproad nds"
+          TopLeft="369,59" />
         <EdgeLayout
           Id="Package\Dim BuildUpRoad.Paths[OLE DB Source Output]"
           TopLeft="446.2,100.6">
@@ -14172,7 +14463,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14292,21 +14585,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Dim CasualtySeverity\CasualtySeverity nds"
-          TopLeft="352,62" />
+          Size="211.2,41.6"
+          Id="Package\Dim CasualtySeverity\update CasualtySeverity dds"
+          TopLeft="240,299" />
         <NodeLayout
           Size="221.6,41.6"
           Id="Package\Dim CasualtySeverity\Lookup CasualtySeverityid dds"
           TopLeft="373,174" />
         <NodeLayout
-          Size="211.2,41.6"
-          Id="Package\Dim CasualtySeverity\update CasualtySeverity dds"
-          TopLeft="240,299" />
-        <NodeLayout
           Size="204.8,41.6"
           Id="Package\Dim CasualtySeverity\insert CasualtySeverity dds"
           TopLeft="500,307.4" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Dim CasualtySeverity\CasualtySeverity nds"
+          TopLeft="352,62" />
         <EdgeLayout
           Id="Package\Dim CasualtySeverity.Paths[OLE DB Source Output]"
           TopLeft="440,103.6">
@@ -14338,7 +14631,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14458,21 +14753,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Dim CasualtyType\CasualtyType nds"
-          TopLeft="290,40" />
+          Size="196.8,41.6"
+          Id="Package\Dim CasualtyType\update CasualtyType dds"
+          TopLeft="99,298" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Dim CasualtyType\Lookup CasualtyTypeid dds"
           TopLeft="310,162" />
         <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Dim CasualtyType\update CasualtyType dds"
-          TopLeft="99,298" />
-        <NodeLayout
           Size="190.4,41.6"
           Id="Package\Dim CasualtyType\insert CasualtyType dds"
           TopLeft="409,300.6" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Dim CasualtyType\CasualtyType nds"
+          TopLeft="290,40" />
         <EdgeLayout
           Id="Package\Dim CasualtyType.Paths[OLE DB Source Output]"
           TopLeft="370.4,81.6">
@@ -14504,7 +14799,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14624,21 +14921,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Dim Country\Country nds"
-          TopLeft="324,49" />
+          Size="169.6,41.6"
+          Id="Package\Dim Country\update country dds"
+          TopLeft="179,294" />
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Dim Country\Lookup country id dds"
           TopLeft="325,178" />
         <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Dim Country\update country dds"
-          TopLeft="179,294" />
-        <NodeLayout
           Size="163.2,41.6"
           Id="Package\Dim Country\insert country dds"
           TopLeft="504,291.4" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Dim Country\Country nds"
+          TopLeft="324,49" />
         <EdgeLayout
           Id="Package\Dim Country.Paths[OLE DB Source Output]"
           TopLeft="391.6,90.6">
@@ -14670,7 +14967,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14790,13 +15089,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Dim County\County nds"
-          TopLeft="384,74" />
+          Size="159.2,41.6"
+          Id="Package\Dim County\insert county dds"
+          TopLeft="576,305.4" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Dim County\Lookup county id dds"
           TopLeft="386,181" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Dim County\County nds"
+          TopLeft="384,74" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Dim County\update county dds"
+          TopLeft="261,299" />
         <EdgeLayout
           Id="Package\Dim County.Paths[OLE DB Source Output]"
           TopLeft="449.6,115.6">
@@ -14828,17 +15135,11 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Dim County\update county dds"
-          TopLeft="261,299" />
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Dim County\insert county dds"
-          TopLeft="576,305.4" />
         <EdgeLayout
           Id="Package\Dim County.Paths[Lookup Match Output]"
           TopLeft="447.066666666667,222.6">
@@ -14956,21 +15257,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="116.8,41.6"
-          Id="Package\Dim Day\Day nds"
-          TopLeft="361,80" />
+          Size="148.8,41.6"
+          Id="Package\Dim Day\insert date dds"
+          TopLeft="522,324.4" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Dim Day\Lookup dayid dds"
           TopLeft="370,200" />
         <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Dim Day\Day nds"
+          TopLeft="361,80" />
+        <NodeLayout
           Size="151.2,41.6"
           Id="Package\Dim Day\update day dds"
           TopLeft="220,315" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Dim Day\insert date dds"
-          TopLeft="522,324.4" />
         <EdgeLayout
           Id="Package\Dim Day.Paths[OLE DB Source Output]"
           TopLeft="419.4,121.6">
@@ -15002,7 +15303,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15122,21 +15425,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\Dim JourneyPurposeDriver\JourneyPurposeDriver nds"
-          TopLeft="323,59" />
-        <NodeLayout
-          Size="250.4,41.6"
-          Id="Package\Dim JourneyPurposeDriver\Lookup JourneyPurposeDriver id dds"
-          TopLeft="319,192" />
-        <NodeLayout
           Size="236.8,41.6"
           Id="Package\Dim JourneyPurposeDriver\update JourneyPurposeDriver dds"
           TopLeft="162,287" />
         <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Dim JourneyPurposeDriver\JourneyPurposeDriver nds"
+          TopLeft="323,59" />
+        <NodeLayout
           Size="230.4,41.6"
           Id="Package\Dim JourneyPurposeDriver\insert JourneyPurposeDriver dds"
           TopLeft="531,291" />
+        <NodeLayout
+          Size="250.4,41.6"
+          Id="Package\Dim JourneyPurposeDriver\Lookup JourneyPurposeDriver id dds"
+          TopLeft="319,192" />
         <EdgeLayout
           Id="Package\Dim JourneyPurposeDriver.Paths[OLE DB Source Output]"
           TopLeft="423.8,100.6">
@@ -15168,7 +15471,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15288,21 +15593,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Dim LocalAuthorityDistrict\LocalAuthorityDistrict nds"
-          TopLeft="350,79" />
-        <NodeLayout
-          Size="244,41.6"
-          Id="Package\Dim LocalAuthorityDistrict\Lookup LocalAuthorityDistrictid dds"
-          TopLeft="334,185" />
-        <NodeLayout
           Size="233.6,41.6"
           Id="Package\Dim LocalAuthorityDistrict\update LocalAuthorityDistrict dds"
           TopLeft="198,286" />
         <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Dim LocalAuthorityDistrict\LocalAuthorityDistrict nds"
+          TopLeft="350,79" />
+        <NodeLayout
           Size="227.2,41.6"
           Id="Package\Dim LocalAuthorityDistrict\insert LocalAuthorityDistrict dds"
           TopLeft="466,288.4" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\Dim LocalAuthorityDistrict\Lookup LocalAuthorityDistrictid dds"
+          TopLeft="334,185" />
         <EdgeLayout
           Id="Package\Dim LocalAuthorityDistrict.Paths[OLE DB Source Output]"
           TopLeft="452.4,120.6">
@@ -15322,7 +15627,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15446,10 +15753,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Id="Package\Dim Month\Month nds"
           TopLeft="356,72" />
         <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Dim Month\Lookup month id dds"
-          TopLeft="372,185" />
-        <NodeLayout
           Size="164,41.6"
           Id="Package\Dim Month\update month dds"
           TopLeft="225,295" />
@@ -15457,6 +15760,10 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Size="158.4,41.6"
           Id="Package\Dim Month\insert month dds"
           TopLeft="545,298.2" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Dim Month\Lookup month id dds"
+          TopLeft="372,185" />
         <EdgeLayout
           Id="Package\Dim Month.Paths[OLE DB Source Output]"
           TopLeft="420,113.6">
@@ -15488,7 +15795,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15612,10 +15921,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Id="Package\Dim Quarter\Quarter nds"
           TopLeft="388,126" />
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Dim Quarter\Lookup quarter id dds"
-          TopLeft="370,234" />
-        <NodeLayout
           Size="168.8,41.6"
           Id="Package\Dim Quarter\update quarter dds"
           TopLeft="231,325" />
@@ -15623,6 +15928,10 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Size="162.4,41.6"
           Id="Package\Dim Quarter\insert quarter dds"
           TopLeft="515,324" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Dim Quarter\Lookup quarter id dds"
+          TopLeft="370,234" />
         <EdgeLayout
           Id="Package\Dim Quarter.Paths[OLE DB Source Output]"
           TopLeft="458,167.6">
@@ -15642,7 +15951,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15766,6 +16077,14 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Id="Package\Dim Region\Region nds"
           TopLeft="394,63" />
         <NodeLayout
+          Size="164,41.6"
+          Id="Package\Dim Region\update region dds"
+          TopLeft="308,279" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Dim Region\insert region dds"
+          TopLeft="592,281.2" />
+        <NodeLayout
           Size="176.8,41.6"
           Id="Package\Dim Region\Lookup region id dds"
           TopLeft="427,167" />
@@ -15800,17 +16119,11 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Dim Region\update region dds"
-          TopLeft="308,279" />
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Dim Region\insert region dds"
-          TopLeft="592,281.2" />
         <EdgeLayout
           Id="Package\Dim Region.Paths[Lookup Match Output]"
           TopLeft="487.266666666667,208.6">
@@ -15936,13 +16249,13 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Id="Package\Dim RoadType\Lookup RoadTypeid dds"
           TopLeft="383,190" />
         <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Dim RoadType\update RoadType dds"
-          TopLeft="206,274" />
-        <NodeLayout
           Size="174.4,41.6"
           Id="Package\Dim RoadType\insert RoadType dds"
           TopLeft="490,284" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Dim RoadType\update RoadType dds"
+          TopLeft="206,274" />
         <EdgeLayout
           Id="Package\Dim RoadType.Paths[OLE DB Source Output]"
           TopLeft="430.8,106.6">
@@ -15974,7 +16287,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16102,13 +16417,13 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Id="Package\Dim SexCasualty\Lookup SexCasulty id dds"
           TopLeft="427,174" />
         <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Dim SexCasualty\update SexCasu dds"
-          TopLeft="279,298" />
-        <NodeLayout
           Size="172.8,41.6"
           Id="Package\Dim SexCasualty\insert SexxCasu dds"
           TopLeft="567,296.6" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Dim SexCasualty\update SexCasu dds"
+          TopLeft="279,298" />
         <EdgeLayout
           Id="Package\Dim SexCasualty.Paths[OLE DB Source Output]"
           TopLeft="480.6,100.6">
@@ -16140,7 +16455,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16264,10 +16581,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Id="Package\Dim Town\Town nds"
           TopLeft="308,52" />
         <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Dim Town\Lookup Town id dds"
-          TopLeft="313,184" />
-        <NodeLayout
           Size="157.6,41.6"
           Id="Package\Dim Town\update town dds"
           TopLeft="136,314" />
@@ -16275,6 +16588,10 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Size="151.2,41.6"
           Id="Package\Dim Town\insert town dds"
           TopLeft="423,307.6" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Dim Town\Lookup Town id dds"
+          TopLeft="313,184" />
         <EdgeLayout
           Id="Package\Dim Town.Paths[OLE DB Source Output]"
           TopLeft="370,93.6">
@@ -16306,7 +16623,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16426,21 +16745,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Dim UrbanRuralArea\UrbanRuralArea nds"
-          TopLeft="438,45" />
+          Size="208,41.6"
+          Id="Package\Dim UrbanRuralArea\update UrbanRuralArea dds"
+          TopLeft="245,288" />
         <NodeLayout
           Size="218.4,41.6"
           Id="Package\Dim UrbanRuralArea\Lookup UrbanRuralAreaid dds"
           TopLeft="467,173" />
         <NodeLayout
-          Size="208,41.6"
-          Id="Package\Dim UrbanRuralArea\update UrbanRuralArea dds"
-          TopLeft="245,288" />
-        <NodeLayout
           Size="201.6,41.6"
           Id="Package\Dim UrbanRuralArea\insert UrbanRuralArea dds"
           TopLeft="569,293" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Dim UrbanRuralArea\UrbanRuralArea nds"
+          TopLeft="438,45" />
         <EdgeLayout
           Id="Package\Dim UrbanRuralArea.Paths[OLE DB Source Output]"
           TopLeft="524.4,86.6">
@@ -16472,7 +16791,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16592,21 +16913,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Dim VehicleType\VehicleType nds"
-          TopLeft="355,52" />
+          Size="190.4,41.6"
+          Id="Package\Dim VehicleType\update VehicleType dds"
+          TopLeft="264,277" />
         <NodeLayout
           Size="200,41.6"
           Id="Package\Dim VehicleType\Lookup VehicleTypeid dds"
           TopLeft="387,171" />
         <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\Dim VehicleType\update VehicleType dds"
-          TopLeft="264,277" />
-        <NodeLayout
           Size="184,41.6"
           Id="Package\Dim VehicleType\insert VehicleType dds"
           TopLeft="513,288" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Dim VehicleType\VehicleType nds"
+          TopLeft="355,52" />
         <EdgeLayout
           Id="Package\Dim VehicleType.Paths[OLE DB Source Output]"
           TopLeft="432.2,93.6">
@@ -16638,7 +16959,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16758,13 +17081,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Dim Year\Year nds"
-          TopLeft="260.714290154224,78.0000010939206" />
+          Size="154.4,41.6"
+          Id="Package\Dim Year\update year dds"
+          TopLeft="147.142859648685,286.000004011042" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Dim Year\Lookup year dds"
           TopLeft="243.571432719425,172.823531835549" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Dim Year\insert year dds"
+          TopLeft="390.714292368111,288.22353274715" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Dim Year\Year nds"
+          TopLeft="260.714290154224,78.0000010939206" />
         <EdgeLayout
           Id="Package\Dim Year.Paths[OLE DB Source Output]"
           TopLeft="320.942861436825,119.600001093921">
@@ -16784,17 +17115,11 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Dim Year\update year dds"
-          TopLeft="147.142859648685,286.000004011042" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Dim Year\insert year dds"
-          TopLeft="390.714292368111,288.22353274715" />
         <EdgeLayout
           Id="Package\Dim Year.Paths[Lookup Match Output]"
           TopLeft="296.904766052759,214.423531835549">
@@ -16910,49 +17235,113 @@ where [refTable].[FactVehicleStatsId] = ?</property>
     design-time-name="Package\Fact AccidentStatistic">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Fact AccidentStatistic\Accident nds"
-          TopLeft="409,52" />
-        <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id"
-          TopLeft="404,177" />
+          TopLeft="385,292" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Fact AccidentStatistic\update Fact_Accident_Statistic"
-          TopLeft="221,333" />
+          TopLeft="259,449" />
         <NodeLayout
-          Size="216,41.6"
+          Size="173,42"
+          Id="Package\Fact AccidentStatistic\Lookup Vehicle NDS"
+          TopLeft="412,169" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Fact AccidentStatistic\Accident nds"
+          TopLeft="425,52" />
+        <NodeLayout
+          Size="216,42"
           Id="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic"
-          TopLeft="537,331.8" />
+          TopLeft="586,446.8" />
         <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
-          TopLeft="478.2,93.6">
+          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output]"
+          TopLeft="464.666666666667,334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.4,83.4"
+              EndConnector="-94.6666666666666,115"
               Start="0,0"
-              End="43.4,75.9">
+              End="-94.6666666666666,107.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.7" />
+                    End="0,42.4666103127641" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.7"
-                    Point2="0,41.7"
-                    Point3="4,41.7" />
+                    Point1="0,42.4666103127641"
+                    Point2="0,46.4666103127641"
+                    Point3="-4,46.4666103127641" />
                   <mssgle:LineSegment
-                    End="39.4,41.7" />
+                    End="-90.6666666666666,46.4666103127641" />
                   <mssgle:CubicBezierSegment
-                    Point1="39.4,41.7"
-                    Point2="43.4,41.7"
-                    Point3="43.4,45.7" />
+                    Point1="-90.6666666666666,46.4666103127641"
+                    Point2="-94.6666666666666,46.4666103127641"
+                    Point3="-94.6666666666666,50.4666103127641" />
                   <mssgle:LineSegment
-                    End="43.4,75.9" />
+                    End="-94.6666666666666,107.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.5247200520833,51.4666103127641,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[Lookup Error Output]"
+          TopLeft="540.333333333333,334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.666666666667,112.8"
+              Start="0,0"
+              End="153.666666666667,105.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.577683854607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.577683854607"
+                    Point2="0,45.577683854607"
+                    Point3="4,45.577683854607" />
+                  <mssgle:LineSegment
+                    End="149.666666666667,45.577683854607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.666666666667,45.577683854607"
+                    Point2="153.666666666667,45.577683854607"
+                    Point3="153.666666666667,49.577683854607" />
+                  <mssgle:LineSegment
+                    End="153.666666666667,105.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="30.9669466145835,50.577683854607,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
+          TopLeft="496.25,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16962,80 +17351,68 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output]"
-          TopLeft="521.6,218.6">
+          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output1]"
+          TopLeft="500.5,211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-189.4,114.4"
+              EndConnector="0,81"
               Start="0,0"
-              End="-189.4,106.9">
+              End="0,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,53.2"
-                    Point2="0,57.2"
-                    Point3="-4,57.2" />
-                  <mssgle:LineSegment
-                    End="-185.4,57.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-185.4,57.2"
-                    Point2="-189.4,57.2"
-                    Point3="-189.4,61.2" />
-                  <mssgle:LineSegment
-                    End="-189.4,106.9" />
+                    End="0,73.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-142.89138671875,62.2,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[Lookup Error Output]"
-          TopLeft="559.466666666667,218.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.5333333333333,113.2"
-              Start="0,0"
-              End="85.5333333333333,105.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.7389189189189" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.7389189189189"
-                    Point2="0,45.7389189189189"
-                    Point3="4,45.7389189189189" />
-                  <mssgle:LineSegment
-                    End="81.5333333333333,45.7389189189189" />
-                  <mssgle:CubicBezierSegment
-                    Point1="81.5333333333333,45.7389189189189"
-                    Point2="85.5333333333333,45.7389189189189"
-                    Point3="85.5333333333333,49.7389189189189" />
-                  <mssgle:LineSegment
-                    End="85.5333333333333,105.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.09972005208336,50.7389189189189,91.7327734375,11.609375"
+              BoundingBox="-48.19138671875,30.9453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact AccidentStatistic\Lookup Vehicle NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact AccidentStatistic\Accident nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id">
     <Properties>
@@ -17059,80 +17436,35 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact AccidentStatistic\Accident nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Fact CasualtyStatistic">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="216,42"
-          Id="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic"
-          TopLeft="561,416.2" />
+          Size="223,42"
+          Id="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic"
+          TopLeft="385,314" />
         <NodeLayout
           Size="175,42"
           Id="Package\Fact CasualtyStatistic\Lookup Accident nds"
           TopLeft="415,127" />
         <NodeLayout
+          Size="216,42"
+          Id="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic"
+          TopLeft="561,416.2" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Fact CasualtyStatistic\Lookup Causalty NDS"
+          TopLeft="408,215" />
+        <NodeLayout
           Size="222,42"
           Id="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic"
           TopLeft="227,422" />
         <NodeLayout
-          Size="223,42"
-          Id="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic"
-          TopLeft="385,314" />
-        <NodeLayout
           Size="121,42"
           Id="Package\Fact CasualtyStatistic\Casu nds"
           TopLeft="440,33" />
-        <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Error Output]"
-          TopLeft="532.466666666667,355.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="136.533333333333,60.5999999999999"
-              Start="0,0"
-              End="136.533333333333,53.0999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4987900355872" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4987900355872"
-                    Point2="0,24.4987900355872"
-                    Point3="4,24.4987900355872" />
-                  <mssgle:LineSegment
-                    End="132.533333333333,24.4987900355872" />
-                  <mssgle:CubicBezierSegment
-                    Point1="132.533333333333,24.4987900355872"
-                    Point2="136.533333333333,24.4987900355872"
-                    Point3="136.533333333333,28.4987900355872" />
-                  <mssgle:LineSegment
-                    End="136.533333333333,53.0999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.4002799479165,29.4987900355872,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact CasualtyStatistic.Paths[OLE DB Source Output]"
           TopLeft="501.5,75">
@@ -17153,6 +17485,54 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output2]"
+          TopLeft="497.25,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,18.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output1]"
+          TopLeft="500.25,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17191,55 +17571,39 @@ where [refTable].[FactVehicleStatsId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Fact CasualtyStatistic\Lookup Causalty NDS"
-          TopLeft="408,215" />
         <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output1]"
-          TopLeft="500.25,169">
+          Id="Package\Fact CasualtyStatistic.Paths[Lookup Error Output]"
+          TopLeft="532.466666666667,355.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="136.533333333333,60.5999999999999"
               Start="0,0"
-              End="0,38.5">
+              End="136.533333333333,53.0999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,20.4987900355872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4987900355872"
+                    Point2="0,24.4987900355872"
+                    Point3="4,24.4987900355872" />
+                  <mssgle:LineSegment
+                    End="132.533333333333,24.4987900355872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="132.533333333333,24.4987900355872"
+                    Point2="136.533333333333,24.4987900355872"
+                    Point3="136.533333333333,28.4987900355872" />
+                  <mssgle:LineSegment
+                    End="136.533333333333,53.0999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output2]"
-          TopLeft="497.25,257">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,18.9453125,96.3827734375,11.609375"
+              BoundingBox="22.4002799479165,29.4987900355872,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17247,15 +17611,25 @@ where [refTable].[FactVehicleStatsId] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact CasualtyStatistic\Casu nds">
+    design-time-name="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -17283,12 +17657,12 @@ where [refTable].[FactVehicleStatsId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic">
+    design-time-name="Package\Fact CasualtyStatistic\Lookup Causalty NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17305,19 +17679,80 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact CasualtyStatistic\Casu nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Fact VehicleStatistic">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="132,41.6"
-          Id="Package\Fact VehicleStatistic\Vehicle nds"
-          TopLeft="411,74" />
-        <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Fact VehicleStatistic\Lookup Accident id"
           TopLeft="396,151" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Fact VehicleStatistic\update Fact_Vehicle_Statistic"
+          TopLeft="262,339" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Fact VehicleStatistic\Lookup Vehicle id dds"
+          TopLeft="383,237" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fact VehicleStatistic\insert Fact_Vehicle_Statistic"
+          TopLeft="557,340.4" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Fact VehicleStatistic\Vehicle nds"
+          TopLeft="411,74" />
+        <EdgeLayout
+          Id="Package\Fact VehicleStatistic.Paths[Lookup Error Output]"
+          TopLeft="502.2,278.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.6,61.8"
+              Start="0,0"
+              End="159.6,54.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0452631578947" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0452631578947"
+                    Point2="0,25.0452631578947"
+                    Point3="4,25.0452631578947" />
+                  <mssgle:LineSegment
+                    End="155.6,25.0452631578947" />
+                  <mssgle:CubicBezierSegment
+                    Point1="155.6,25.0452631578947"
+                    Point2="159.6,25.0452631578947"
+                    Point3="159.6,29.0452631578947" />
+                  <mssgle:LineSegment
+                    End="159.6,54.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="33.93361328125,30.0452631578947,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact VehicleStatistic.Paths[OLE DB Source Output]"
           TopLeft="478.3,115.6">
@@ -17340,42 +17775,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Fact VehicleStatistic\Lookup Vehicle id dds"
-          TopLeft="383,237" />
-        <EdgeLayout
-          Id="Package\Fact VehicleStatistic.Paths[Lookup Match Output]"
-          TopLeft="476.5,192.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.3999999999999"
-              Start="0,0"
-              End="0,36.8999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.8999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.6453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="216,41.6"
-          Id="Package\Fact VehicleStatistic\update Fact_Vehicle_Statistic"
-          TopLeft="262,339" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Fact VehicleStatistic\insert Fact_Vehicle_Statistic"
-          TopLeft="557,340.4" />
         <EdgeLayout
           Id="Package\Fact VehicleStatistic.Paths[Lookup Match Output1]"
           TopLeft="473.4,278.6">
@@ -17413,38 +17812,26 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact VehicleStatistic.Paths[Lookup Error Output]"
-          TopLeft="502.2,278.6">
+          Id="Package\Fact VehicleStatistic.Paths[Lookup Match Output]"
+          TopLeft="476.5,192.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159.6,61.8"
+              EndConnector="0,44.3999999999999"
               Start="0,0"
-              End="159.6,54.3">
+              End="0,36.8999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.0452631578947" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.0452631578947"
-                    Point2="0,25.0452631578947"
-                    Point3="4,25.0452631578947" />
-                  <mssgle:LineSegment
-                    End="155.6,25.0452631578947" />
-                  <mssgle:CubicBezierSegment
-                    Point1="155.6,25.0452631578947"
-                    Point2="159.6,25.0452631578947"
-                    Point3="159.6,29.0452631578947" />
-                  <mssgle:LineSegment
-                    End="159.6,54.3" />
+                    End="0,36.8999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="33.93361328125,30.0452631578947,91.7327734375,11.609375"
+              BoundingBox="-48.19138671875,12.6453124999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17507,29 +17894,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact CasualtyStatistic\Lookup Causalty NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
