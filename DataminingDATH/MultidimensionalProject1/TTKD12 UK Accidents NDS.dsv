@@ -1,0 +1,98 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e586e9f0-9885-41df-8e99-65b1d65650af" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TTKD12 UK Accidents NDS</ID>
+  <Name>TTKD12 UK Accidents NDS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>TTKD12 UK Accidents NDS</DataSourceID>
+  <Schema>
+    <xs:schema id="TTKD12_x0020_UK_x0020_Accidents_x0020_NDS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="TTKD12_x0020_UK_x0020_Accidents_x0020_NDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="39f1226d-467d-4e75-91bb-97ca350a48b0">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_AcidentSeverityPredict" msprop:design-time-name="d7c348e9-f066-452f-8ae1-d8c23daa9d33" msprop:DbTableName="AcidentSeverityPredict" msprop:FriendlyName="AcidentSeverityPredict" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AccidentIndex" msprop:design-time-name="1199598d-0cee-4dae-b40c-d29ef28ffa9b" msprop:DbColumnName="AccidentIndex" msprop:FriendlyName="AccidentIndex" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="13" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AccidentSeverity" msprop:design-time-name="965286c9-db28-4ff0-94df-02bcf4f87021" msprop:DbColumnName="AccidentSeverity" msprop:FriendlyName="AccidentSeverity" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LocalAuthorityDistrict" msprop:design-time-name="c0bba9fa-9c1b-447a-aab2-d728f316baa2" msprop:DbColumnName="LocalAuthorityDistrict" msprop:FriendlyName="LocalAuthorityDistrict" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SpeedLimit" msprop:design-time-name="1c470fbd-ce8b-469b-9416-64ca5a1d36d2" msprop:DbColumnName="SpeedLimit" msprop:FriendlyName="SpeedLimit" type="xs:int" minOccurs="0" />
+                  <xs:element name="UrbanRural" msprop:design-time-name="372b7a2a-97fc-40e5-a562-922495df88dd" msprop:DbColumnName="UrbanRural" msprop:FriendlyName="UrbanRural" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NumberVehicles" msprop:design-time-name="b08fb528-00de-4f72-a4e8-f2056aabde88" msprop:DbColumnName="NumberVehicles" msprop:FriendlyName="NumberVehicles" type="xs:int" minOccurs="0" />
+                  <xs:element name="NumberCasualties" msprop:design-time-name="fdc5cd82-b3a4-4345-8267-3b20e4ec98e8" msprop:DbColumnName="NumberCasualties" msprop:FriendlyName="NumberCasualties" type="xs:int" minOccurs="0" />
+                  <xs:element name="RoadType" msprop:design-time-name="af8e159d-cc93-4f0f-acaa-3383bbe0a19f" msprop:DbColumnName="RoadType" msprop:FriendlyName="RoadType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <TTKD12_x0020_UK_x0020_Accidents_x0020_NDS xmlns="" />
+  </Schema>
+</DataSourceView>
