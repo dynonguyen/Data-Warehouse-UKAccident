@@ -249,6 +249,11 @@ ADD CONSTRAINT FK_FAS_Town
 FOREIGN KEY (TownId) REFERENCES Dim_Town (TownId)
 GO
 
+ALTER TABLE Fact_Accident_Statistic
+ADD CONSTRAINT FK_FAS_VT
+FOREIGN KEY (VehicleTypeId) REFERENCES Dim_VehicleType (VehicleTypeId)
+GO
+
 -- Fact_Vehicle_Statistic
 ALTER TABLE Fact_Vehicle_Statistic
 ADD CONSTRAINT FK_FVS_Day
