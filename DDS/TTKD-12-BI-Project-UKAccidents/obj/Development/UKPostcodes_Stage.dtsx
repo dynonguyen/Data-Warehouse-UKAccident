@@ -1,0 +1,939 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/18/2021 12:07:09 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MINHTRI"
+  DTS:CreatorName="MINHTRI\MinhTri"
+  DTS:DTSID="{3BFE2D68-63EF-4A33-862E-A173F31C0199}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="UKPostcodes_Stage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{478C23AB-E2C0-4F65-8B1D-BAFA629253E9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{69FA7FC4-4892-4BBD-B804-AD694C7C4937}"
+      DTS:ObjectName="LocalHost.TTKD12_DB_UKAccidents">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=TTKD12_DB_UKAccidents;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UKPostcodes Source]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="UKPostcodes Source"
+      DTS:DTSID="{441205BF-87F6-4811-95AF-0FC380BE0EA3}"
+      DTS:ObjectName="UKPostcodes Source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\K18-FIT-HCMUS-18120609\Nam04(HK1)\HTTT-PV-TTKD\ThucHanh\_BaiLam_code\raw_data\postcodes.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="postcode"
+              DTS:DTSID="{BCE6A479-E306-49F8-9696-0906103BD0EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="easting"
+              DTS:DTSID="{60ACA41B-D8EE-4A63-A9A4-2185E76A850D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="northing"
+              DTS:DTSID="{205F124E-61A9-442B-BBA2-4186115347CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="latitude"
+              DTS:DTSID="{311354E6-789E-4190-BB7F-F240C3237324}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="longitude"
+              DTS:DTSID="{D2A24C69-E665-405C-8B2C-6AD93629809B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{A056DC05-16D7-4D44-822F-E8F356A0B71F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="county"
+              DTS:DTSID="{E47BD327-DD89-419B-96DE-4890FFED3A16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country_code"
+              DTS:DTSID="{2FC0B344-0EB8-4F88-97CB-F51E4E2B48C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country_name"
+              DTS:DTSID="{B1FD7EC7-AEAF-4E19-9BC3-42C1E06843F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="iso3166-2"
+              DTS:DTSID="{5D22A204-4015-492F-BB80-61B5CD065A5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region_code"
+              DTS:DTSID="{DF193A68-5ED2-495D-8D3A-271A3747A1C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region_name"
+              DTS:DTSID="{C696C851-C64D-4B65-AF86-1046191B3A4C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\UKPostcodes -&gt; Stage"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F46B393A-ADE0-44EE-88BD-3492779D0C3D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UKPostcodes -&gt; Stage">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="UKPostcodes Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UKPostcodes Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[UKPostcodes Source]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[postcode]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[postcode]"
+                      name="postcode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[easting]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[easting]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[easting]"
+                      name="easting"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[northing]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[northing]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[northing]"
+                      name="northing"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[latitude]"
+                      name="latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[longitude]"
+                      name="longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[county]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[county]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[county]"
+                      name="county"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[country_code]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[country_code]"
+                      name="country_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[country_name]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[country_name]"
+                      name="country_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[iso3166-2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[iso3166-2]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[iso3166-2]"
+                      name="iso3166-2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[region_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[region_code]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[region_code]"
+                      name="region_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[region_name]"
+                      length="50"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[region_name]"
+                      name="region_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="postcode" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[easting]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="easting" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[northing]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="northing" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[county]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="county" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country_code" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country_name" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[iso3166-2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="iso3166-2" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[region_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region_code" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].ExternalColumns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region_name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="UKPostcodes Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[UKPostcodes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_DB_UKAccidents]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[postcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="postcode"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[postcode]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[easting]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="easting"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[easting]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[northing]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="northing"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[northing]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[latitude]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="latitude"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[latitude]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[longitude]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="longitude"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[longitude]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[county]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="county"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[county]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[country_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country_code"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[country_code]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country_name"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[country_name]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[iso3166-2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="iso3166-2"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[iso3166-2]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[region_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region_code"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[region_code]" />
+                    <inputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].Columns[region_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region_name"
+                      externalMetadataColumnId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output].Columns[region_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="postcode" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
+                      dataType="i4"
+                      name="easting" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
+                      dataType="i4"
+                      name="northing" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="county" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="country_code" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="country_name" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="iso3166-2" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="region_code" />
+                    <externalMetadataColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="region_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\UKPostcodes -&gt; Stage.Paths[Flat File Source Output]"
+              endId="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\UKPostcodes -&gt; Stage\UKPostcodes Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\UKPostcodes -&gt; Stage"
+          TopLeft="266.928575880674,25.382353220019" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\UKPostcodes -&gt; Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage"
+          TopLeft="385,205" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\UKPostcodes -&gt; Stage\UKPostcodes Source"
+          TopLeft="187,83" />
+        <EdgeLayout
+          Id="Package\UKPostcodes -&gt; Stage.Paths[Flat File Source Output]"
+          TopLeft="278.5,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="195,80"
+              Start="0,0"
+              End="195,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="4,40" />
+                  <mssgle:LineSegment
+                    End="191,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="191,40"
+                    Point2="195,40"
+                    Point3="195,44" />
+                  <mssgle:LineSegment
+                    End="195,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\UKPostcodes -&gt; Stage\UKPostcodes Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
