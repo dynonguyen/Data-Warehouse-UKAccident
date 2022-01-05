@@ -71,7 +71,6 @@ CREATE TABLE Dim_SexCasualty (
 	SexCasualtyDetail VARCHAR(30),
 )
 GO
-
 ​
 CREATE TABLE Dim_AgeBandCasualty (
 	AgeBandCasualtyId INT PRIMARY KEY,
@@ -97,6 +96,12 @@ CREATE TABLE Dim_LocalAuthorityDistrict (
 )
 GO
 
+CREATE TABLE Dim_AgeGroupCasualty(
+	AgeGroupCasualtyId INT PRIMARY KEY,
+	AgeGroupCasualtyDetail VARCHAR(30) NOT NULL
+)
+GO
+
 CREATE TABLE Fact_Casualty_Statistic(
 	FactCasualtyStatsId INT IDENTITY(1, 1) PRIMARY KEY,
 	DayId INT,
@@ -105,7 +110,8 @@ CREATE TABLE Fact_Casualty_Statistic(
 	CasualtyTypeId INT,
 	CasualtySeverityId INT, 
 	LADId INT,
-	AgeCasualty INT
+	AgeCasualty INT,
+	AgeGroupCasualtyId INT
 )
 GO
 
@@ -223,6 +229,11 @@ ADD CONSTRAINT FK_FCS_Day
 FOREIGN KEY (DayId) REFERENCES Dim_Day(DayId)
 GO
 
+ALTER TABLE Fact_Casualty_Statistic
+ADD CONSTRAINT FK_FCS_AgeGroup
+FOREIGN KEY (AgeGroupCasualtyId) REFERENCES Dim_AgeGroupCasualty(AgeGroupCasualtyId)
+GO
+
 -- Fact_Accident_Statistic
 ALTER TABLE Fact_Accident_Statistic
 ADD CONSTRAINT FK_FAS_RT
@@ -274,3 +285,11 @@ ALTER TABLE Fact_Vehicle_Statistic
 ADD CONSTRAINT FK_FVS_JPD
 FOREIGN KEY (JourneyPurposeDriverId) REFERENCES Dim_JourneyPurposeDriver(JourneyPurposeDriverId)
 GO
+
+
+---------------- Insert Into Dim --------------
+-- Dim_AgeGroupCasualty
+INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 1, 'Children: 0-15')
+INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 2, 'Young adult: 16-17' )
+INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 3,'Adult: 18-59' )
+INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 4,'60 and over: 60-...' )

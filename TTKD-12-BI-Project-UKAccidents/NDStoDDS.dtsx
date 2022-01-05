@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{0155DAC7-B2A5-4F34-8CD9-D734015CB10A}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{95D490F6-B79E-4B62-90F5-AED18329C044}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -11309,6 +11309,86 @@ where [refTable].[AccidentId] = ?</property>
           version="1">
           <components>
             <component
+              refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add AgeGroupCasualtyId"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Inputs[Derived Column Input].Columns[AgeCasualty]"
+                      cachedDataType="i4"
+                      cachedName="AgeCasualty"
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeCasualty]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output].Columns[AgeGroupCasualtyId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output].Columns[AgeGroupCasualtyId]"
+                      name="AgeGroupCasualtyId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeCasualty]} &lt;= 15 ? 1 : #{Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeCasualty]} &lt;= 17 ? 2 : #{Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeCasualty]} &lt;= 59 ? 3 : 4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">AgeCasualty &lt;= 15 ? 1 : AgeCasualty &lt;= 17 ? 2 : AgeCasualty &lt;= 59 ? 3 : 4</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact CasualtyStatistic\Casu nds"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -11459,6 +11539,24 @@ where [refTable].[AccidentId] = ?</property>
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CasualtyTypeId]"
                       name="CasualtyTypeId"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -11502,6 +11600,14 @@ where [refTable].[AccidentId] = ?</property>
                       refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].ExternalColumns[CasualtyTypeId]"
                       dataType="i4"
                       name="CasualtyTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -11560,6 +11666,16 @@ where [refTable].[AccidentId] = ?</property>
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[CasualtyTypeId]"
                       name="CasualtyTypeId" />
                     <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
                       refId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -11594,16 +11710,14 @@ where [refTable].[AccidentId] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SET IDENTITY_INSERT Fact_Casualty_Statistic ON
-INSERT INTO dbo.Fact_Casualty_Statistic
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO dbo.Fact_Casualty_Statistic
 (
-    FactCasualtyStatsId, DayId, SexCasualtyId, AgeBandCasualtyId, CasualtyTypeId, CasualtySeverityId, LADId, AgeCasualty
+ DayId, SexCasualtyId, AgeBandCasualtyId, CasualtyTypeId, CasualtySeverityId, LADId, AgeCasualty, AgeGroupCasualtyId
 )
 VALUES
-(   ?,
-    ?,?,?,?,?,?,?
-)
-SET IDENTITY_INSERT Fact_Casualty_Statistic OFF</property>
+( 
+    ?,?,?,?,?,?,?,?
+)</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11626,53 +11740,53 @@ SET IDENTITY_INSERT Fact_Casualty_Statistic OFF</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[CasualtyId]"
-                      cachedDataType="i4"
-                      cachedName="CasualtyId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CasualtyId]" />
-                    <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[DayId]"
                       cachedDataType="i4"
                       cachedName="DayId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output].Columns[DayId]" />
                     <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[SexCasualtyId]"
                       cachedDataType="i4"
                       cachedName="SexCasualtyId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[SexCasualtyId]" />
                     <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[AgeBandCasualtyId]"
                       cachedDataType="i4"
                       cachedName="AgeBandCasualtyId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeBandCasualtyId]" />
                     <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[CasualtyTypeId]"
                       cachedDataType="i4"
                       cachedName="CasualtyTypeId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CasualtyTypeId]" />
                     <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[CasualtySeverityId]"
                       cachedDataType="i4"
                       cachedName="CasualtySeverityId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CasualtySeverityId]" />
                     <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[LocalAuthorityDistrictId]"
                       cachedDataType="i4"
                       cachedName="LocalAuthorityDistrictId"
-                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output].Columns[LocalAuthorityDistrictId]" />
                     <inputColumn
                       refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[AgeCasualty]"
                       cachedDataType="i4"
                       cachedName="AgeCasualty"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeCasualty]" />
+                    <inputColumn
+                      refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[AgeGroupCasualtyId]"
+                      cachedDataType="i4"
+                      cachedName="AgeGroupCasualtyId"
                       externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Match Output].Columns[AgeCasualty]" />
+                      lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output].Columns[AgeGroupCasualtyId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -11972,166 +12086,6 @@ where [refTable].[AccidentId] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Causalty NDS"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CasualtyId, AgeCasualty
-FROM Casualty</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT CasualtyId, AgeCasualty
-FROM Casualty) [refTable]
-where [refTable].[CasualtyId] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CasualtyId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AgeCasualty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CasualtyId]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Inputs[Lookup Input].Columns[CasualtyId]"
-                      cachedDataType="i4"
-                      cachedName="CasualtyId"
-                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[CasualtyId]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">CasualtyId</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Match Output].Columns[AgeCasualty]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Match Output].Columns[AgeCasualty]"
-                      name="AgeCasualty"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">AgeCasualty</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -12291,7 +12245,7 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Casualty_Statistic SET DayId=?, SexCasualtyId=?, AgeBandCasualtyId=?, CasualtyTypeId=?, CasualtySeverityId=?, LADId=?, AgeCasualty=? WHERE FactCasualtyStatsId=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Casualty_Statistic SET DayId=?, SexCasualtyId=?, AgeBandCasualtyId=?, CasualtyTypeId=?, CasualtySeverityId=?, LADId=?, AgeCasualty=?, AgeGroupCasualtyId = ? WHERE FactCasualtyStatsId=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12360,7 +12314,13 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
                       cachedDataType="i4"
                       cachedName="AgeCasualty"
                       externalMetadataColumnId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Match Output].Columns[AgeCasualty]" />
+                      lineageId="Package\Fact CasualtyStatistic\Casu nds.Outputs[OLE DB Source Output].Columns[AgeCasualty]" />
+                    <inputColumn
+                      refId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[AgeGroupCasualtyId]"
+                      cachedDataType="i4"
+                      cachedName="AgeGroupCasualtyId"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output].Columns[AgeGroupCasualtyId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12452,6 +12412,17 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
                           name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="i4"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -12490,6 +12461,11 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
           </components>
           <paths>
             <path
+              refId="Package\Fact CasualtyStatistic.Paths[Derived Column Output]"
+              endId="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Fact CasualtyStatistic.Paths[Lookup Error Output]"
               endId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input]"
               name="Lookup Error Output"
@@ -12501,14 +12477,9 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
               startId="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact CasualtyStatistic.Paths[Lookup Match Output1]"
-              endId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Inputs[Lookup Input]"
+              endId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fact CasualtyStatistic.Paths[Lookup Match Output2]"
-              endId="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fact CasualtyStatistic\Lookup Causalty NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact CasualtyStatistic.Paths[OLE DB Source Output]"
               endId="Package\Fact CasualtyStatistic\Lookup Accident nds.Inputs[Lookup Input]"
@@ -17383,7 +17354,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17393,7 +17364,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17444,7 +17415,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="223,42"
           Id="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic"
-          TopLeft="385,314" />
+          TopLeft="387,314" />
         <NodeLayout
           Size="175,42"
           Id="Package\Fact CasualtyStatistic\Lookup Accident nds"
@@ -17452,15 +17423,11 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="216,42"
           Id="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic"
-          TopLeft="561,416.2" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Fact CasualtyStatistic\Lookup Causalty NDS"
-          TopLeft="408,215" />
+          TopLeft="564,427.2" />
         <NodeLayout
           Size="222,42"
           Id="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic"
-          TopLeft="227,422" />
+          TopLeft="229,430" />
         <NodeLayout
           Size="121,42"
           Id="Package\Fact CasualtyStatistic\Casu nds"
@@ -17488,8 +17455,84 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output2]"
-          TopLeft="497.25,257">
+          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output]"
+          TopLeft="462.666666666667,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-122.666666666667,74"
+              Start="0,0"
+              End="-122.666666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9162956366874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9162956366874"
+                    Point2="0,29.9162956366874"
+                    Point3="-4,29.9162956366874" />
+                  <mssgle:LineSegment
+                    End="-118.666666666667,29.9162956366874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-118.666666666667,29.9162956366874"
+                    Point2="-122.666666666667,29.9162956366874"
+                    Point3="-122.666666666667,33.9162956366874" />
+                  <mssgle:LineSegment
+                    End="-122.666666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-109.524720052083,34.9162956366874,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact CasualtyStatistic.Paths[Lookup Error Output]"
+          TopLeft="534.333333333333,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.666666666667,71.2"
+              Start="0,0"
+              End="137.666666666667,63.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7843276936777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7843276936777"
+                    Point2="0,28.7843276936777"
+                    Point3="4,28.7843276936777" />
+                  <mssgle:LineSegment
+                    End="133.666666666667,28.7843276936777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133.666666666667,28.7843276936777"
+                    Point2="137.666666666667,28.7843276936777"
+                    Point3="137.666666666667,32.7843276936777" />
+                  <mssgle:LineSegment
+                    End="137.666666666667,63.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.9669466145834,33.7843276936777,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId"
+          TopLeft="403,226" />
+        <EdgeLayout
+          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output1]"
+          TopLeft="502.5,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17512,8 +17555,8 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output1]"
-          TopLeft="500.25,169">
+          Id="Package\Fact CasualtyStatistic.Paths[Derived Column Output]"
+          TopLeft="500.5,268">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17530,81 +17573,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output]"
-          TopLeft="496.6,355.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-158.8,66.3999999999999"
-              Start="0,0"
-              End="-158.8,58.8999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2"
-                    Point2="0,33.2"
-                    Point3="-4,33.2" />
-                  <mssgle:LineSegment
-                    End="-154.8,33.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-154.8,33.2"
-                    Point2="-158.8,33.2"
-                    Point3="-158.8,37.2" />
-                  <mssgle:LineSegment
-                    End="-158.8,58.8999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-127.59138671875,38.2,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Lookup Error Output]"
-          TopLeft="532.466666666667,355.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="136.533333333333,60.5999999999999"
-              Start="0,0"
-              End="136.533333333333,53.0999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4987900355872" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4987900355872"
-                    Point2="0,24.4987900355872"
-                    Point3="4,24.4987900355872" />
-                  <mssgle:LineSegment
-                    End="132.533333333333,24.4987900355872" />
-                  <mssgle:CubicBezierSegment
-                    Point1="132.533333333333,24.4987900355872"
-                    Point2="136.533333333333,24.4987900355872"
-                    Point3="136.533333333333,28.4987900355872" />
-                  <mssgle:LineSegment
-                    End="136.533333333333,53.0999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.4002799479165,29.4987900355872,91.7327734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17640,29 +17609,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
           type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact CasualtyStatistic\Lookup Causalty NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
