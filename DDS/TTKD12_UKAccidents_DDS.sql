@@ -174,6 +174,14 @@ CREATE TABLE Fact_Vehicle_Statistic(
 )
 GO 
 
+---------------- Fact Variance  --------------
+CREATE TABLE Fact_Variance_Statistic(
+	FactVarianceStatsId INT PRIMARY KEY IDENTITY(1, 1),
+	DayId INT,
+	Total INT
+)
+GO
+
 ---------------- Foreign Key --------------
 ALTER TABLE Dim_Quarter
 ADD	CONSTRAINT FK_Quarter_Year
@@ -298,6 +306,11 @@ ADD CONSTRAINT FK_FVS_JPD
 FOREIGN KEY (JourneyPurposeDriverId) REFERENCES Dim_JourneyPurposeDriver(JourneyPurposeDriverId)
 GO
 
+-- Fact_Variance_Statistic
+ALTER TABLE Fact_Variance_Statistic
+ADD CONSTRAINT FK_FVS_DimDay
+FOREIGN KEY (DayId) REFERENCES Dim_Day(DayId)
+GO
 
 ---------------- Insert Into Dim --------------
 -- Dim_AgeGroupCasualty
