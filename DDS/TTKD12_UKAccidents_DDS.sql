@@ -134,6 +134,12 @@ CREATE TABLE Dim_UrbanRuralArea (
 )
 GO
 
+CREATE TABLE Dim_Time(
+	TimeId INT PRIMARY KEY,
+	TimeDetail VARCHAR(30) NOT NULL
+)
+GO
+
 CREATE TABLE Fact_Accident_Statistic (
 	FactAccidentStatsId INT IDENTITY(1, 1) PRIMARY KEY,
 	RoadTypeId INT,
@@ -141,7 +147,8 @@ CREATE TABLE Fact_Accident_Statistic (
 	BuilduproadId INT,
 	UrbanRuralAreaId INT,
 	TownId INT,
-	VehicleTypeId INT
+	VehicleTypeId INT,
+	TimeId INT
 )
 GO
 
@@ -265,6 +272,11 @@ ADD CONSTRAINT FK_FAS_VT
 FOREIGN KEY (VehicleTypeId) REFERENCES Dim_VehicleType (VehicleTypeId)
 GO
 
+ALTER TABLE Fact_Accident_Statistic
+ADD CONSTRAINT FK_FAS_Time
+FOREIGN KEY (TimeId) REFERENCES Dim_Time(TimeId)
+GO
+
 -- Fact_Vehicle_Statistic
 ALTER TABLE Fact_Vehicle_Statistic
 ADD CONSTRAINT FK_FVS_Day
@@ -293,3 +305,11 @@ INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) 
 INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 2, 'Young adult: 16-17' )
 INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 3,'Adult: 18-59' )
 INSERT INTO Dim_AgeGroupCasualty ( AgeGroupCasualtyId, AgeGroupCasualtyDetail ) VALUES ( 4,'60 and over: 60-...' )
+GO
+
+-- Dim_Time
+INSERT INTO Dim_Time ( TimeId, TimeDetail ) VALUES ( 1, 'Morning: 5am - 12pm' )
+INSERT INTO Dim_Time ( TimeId, TimeDetail ) VALUES ( 2, 'Afternoon: 12pm - 5pm' )
+INSERT INTO Dim_Time ( TimeId, TimeDetail ) VALUES ( 3, 'Evening: 5pm - 9pm' )
+INSERT INTO Dim_Time ( TimeId, TimeDetail ) VALUES ( 4, 'Night: 9pm - 5pm' )
+GO

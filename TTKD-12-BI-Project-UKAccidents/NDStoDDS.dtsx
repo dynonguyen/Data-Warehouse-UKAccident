@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{95D490F6-B79E-4B62-90F5-AED18329C044}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{E6343828-5C54-4C1D-9C21-1195BE724AD3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -10564,6 +10564,86 @@ where [refTable].[YearId] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Fact AccidentStatistic\Add TimeId"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add TimeId"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fact AccidentStatistic\Add TimeId.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\Add TimeId.Inputs[Derived Column Input].Columns[Hour]"
+                      cachedDataType="decimal"
+                      cachedName="Hour"
+                      lineageId="Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Fact AccidentStatistic\Add TimeId.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output].Columns[TimeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output].Columns[TimeId]"
+                      name="TimeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]} &gt;= 5 &amp;&amp; #{Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]} &lt; 12) ? 1 : ((#{Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]} &gt;= 12 &amp;&amp; #{Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]} &lt; 17) ? 2 : ((#{Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]} &gt;= 17 &amp;&amp; #{Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]} &lt; 21) ? 3 : 4))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(Hour &gt;= 5 &amp;&amp; Hour &lt; 12) ? 1 : ((Hour &gt;= 12 &amp;&amp; Hour &lt; 17) ? 2 : ((Hour &gt;= 17 &amp;&amp; Hour &lt; 21) ? 3 : 4))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Fact AccidentStatistic\Add TimeId.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -10581,16 +10661,13 @@ where [refTable].[YearId] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SET IDENTITY_INSERT dbo.Fact_Accident_Statistic ON
-INSERT INTO dbo.Fact_Accident_Statistic
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO dbo.Fact_Accident_Statistic
 (
-    FactAccidentStatsId, RoadTypeId, DayId, BuilduproadId, UrbanRuralAreaId, TownId, VehicleTypeId
+ RoadTypeId, DayId, BuilduproadId, UrbanRuralAreaId, TownId, VehicleTypeId, TimeId
 )
 VALUES
-(   ?,
-    ?,?,?,?,?,?
-)
-SET IDENTITY_INSERT dbo.Fact_Accident_Statistic OFF</property>
+(   ?, ?,?,?,?,?,?
+)</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10613,47 +10690,47 @@ SET IDENTITY_INSERT dbo.Fact_Accident_Statistic OFF</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[AccidentId]"
-                      cachedDataType="i4"
-                      cachedName="AccidentId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[AccidentId]" />
-                    <inputColumn
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[RoadTypeId]"
                       cachedDataType="i4"
                       cachedName="RoadTypeId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[RoadTypeId]" />
                     <inputColumn
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[DayId]"
                       cachedDataType="i4"
                       cachedName="DayId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[DayId]" />
                     <inputColumn
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[BuildUpRoadId]"
                       cachedDataType="i4"
                       cachedName="BuildUpRoadId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[BuildUpRoadId]" />
                     <inputColumn
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[UrbanRuralAreaId]"
                       cachedDataType="i4"
                       cachedName="UrbanRuralAreaId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[UrbanRuralAreaId]" />
                     <inputColumn
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[TownId]"
                       cachedDataType="i4"
                       cachedName="TownId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[TownId]" />
                     <inputColumn
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[VehicleTypeId]"
                       cachedDataType="i4"
                       cachedName="VehicleTypeId"
-                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output].Columns[VehicleTypeId]" />
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[TimeId]"
+                      cachedDataType="i4"
+                      cachedName="TimeId"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output].Columns[TimeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -11072,6 +11149,906 @@ where [refTable].[AccidentId] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Fact AccidentStatistic\Split Time"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Split Time"
+              version="12">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        String[] timeSplit = Row.Time.Split(':');
+        Row.Hour = int.Parse(timeSplit[0]);
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_0d13ee0edccb4ef3b8dcf051a7393cb3.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5de5cfb9-c304-443d-90f4-9b0e76a70874}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_0d13ee0edccb4ef3b8dcf051a7393cb3</RootNamespace>
+    <AssemblyName>SC_6794A31EF8E242108CC88F39D172B036</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_0d13ee0edccb4ef3b8dcf051a7393cb3" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties.Settings.get_Default():SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties.Sett" +
+    "ings")]
+
+namespace SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String Time
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool Time_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public Decimal Hour
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool Hour_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_0d13ee0edccb4ef3b8dcf051a7393cb3</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_0d13ee0edccb4ef3b8dcf051a7393cb3</msb:DisplayName>
+    <msb:ProjectId>{B9770626-A8BD-475B-9E9C-2765D98CF712}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_0d13ee0edccb4ef3b8dcf051a7393cb3.csproj" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_0d13ee0edccb4ef3b8dcf051a7393cb3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_0d13ee0edccb4ef3b8dcf051a7393cb3")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_0d13ee0edccb4ef3b8dcf051a7393cb3.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_6794A31EF8E242108CC88F39D172B036.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOs91WEAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAJjIA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANQxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAALBIAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAI
+MgAAAAAAAEgAAAACAAUA1CEAAEgPAAABAAAAAAAAABwxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAUAKwAAAAEAABEDbwYAAAYX
+jRsAAAElFh86nW8SAAAKCgMGFpooEwAACigUAAAKbwgAAAYqHgIoDAAABioqAgMEBSgVAAAKKlIC
+exYAAAoCexcAAAoWlG8YAAAKKiICFigZAAAKKjoCFwOMEQAAASgaAAAKKloDLAgCFygbAAAKKnIB
+AABwcxwAAAp6HgIoHQAACioeAigeAAAKKn4CKB8AAAoCAnMQAAAGfQEAAAQCAnMRAAAGfQIAAAQq
+kgRyngAAcBpvIAAACiwVAgUCAyghAAAKDgRzBQAABm8OAAAGKkorBwIDbw8AAAYDbwoAAAYt8SoG
+KjoCKCIAAAoCA30DAAAEKjoCKCIAAAoCA30EAAAEKh4CKCIAAAoqrn4FAAAELR5yrgAAcNAHAAAC
+KCMAAApvJAAACnMlAAAKgAUAAAR+BQAABCoafgYAAAQqHgKABgAABCoafgcAAAQqHgIoJgAACiou
+cxcAAAaABwAABCpCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAACQBQAAI34AAPwF
+AABUBgAAI1N0cmluZ3MAAAAAUAwAACABAAAjVVMAcA0AABAAAAAjR1VJRAAAAIANAADIAQAAI0Js
+b2IAAAAAAAAAAgAAAVcVogEJAQAAAPoBMwAWAAABAAAAIgAAAAgAAAAHAAAAGAAAAA8AAAAmAAAA
+EAAAAAEAAAADAAAABwAAAAgAAAABAAAABAAAAAEAAAAAAAoDAQAAAAAABgD5AXcEBgCNAncEBgBF
+AWQEDwDrBAAABgByAasDBgDcAasDBgC9AasDBgB0AqsDBgAZAqsDBgAyAqsDBgCJAasDBgCkAcgC
+CgBNAowACgAtBIwADgAeBIwACgD0A4wABgDsAmMDCgDDBYwABgB0BWMDBgAoAWQEBgA+BJcEBgDo
+A5YDEgD4APQCEgBZAfQCEgDaAIEDBgANAXcEBgAMBGMDBgDlAmMDBgABAGMDBgC9A2MDBgDXA2MD
+BgCtAGMDBgBVAGMDBgBIBqsDAAAAACsAAAAAAAEAAQABABAAdgMAABAAAQABAAEAEAARBAAAOQAB
+AAUAAQAQAKUFAABJAAEADAABABAAaAUAAE0AAwAQAAEAEAApBQAATQAEABEAAAAQAJ4E+gRNAAUA
+EgAAARAAWAX6BGUABwAWAAYAaAWOAAYAKQWSAAEAswWWAAEAswWWABEAagOaABEAygCeABEARQCi
+AFAgAAAAAMYAqwIGAAEAWCAAAAAAxgC2AgYAAQBgIAAAAADGACUGpgABAJcgAAAAAIYYTgQGAAIA
+nyAAAAAAhhhOBDIAAgCqIAAAAACGCIMArAAFAL8gAAAAAIYIMgNUAAUAyCAAAAAAhghbBLAABQDX
+IAAAAACGCEIDtgAGAO4gAAAAAIYAPAZUAAcA9iAAAAAAhgB7BVQABwD+IAAAAACGGE4EBgAHAB4h
+AAAAAMYAGAa7AAcAQyEAAAAAxgERBqYACwBWIQAAAADGASUGpgAMAFghAAAAAIYYTgTFAA0AZyEA
+AAAAhhhOBMUADgB2IQAAAACDGE4EBgAPAH4hAAAAAJMIOgTLAA8AqiEAAAAAkwiyANAADwCxIQAA
+AACTCL4A1QAPALkhAAAAAJYImQXbABAAwCEAAAAAhhhOBAYAEADIIQAAAACRGFQE4AAQAAAAAQBA
+BgAAAQAzBAAAAgAzBQAAAwACBAAAAQDCAgAAAQDCAgAAAQA0AAAAAgB5AAAAAwAzBAAABAACBAAA
+AQAzBAAAAQBABgAAAQDJBQAAAQDJBQAAAQDCAgkATgQBABEATgQGABkATgQKACkATgQQADEATgQQ
+ADkATgQQAEEATgQQAEkATgQQAFEATgQQAFkATgQQAGEATgQQAGkATgQGAKEATgQGAMEATgQVANEA
+TgQGAJEAqwIGAJEAtgIGAOEAkwUgAOkA8gAnAIkAhwUsAHEATgQyAHEAMwQ8AHEAMwVAAHkA4gJE
+AHEASwNJAHEAWgNOAHEAUgMBAPEATgQQAHEAPAZUAHEAewVUAJEATgQGAOEAYQVYAJEARwVfAJkA
+TgQGAAEBZwBlAAEBRAZuAKkATgR0AMkATgQGAC4ACwAAAS4AEwAJAS4AGwAoAS4AIwAxAS4AKwBa
+AS4AMwBaAS4AOwBaAS4AQwAxAS4ASwBgAS4AUwBaAS4AWwB3AUMAYwDBAakAcwAoAckAcwAoAeEA
+ewDBAeMAawDBARsAAwABAAcABQAIAAcAAACHAOQAAAA2A+gAAABfBOwAAABGA+gAAAA+BPEAAADS
+APYAAACdBfsAAgAGAAMAAgAHAAUAAQAIAAcAAQAJAAkAAgATAAsAAgAUAA0AAQAVAA0AAgAWAA8A
+BIAAAAEAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAAAAAAHwAPAAAAAAADwAAAAAAAAAAAAAAhQDT
+BQAAAAAPAAAAAAAAAAAAAACFAPAFAAAAAAQAAAAAAAAAAAAAAHwAYwMAAAAAAAAAAAEAAACoBAAA
+AAAAAABJbnQzMgBTQ182Nzk0QTMxRUY4RTI0MjEwOENDODhGMzlEMTcyQjAzNgA8TW9kdWxlPgBJ
+bnB1dElEAG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBl
+RnJvbUhhbmRsZQBJbnB1dE5hbWUAZ2V0X1RpbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlw
+ZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGlj
+YXRpb25TZXR0aW5nc0Jhc2UAUGFyc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5l
+cmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0
+cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFz
+c2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJs
+eUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21w
+aWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3Nl
+bWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJp
+YnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1
+dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5n
+AEdldFN0cmluZwBEZWNpbWFsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ182Nzk0QTMxRUY4RTI0
+MjEwOENDODhGMzlEMTcyQjAzNi5kbGwAZ2V0X1RpbWVfSXNOdWxsAHNldF9Ib3VyX0lzTnVsbABT
+ZXROdWxsAHNldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25m
+aWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEludmFsaWRP
+cGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1l
+TWFwAE91dHB1dE1hcABDaGFyAElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZm
+ZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAc2V0X0hvdXIAU3lzdGVtLkRpYWdu
+b3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBT
+Q18wZDEzZWUwZWRjY2I0ZWYzYjhkY2YwNTFhNzM5M2NiMy5Qcm9wZXJ0aWVzLlJlc291cmNlcy5y
+ZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfMGQxM2VlMGVkY2NiNGVmM2I4ZGNmMDUxYTczOTNj
+YjMuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRl
+eGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZSb3dzZXQAb3BfSW1w
+bGljaXQAU3BsaXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2Ny
+aXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNl
+cnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0
+Um93AE5leHRSb3cAZ2V0X0Fzc2VtYmx5AAAAAACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIA
+dAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBz
+AHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkA
+bgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwAwAGQAMQAzAGUAZQAwAGUAZABj
+AGMAYgA0AGUAZgAzAGIAOABkAGMAZgAwADUAMQBhADcAMwA5ADMAYwBiADMALgBQAHIAbwBwAGUA
+cgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAJHHxyXlVTJGubzjP2LGysgABCABAQgDIAAB
+BSABARERBCABAQ4FIAEBEV0EBwEdDgYgAR0OHQMEAAEIDgUAARFFCAkgAwESPR0IEkEDBhI9AwYd
+CAQgAQ4IBCABAggFIAIBCBwDIAACBiACAg4RfQUgAR0ICAgAARKAgRGAhQUgABKAiQcgAgEOEoCJ
+CLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJJAwYSVQMGElkDBhIgBSABARIMAyAADgUgAQER
+RQQgAQECCSAEAQgOEj0SQQUgAQESSQQAABJVBAAAElkFAAEBElkEAAASIAMAAAEDKAAOAygAAgQo
+ABFFBAgAElUECAASWQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dz
+AQgBAAIAAAAAACgBACNTQ18wZDEzZWUwZWRjY2I0ZWYzYjhkY2YwNTFhNzM5M2NiMwAABQEAAAAA
+FgEAEUNvcHlyaWdodCBAICAyMDIyAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQO
+FEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAAAC0AAAAzsrvvgEA
+AACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9u
+PTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4
+OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0
+AAAA/DEAAAAAAAAAAAAAFjIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgyAAAAAAAAAAAAAAAA
+X0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAEMAXwAwAGQAMQAzAGUAZQAwAGUAZABjAGMAYgA0AGUAZgAzAGIAOABkAGMAZgAwADUAMQBh
+ADcAMwA5ADMAYwBiADMAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADYANwA5ADQAQQAz
+ADEARQBGADgARQAyADQAMgAxADAAOABDAEMAOAA4AEYAMwA5AEQAMQA3ADIAQgAwADMANgAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMgAyAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8ANgA3
+ADkANABBADMAMQBFAEYAOABFADIANAAyADEAMAA4AEMAQwA4ADgARgAzADkARAAxADcAMgBCADAA
+MwA2AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADAAZAAx
+ADMAZQBlADAAZQBkAGMAYwBiADQAZQBmADMAYgA4AGQAYwBmADAANQAxAGEANwAzADkAMwBjAGIA
+MwAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAKDIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_6794a31ef8e242108cc88f39d172b036</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">5C</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Fact AccidentStatistic\Split Time.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\Split Time.Inputs[Input 0].Columns[Time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="Time"
+                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[Time]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact AccidentStatistic\Split Time.Outputs[Ouput]"
+                  name="Ouput"
+                  synchronousInputId="Package\Fact AccidentStatistic\Split Time.Inputs[Input 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]"
+                      dataType="decimal"
+                      lineageId="Package\Fact AccidentStatistic\Split Time.Outputs[Ouput].Columns[Hour]"
+                      name="Hour" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -11089,7 +12066,7 @@ where [refTable].[AccidentId] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Accident_Statistic SET RoadTypeId=?, DayId=?, BuilduproadId=?, UrbanRuralAreaId=?, TownId=?, VehicleTypeId=? WHERE FactAccidentStatsId=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Accident_Statistic SET RoadTypeId=?, DayId=?, BuilduproadId=?, UrbanRuralAreaId=?, TownId=?, VehicleTypeId=?, TimeId=? WHERE FactAccidentStatsId=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11153,6 +12130,12 @@ where [refTable].[AccidentId] = ?</property>
                       cachedName="VehicleTypeId"
                       externalMetadataColumnId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output].Columns[VehicleTypeId]" />
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[TimeId]"
+                      cachedDataType="i4"
+                      cachedName="TimeId"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output].Columns[TimeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -11233,6 +12216,17 @@ where [refTable].[AccidentId] = ?</property>
                           name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -11271,6 +12265,11 @@ where [refTable].[AccidentId] = ?</property>
           </components>
           <paths>
             <path
+              refId="Package\Fact AccidentStatistic.Paths[Derived Column Output]"
+              endId="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Fact AccidentStatistic.Paths[Lookup Error Output]"
               endId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input]"
               name="Lookup Error Output"
@@ -11282,7 +12281,7 @@ where [refTable].[AccidentId] = ?</property>
               startId="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact AccidentStatistic.Paths[Lookup Match Output1]"
-              endId="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id.Inputs[Lookup Input]"
+              endId="Package\Fact AccidentStatistic\Split Time.Inputs[Input 0]"
               name="Lookup Match Output"
               startId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Outputs[Lookup Match Output]" />
             <path
@@ -11290,6 +12289,11 @@ where [refTable].[AccidentId] = ?</property>
               endId="Package\Fact AccidentStatistic\Lookup Vehicle NDS.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fact AccidentStatistic.Paths[Ouput]"
+              endId="Package\Fact AccidentStatistic\Add TimeId.Inputs[Derived Column Input]"
+              name="Ouput"
+              startId="Package\Fact AccidentStatistic\Split Time.Outputs[Ouput]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -17208,111 +18212,47 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="235,42"
+          Size="238,42"
           Id="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id"
-          TopLeft="385,292" />
+          TopLeft="427,457" />
         <NodeLayout
           Size="222,42"
           Id="Package\Fact AccidentStatistic\update Fact_Accident_Statistic"
-          TopLeft="259,449" />
+          TopLeft="301,614" />
         <NodeLayout
-          Size="173,42"
+          Size="195,42"
           Id="Package\Fact AccidentStatistic\Lookup Vehicle NDS"
-          TopLeft="412,169" />
+          TopLeft="452,173" />
         <NodeLayout
-          Size="138,42"
+          Size="170,42"
           Id="Package\Fact AccidentStatistic\Accident nds"
-          TopLeft="425,52" />
+          TopLeft="469,70" />
         <NodeLayout
           Size="216,42"
           Id="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic"
-          TopLeft="586,446.8" />
-        <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output]"
-          TopLeft="464.666666666667,334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-94.6666666666666,115"
-              Start="0,0"
-              End="-94.6666666666666,107.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.4666103127641" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.4666103127641"
-                    Point2="0,46.4666103127641"
-                    Point3="-4,46.4666103127641" />
-                  <mssgle:LineSegment
-                    End="-90.6666666666666,46.4666103127641" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-90.6666666666666,46.4666103127641"
-                    Point2="-94.6666666666666,46.4666103127641"
-                    Point3="-94.6666666666666,50.4666103127641" />
-                  <mssgle:LineSegment
-                    End="-94.6666666666666,107.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-95.5247200520833,51.4666103127641,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[Lookup Error Output]"
-          TopLeft="540.333333333333,334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="153.666666666667,112.8"
-              Start="0,0"
-              End="153.666666666667,105.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.577683854607" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.577683854607"
-                    Point2="0,45.577683854607"
-                    Point3="4,45.577683854607" />
-                  <mssgle:LineSegment
-                    End="149.666666666667,45.577683854607" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149.666666666667,45.577683854607"
-                    Point2="153.666666666667,45.577683854607"
-                    Point3="153.666666666667,49.577683854607" />
-                  <mssgle:LineSegment
-                    End="153.666666666667,105.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="30.9669466145835,50.577683854607,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="628,611.8" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Fact AccidentStatistic\Split Time"
+          TopLeft="478,269" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Fact AccidentStatistic\Add TimeId"
+          TopLeft="477,368" />
         <EdgeLayout
           Id="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
-          TopLeft="496.25,94">
+          TopLeft="551.75,112">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75"
+              EndConnector="0,61"
               Start="0,0"
-              End="0,67.5">
+              End="0,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.5" />
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17322,104 +18262,153 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output1]"
-          TopLeft="500.5,211">
+          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output]"
+          TopLeft="507.666666666667,499">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,81"
+              EndConnector="-95.6666666666666,115"
               Start="0,0"
-              End="0,73.5">
+              End="-95.6666666666666,107.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.5" />
+                    End="0,42.4607679465776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.4607679465776"
+                    Point2="0,46.4607679465776"
+                    Point3="-4,46.4607679465776" />
+                  <mssgle:LineSegment
+                    End="-91.6666666666666,46.4607679465776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-91.6666666666666,46.4607679465776"
+                    Point2="-95.6666666666666,46.4607679465776"
+                    Point3="-95.6666666666666,50.4607679465776" />
+                  <mssgle:LineSegment
+                    End="-95.6666666666666,107.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,30.9453125,96.3827734375,11.609375"
+              BoundingBox="-96.0247200520833,51.4607679465776,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[Lookup Error Output]"
+          TopLeft="584.333333333333,499">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.666666666667,112.8"
+              Start="0,0"
+              End="151.666666666667,105.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5719532554258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.5719532554258"
+                    Point2="0,45.5719532554258"
+                    Point3="4,45.5719532554258" />
+                  <mssgle:LineSegment
+                    End="147.666666666667,45.5719532554258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="147.666666666667,45.5719532554258"
+                    Point2="151.666666666667,45.5719532554258"
+                    Point3="151.666666666667,49.5719532554258" />
+                  <mssgle:LineSegment
+                    End="151.666666666667,105.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="29.9669466145835,50.5719532554258,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output1]"
+          TopLeft="545.75,215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[Ouput]"
+          TopLeft="543.5,311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[Derived Column Output]"
+          TopLeft="545.5,410">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact AccidentStatistic\Lookup Vehicle NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact AccidentStatistic\Accident nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Fact CasualtyStatistic">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic"
-          TopLeft="387,314" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Fact CasualtyStatistic\Lookup Accident nds"
-          TopLeft="415,127" />
         <NodeLayout
           Size="216,42"
           Id="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic"
@@ -17432,28 +18421,18 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           Size="121,42"
           Id="Package\Fact CasualtyStatistic\Casu nds"
           TopLeft="440,33" />
-        <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[OLE DB Source Output]"
-          TopLeft="501.5,75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic"
+          TopLeft="387,314" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId"
+          TopLeft="403,226" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Fact CasualtyStatistic\Lookup Accident nds"
+          TopLeft="415,127" />
         <EdgeLayout
           Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output]"
           TopLeft="462.666666666667,356">
@@ -17526,10 +18505,50 @@ where [refTable].[FactVehicleStatsId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId"
-          TopLeft="403,226" />
+        <EdgeLayout
+          Id="Package\Fact CasualtyStatistic.Paths[Derived Column Output]"
+          TopLeft="500.5,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact CasualtyStatistic.Paths[OLE DB Source Output]"
+          TopLeft="501.5,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact CasualtyStatistic.Paths[Lookup Match Output1]"
           TopLeft="502.5,169">
@@ -17554,31 +18573,22 @@ where [refTable].[FactVehicleStatsId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact CasualtyStatistic.Paths[Derived Column Output]"
-          TopLeft="500.5,268">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact CasualtyStatistic\Casu nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fact CasualtyStatistic\Lookup Fact_Casualty_Statistic">
     <Properties>
@@ -17622,19 +18632,6 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact CasualtyStatistic\Casu nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
