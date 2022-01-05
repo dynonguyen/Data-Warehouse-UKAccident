@@ -1,3 +1,19 @@
+---- Nhom TTKD12
+-- Script to create database TTKD12_UKAccidents_Statge
+----------------
+
+USE master
+GO
+
+DROP DATABASE IF EXISTS TTKD12_UKAccidents_Statge
+GO
+
+CREATE DATABASE TTKD12_UKAccidents_Statge
+GO
+
+USE TTKD12_UKAccidents_Stage
+GO
+
 CREATE TABLE [Accident1114] (
     [Accident_Index] varchar(20),
     [Location_Easting_OSGR] varchar(10),

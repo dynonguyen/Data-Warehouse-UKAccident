@@ -1,9 +1,17 @@
-﻿DROP DATABASE a1712766_DABI_NDS
+﻿---- Nhom TTKD12
+-- Script to create TTKD12_UKAccidents_NDS database
+----------------
 
-CREATE DATABASE a1712766_DABI_NDS
+USE master
+GO
+
+DROP DATABASE TTKD12_UKAccidents_NDS
+GO
+
+CREATE DATABASE TTKD12_UKAccidents_NDS
 GO
 ​
-USE a1712766_DABI_NDS
+USE TTKD12_UKAccidents_NDS
 GO
 ​
 ------------ CREATE TABLE
