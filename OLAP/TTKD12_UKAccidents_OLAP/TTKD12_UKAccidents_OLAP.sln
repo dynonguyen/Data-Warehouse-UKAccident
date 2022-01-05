@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "TTKD12_UKAccidents_OLAP", "TTKD12_UKAccidents_OLAP\TTKD12_UKAccidents_OLAP.dwproj", "{F4FB33DC-9AC7-4E2C-B116-707D79BCDF9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4FB33DC-9AC7-4E2C-B116-707D79BCDF9A}.Development|Default.ActiveCfg = Development
+		{F4FB33DC-9AC7-4E2C-B116-707D79BCDF9A}.Development|Default.Build.0 = Development
+		{F4FB33DC-9AC7-4E2C-B116-707D79BCDF9A}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AD5490A-D6C5-4D4F-A782-2125B616CAF8}
+	EndGlobalSection
+EndGlobal

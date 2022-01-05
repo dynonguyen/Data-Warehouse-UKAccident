@@ -1,0 +1,117 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>TTKD12 UK Accidents DDS DataSource</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_DDS</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Tuan</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Dim Urban Rural Area</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Day</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Builduproad</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Time</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Vehicle Type</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Town</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Road Type</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Local Authority District</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Sex Casualty</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Casualty Severity</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Age Band Casualty</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Age Group Casualty</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Casualty Type</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Journey Purpose Driver</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Accident_Stats_Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Accident Statistic</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Accident Statistic</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Casualty_Statistic_Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Casualty Statistic</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Casualty Statistic</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Variance_Statistic_Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Variance Statistic</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Variance Statistic</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Vehicle_Statistic_Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Vehicle Statistic</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Vehicle Statistic</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>
