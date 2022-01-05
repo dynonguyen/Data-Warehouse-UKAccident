@@ -11,11 +11,19 @@
       <Name>TTKD12 UK Accidents NDS.ds</Name>
       <FullPath>TTKD12 UK Accidents NDS.ds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>TTKD12 UK Accidents DDS.ds</Name>
+      <FullPath>TTKD12 UK Accidents DDS.ds</FullPath>
+    </ProjectItem>
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
       <Name>TTKD12 UK Accidents NDS.dsv</Name>
       <FullPath>TTKD12 UK Accidents NDS.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TTKD12 UK Accidents DDS.dsv</Name>
+      <FullPath>TTKD12 UK Accidents DDS.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <MiningModels>
@@ -26,6 +34,10 @@
     <ProjectItem>
       <Name>Acident Severity Predict 1.dmm</Name>
       <FullPath>Acident Severity Predict 1.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact Accident Statistic.dmm</Name>
+      <FullPath>Fact Accident Statistic.dmm</FullPath>
     </ProjectItem>
   </MiningModels>
   <Configurations>
@@ -38,11 +50,21 @@
             <Name>TTKD12 UK Accidents NDS</Name>
             <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_NDS</Value>
           </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>TTKD12 UK Accidents DDS</Id>
+            <Name>TTKD12 UK Accidents DDS</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_DDS</Value>
+          </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>TTKD12 UK Accidents NDS</Id>
             <Name>TTKD12 UK Accidents NDS</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>TTKD12 UK Accidents DDS</Id>
+            <Name>TTKD12 UK Accidents DDS</Name>
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>

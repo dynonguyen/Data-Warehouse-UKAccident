@@ -10,6 +10,15 @@
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
+      <DataSource>
+        <ID>TTKD12 UK Accidents DDS</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_DDS</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">thanh</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
     </DataSources>
     <MiningStructures>
       <MiningStructure>
@@ -17,6 +26,9 @@
       </MiningStructure>
       <MiningStructure>
         <ID>Acident Severity Predict 1</ID>
+      </MiningStructure>
+      <MiningStructure>
+        <ID>Fact Accident Statistic</ID>
       </MiningStructure>
     </MiningStructures>
     <DataSourceImpersonationInfo>

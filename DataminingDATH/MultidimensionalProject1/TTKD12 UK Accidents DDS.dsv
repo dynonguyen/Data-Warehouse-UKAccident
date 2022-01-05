@@ -1,0 +1,136 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cec413d6-351c-41af-8f81-a2136444e4d4" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TTKD12 UK Accidents DDS</ID>
+  <Name>TTKD12 UK Accidents DDS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>TTKD12 UK Accidents DDS</DataSourceID>
+  <Schema>
+    <xs:schema id="TTKD12_x0020_UK_x0020_Accidents_x0020_DDS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="TTKD12_x0020_UK_x0020_Accidents_x0020_DDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="148d908d-be73-4dac-9410-843e9ab772dd">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Dim_Builduproad" msprop:design-time-name="fc198154-6311-42a2-8326-c47de4b7bceb" msprop:DbTableName="Dim_Builduproad" msprop:FriendlyName="Dim_Builduproad" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="BuilduproadId" msprop:design-time-name="9b3dbaad-7125-4f54-a015-1f7d35bcfe4f" msprop:DbColumnName="BuilduproadId" msprop:FriendlyName="BuilduproadId" type="xs:int" />
+                  <xs:element name="BuilduproadDetail" msprop:design-time-name="caf551e7-4bbd-49df-8d01-96036624e169" msprop:DbColumnName="BuilduproadDetail" msprop:FriendlyName="BuilduproadDetail" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Fact_Accident_Statistic" msprop:design-time-name="1a150fa2-6f78-4c23-aaaa-15ce6a8995cc" msprop:DbTableName="Fact_Accident_Statistic" msprop:FriendlyName="Fact_Accident_Statistic" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FactAccidentStatsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="5e4c1da2-1bc7-4da2-a1c9-f2d5121b940f" msprop:DbColumnName="FactAccidentStatsId" msprop:FriendlyName="FactAccidentStatsId" type="xs:int" />
+                  <xs:element name="RoadTypeId" msprop:design-time-name="ba649cad-1642-4dbe-84ab-e7736b785141" msprop:DbColumnName="RoadTypeId" msprop:FriendlyName="RoadTypeId" type="xs:int" minOccurs="0" />
+                  <xs:element name="DayId" msprop:design-time-name="fb36ee50-c9d9-4ab6-99f7-0da3cca66ee0" msprop:DbColumnName="DayId" msprop:FriendlyName="DayId" type="xs:int" minOccurs="0" />
+                  <xs:element name="BuilduproadId" msprop:design-time-name="fdab6b72-10af-426a-b202-f777193cd345" msprop:DbColumnName="BuilduproadId" msprop:FriendlyName="BuilduproadId" type="xs:int" minOccurs="0" />
+                  <xs:element name="UrbanRuralAreaId" msprop:design-time-name="7d28868a-07ad-4231-ad6b-659da0efcb1f" msprop:DbColumnName="UrbanRuralAreaId" msprop:FriendlyName="UrbanRuralAreaId" type="xs:int" minOccurs="0" />
+                  <xs:element name="TownId" msprop:design-time-name="f19d6ab8-48ce-4e68-8e02-8addce162f8e" msprop:DbColumnName="TownId" msprop:FriendlyName="TownId" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_RoadType" msprop:design-time-name="0b88632f-cf92-44ca-b627-6723c3b36bae" msprop:DbTableName="Dim_RoadType" msprop:FriendlyName="Dim_RoadType" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RoadTypeId" msprop:design-time-name="43bab3d9-9186-4480-b6c3-956285868001" msprop:DbColumnName="RoadTypeId" msprop:FriendlyName="RoadTypeId" type="xs:int" />
+                  <xs:element name="RoadTypeDetail" msprop:design-time-name="0f4e6b39-6c7a-4c84-a74f-34eb4d4a5f56" msprop:DbColumnName="RoadTypeDetail" msprop:FriendlyName="RoadTypeDetail" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_UrbanRuralArea" msprop:design-time-name="36a4af3f-5dd2-4971-b151-92d0afc97dbc" msprop:DbTableName="Dim_UrbanRuralArea" msprop:FriendlyName="Dim_UrbanRuralArea" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="UrbanRuralAreaId" msprop:design-time-name="cac5a069-b8be-40e9-b40d-adeced9dc081" msprop:DbColumnName="UrbanRuralAreaId" msprop:FriendlyName="UrbanRuralAreaId" type="xs:int" />
+                  <xs:element name="UrbanRuralAreaDetail" msprop:design-time-name="a9f067bd-e523-4b32-b8bc-d364f12233da" msprop:DbColumnName="UrbanRuralAreaDetail" msprop:FriendlyName="UrbanRuralAreaDetail">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Builduproad" />
+          <xs:field xpath="BuilduproadId" />
+        </xs:unique>
+        <xs:unique name="dbo_Fact_Accident_Statistic_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+          <xs:field xpath="FactAccidentStatsId" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_RoadType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_RoadType" />
+          <xs:field xpath="RoadTypeId" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_UrbanRuralArea_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_UrbanRuralArea" />
+          <xs:field xpath="UrbanRuralAreaId" />
+        </xs:unique>
+        <xs:keyref name="FK_FAS_RT" refer="dbo_Dim_RoadType_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+          <xs:field xpath="RoadTypeId" />
+        </xs:keyref>
+        <xs:keyref name="FK_FAS_BUR" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+          <xs:field xpath="BuilduproadId" />
+        </xs:keyref>
+        <xs:keyref name="FK_FAS_URA" refer="dbo_Dim_UrbanRuralArea_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+          <xs:field xpath="UrbanRuralAreaId" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <TTKD12_x0020_UK_x0020_Accidents_x0020_DDS xmlns="" />
+  </Schema>
+</DataSourceView>

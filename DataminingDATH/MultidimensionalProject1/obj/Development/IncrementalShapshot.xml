@@ -19,36 +19,57 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>ZtG86biBVAqGJWcRuH0N7vFB9nU=04/01/2022 22:00:3804/01/2022 22:00:38</TimeStamp>
+        <TimeStamp>ZtG86biBVAqGJWcRuH0N7vFB9nU=04/01/2022 22:00:3804/01/2022 23:14:48</TimeStamp>
+        <ID>
+          <String>TTKD12 UK Accidents NDS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>Qb+++hGb3ln87W1UhZwT1oFYGcA=06/01/2022 00:29:2606/01/2022 00:26:19</TimeStamp>
+        <ID>
+          <String>TTKD12 UK Accidents DDS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>kTnLzWZPX2om/vN7NDbRsiwzblY=04/01/2022 22:00:5104/01/2022 23:14:48</TimeStamp>
         <ID>
           <String>TTKD12 UK Accidents NDS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>kTnLzWZPX2om/vN7NDbRsiwzblY=04/01/2022 22:00:5104/01/2022 22:00:51</TimeStamp>
+        <TimeStamp>InAyYlEHSaFiBDBkxI5VjgkziJU=06/01/2022 00:28:0806/01/2022 00:28:06</TimeStamp>
         <ID>
-          <String>TTKD12 UK Accidents NDS</String>
+          <String>TTKD12 UK Accidents DDS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>tbao4VAlLvQZcVdSA21NxxozFok=04/01/2022 22:03:4104/01/2022 22:03:41</TimeStamp>
+        <TimeStamp>tbao4VAlLvQZcVdSA21NxxozFok=04/01/2022 22:03:4104/01/2022 23:14:48</TimeStamp>
         <ID>
           <String>Acident Severity Predict</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>qQpMBhjN9Z+3pwDwhBN5ldPALLo=04/01/2022 22:49:4804/01/2022 22:49:48</TimeStamp>
+        <TimeStamp>qQpMBhjN9Z+3pwDwhBN5ldPALLo=04/01/2022 22:49:4804/01/2022 23:14:48</TimeStamp>
         <ID>
           <String>Acident Severity Predict 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>GtgDqIdGtxn2622Iwc/Ctnb2MIQ=06/01/2022 00:35:5906/01/2022 00:29:10</TimeStamp>
+        <ID>
+          <String>Fact Accident Statistic</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>MIWqEoAFFZI+J2J5HiBRe2B3yn8=04/01/2022 19:53:5404/01/2022 19:53:52</TimeStamp>
+      <TimeStamp>MIWqEoAFFZI+J2J5HiBRe2B3yn8=04/01/2022 19:53:5404/01/2022 23:14:48</TimeStamp>
       <ID>
         <String>MultidimensionalProject1</String>
       </ID>
@@ -57,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-01-04T15:49:59.403333Z</LastDeployed>
+  <LastDeployed>2022-01-05T17:41:35.593333Z</LastDeployed>
 </DeploymentSnapshot>

@@ -29,7 +29,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7388" scrolltop="-3725" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18711" y="11197" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2513" scrolltop="-3717" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="18711" y="11197" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
                 </font>
@@ -64,11 +64,11 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-          <Value>-7388</Value>
+          <Value>-2513</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-3725</Value>
+          <Value>-3717</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -80,7 +80,7 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-          <Value>100</Value>
+          <Value>75</Value>
         </Annotation>
       </Annotations>
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
@@ -295,7 +295,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7388" scrolltop="-3725" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18711" y="11197" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7388" scrolltop="-3736" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18711" y="11197" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
                 </font>
@@ -334,7 +334,7 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-3725</Value>
+          <Value>-3736</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -543,6 +543,221 @@
       <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
       <ddl100_100:HoldoutMaxCases>1000</ddl100_100:HoldoutMaxCases>
     </MiningStructure>
+    <MiningStructure>
+      <ID>Fact Accident Statistic</ID>
+      <Name>Fact Accident Statistic</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+          <Value>dbo_Fact_Accident_Statistic</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7483" scrolltop="-4085" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18711" y="11197" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Fact_Accident_Statistic" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3704" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000780e0000d30b0000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_Fact_Accident_Statistic" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-7483</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-4085</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>TTKD12 UK Accidents DDS</DataSourceViewID>
+      </Source>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Builduproad Id</ID>
+          <Name>Builduproad Id</Name>
+          <Type>Long</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Fact_Accident_Statistic</TableID>
+                <ColumnID>BuilduproadId</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Fact Accident Stats Id</ID>
+          <Name>Fact Accident Stats Id</Name>
+          <IsKey>true</IsKey>
+          <Type>Long</Type>
+          <Content>Key</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Fact_Accident_Statistic</TableID>
+                <ColumnID>FactAccidentStatsId</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Road Type Id</ID>
+          <Name>Road Type Id</Name>
+          <Type>Long</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Fact_Accident_Statistic</TableID>
+                <ColumnID>RoadTypeId</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Urban Rural Area Id</ID>
+          <Name>Urban Rural Area Id</Name>
+          <Type>Long</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Fact_Accident_Statistic</TableID>
+                <ColumnID>UrbanRuralAreaId</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+      </Columns>
+      <MiningModels>
+        <MiningModel>
+          <ID>Fact Accident Statistic</ID>
+          <Name>Fact Accident Statistic</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Algorithm>Microsoft_Decision_Trees</Algorithm>
+          <Columns>
+            <Column>
+              <ID>Builduproad Id</ID>
+              <Name>Builduproad Id</Name>
+              <SourceColumnID>Builduproad Id</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Fact Accident Stats Id</ID>
+              <Name>Fact Accident Stats Id</Name>
+              <SourceColumnID>Fact Accident Stats Id</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+            <Column>
+              <ID>Road Type Id</ID>
+              <Name>Road Type Id</Name>
+              <SourceColumnID>Road Type Id</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Urban Rural Area Id</ID>
+              <Name>Urban Rural Area Id</Name>
+              <SourceColumnID>Urban Rural Area Id</SourceColumnID>
+              <Usage>PredictOnly</Usage>
+            </Column>
+          </Columns>
+        </MiningModel>
+        <MiningModel>
+          <ID>FactASCLuster</ID>
+          <Name>FactASCLuster</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Algorithm>Microsoft_Clustering</Algorithm>
+          <Columns>
+            <Column>
+              <ID>Builduproad Id</ID>
+              <Name>Builduproad Id</Name>
+              <SourceColumnID>Builduproad Id</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Fact Accident Stats Id</ID>
+              <Name>Fact Accident Stats Id</Name>
+              <SourceColumnID>Fact Accident Stats Id</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+            <Column>
+              <ID>Road Type Id</ID>
+              <Name>Road Type Id</Name>
+              <SourceColumnID>Road Type Id</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Urban Rural Area Id</ID>
+              <Name>Urban Rural Area Id</Name>
+              <SourceColumnID>Urban Rural Area Id</SourceColumnID>
+              <Usage>PredictOnly</Usage>
+            </Column>
+          </Columns>
+        </MiningModel>
+      </MiningModels>
+      <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+      <ddl100_100:HoldoutMaxCases>1000</ddl100_100:HoldoutMaxCases>
+    </MiningStructure>
   </MiningStructures>
   <DataSources>
     <DataSource xsi:type="RelationalDataSource">
@@ -551,6 +766,20 @@
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
       <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
       <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_NDS</ConnectionString>
+      <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+      <ImpersonationInfo>
+        <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
+        <Account>thanh</Account>
+        <ImpersonationInfoSecurity>PasswordRemoved</ImpersonationInfoSecurity>
+      </ImpersonationInfo>
+      <Timeout>PT0S</Timeout>
+    </DataSource>
+    <DataSource xsi:type="RelationalDataSource">
+      <ID>TTKD12 UK Accidents DDS</ID>
+      <Name>TTKD12 UK Accidents DDS</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_DDS</ConnectionString>
       <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
       <ImpersonationInfo>
         <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
@@ -577,7 +806,6 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
-          <Value></Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
@@ -657,6 +885,142 @@
           </xs:element>
         </xs:schema>
         <TTKD12_x0020_UK_x0020_Accidents_x0020_NDS xmlns="" />
+      </Schema>
+    </DataSourceView>
+    <DataSourceView>
+      <ID>TTKD12 UK Accidents DDS</ID>
+      <Name>TTKD12 UK Accidents DDS</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+          <Value>_ALL_TABLES_</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+          <Value></Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+          <Value>
+            <Layouts xmlns="">
+              <Diagram>
+                <Name>_ALL_TABLES_</Name>
+                <DiagramLayout />
+                <ShowRelationshipNames>False</ShowRelationshipNames>
+                <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                <DiagramViewPortLeft>0</DiagramViewPortLeft>
+                <DiagramViewPortTop>0</DiagramViewPortTop>
+                <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                <DiagramBoundingTop>0</DiagramBoundingTop>
+                <DiagramZoom>100</DiagramZoom>
+              </Diagram>
+            </Layouts>
+          </Value>
+        </Annotation>
+      </Annotations>
+      <DataSourceID>TTKD12 UK Accidents DDS</DataSourceID>
+      <Schema>
+        <xs:schema id="TTKD12_x0020_UK_x0020_Accidents_x0020_DDS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+          <xs:element name="TTKD12_x0020_UK_x0020_Accidents_x0020_DDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="148d908d-be73-4dac-9410-843e9ab772dd">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="dbo_Dim_Builduproad" msprop:design-time-name="fc198154-6311-42a2-8326-c47de4b7bceb" msprop:FriendlyName="Dim_Builduproad" msprop:DbSchemaName="dbo" msprop:DbTableName="Dim_Builduproad" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="BuilduproadId" msprop:design-time-name="9b3dbaad-7125-4f54-a015-1f7d35bcfe4f" msprop:DbColumnName="BuilduproadId" msprop:FriendlyName="BuilduproadId" type="xs:int" />
+                      <xs:element name="BuilduproadDetail" msprop:design-time-name="caf551e7-4bbd-49df-8d01-96036624e169" msprop:DbColumnName="BuilduproadDetail" msprop:FriendlyName="BuilduproadDetail" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="20" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_Fact_Accident_Statistic" msprop:design-time-name="1a150fa2-6f78-4c23-aaaa-15ce6a8995cc" msprop:FriendlyName="Fact_Accident_Statistic" msprop:DbSchemaName="dbo" msprop:DbTableName="Fact_Accident_Statistic" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="FactAccidentStatsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="5e4c1da2-1bc7-4da2-a1c9-f2d5121b940f" msprop:DbColumnName="FactAccidentStatsId" msprop:FriendlyName="FactAccidentStatsId" type="xs:int" />
+                      <xs:element name="RoadTypeId" msprop:design-time-name="ba649cad-1642-4dbe-84ab-e7736b785141" msprop:DbColumnName="RoadTypeId" msprop:FriendlyName="RoadTypeId" type="xs:int" minOccurs="0" />
+                      <xs:element name="DayId" msprop:design-time-name="fb36ee50-c9d9-4ab6-99f7-0da3cca66ee0" msprop:DbColumnName="DayId" msprop:FriendlyName="DayId" type="xs:int" minOccurs="0" />
+                      <xs:element name="BuilduproadId" msprop:design-time-name="fdab6b72-10af-426a-b202-f777193cd345" msprop:DbColumnName="BuilduproadId" msprop:FriendlyName="BuilduproadId" type="xs:int" minOccurs="0" />
+                      <xs:element name="UrbanRuralAreaId" msprop:design-time-name="7d28868a-07ad-4231-ad6b-659da0efcb1f" msprop:DbColumnName="UrbanRuralAreaId" msprop:FriendlyName="UrbanRuralAreaId" type="xs:int" minOccurs="0" />
+                      <xs:element name="TownId" msprop:design-time-name="f19d6ab8-48ce-4e68-8e02-8addce162f8e" msprop:DbColumnName="TownId" msprop:FriendlyName="TownId" type="xs:int" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_Dim_RoadType" msprop:design-time-name="0b88632f-cf92-44ca-b627-6723c3b36bae" msprop:FriendlyName="Dim_RoadType" msprop:DbSchemaName="dbo" msprop:DbTableName="Dim_RoadType" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="RoadTypeId" msprop:design-time-name="43bab3d9-9186-4480-b6c3-956285868001" msprop:DbColumnName="RoadTypeId" msprop:FriendlyName="RoadTypeId" type="xs:int" />
+                      <xs:element name="RoadTypeDetail" msprop:design-time-name="0f4e6b39-6c7a-4c84-a74f-34eb4d4a5f56" msprop:DbColumnName="RoadTypeDetail" msprop:FriendlyName="RoadTypeDetail" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="30" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_Dim_UrbanRuralArea" msprop:design-time-name="36a4af3f-5dd2-4971-b151-92d0afc97dbc" msprop:FriendlyName="Dim_UrbanRuralArea" msprop:DbSchemaName="dbo" msprop:DbTableName="Dim_UrbanRuralArea" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="UrbanRuralAreaId" msprop:design-time-name="cac5a069-b8be-40e9-b40d-adeced9dc081" msprop:DbColumnName="UrbanRuralAreaId" msprop:FriendlyName="UrbanRuralAreaId" type="xs:int" />
+                      <xs:element name="UrbanRuralAreaDetail" msprop:design-time-name="a9f067bd-e523-4b32-b8bc-d364f12233da" msprop:DbColumnName="UrbanRuralAreaDetail" msprop:FriendlyName="UrbanRuralAreaDetail">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="20" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+            <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Dim_Builduproad" />
+              <xs:field xpath="BuilduproadId" />
+            </xs:unique>
+            <xs:unique name="dbo_Fact_Accident_Statistic_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+              <xs:field xpath="FactAccidentStatsId" />
+            </xs:unique>
+            <xs:unique name="dbo_Dim_RoadType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Dim_RoadType" />
+              <xs:field xpath="RoadTypeId" />
+            </xs:unique>
+            <xs:unique name="dbo_Dim_UrbanRuralArea_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Dim_UrbanRuralArea" />
+              <xs:field xpath="UrbanRuralAreaId" />
+            </xs:unique>
+            <xs:keyref name="FK_FAS_RT" refer="dbo_Dim_RoadType_Constraint1">
+              <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+              <xs:field xpath="RoadTypeId" />
+            </xs:keyref>
+            <xs:keyref name="FK_FAS_BUR" refer="Constraint1">
+              <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+              <xs:field xpath="BuilduproadId" />
+            </xs:keyref>
+            <xs:keyref name="FK_FAS_URA" refer="dbo_Dim_UrbanRuralArea_Constraint1">
+              <xs:selector xpath=".//dbo_Fact_Accident_Statistic" />
+              <xs:field xpath="UrbanRuralAreaId" />
+            </xs:keyref>
+          </xs:element>
+        </xs:schema>
+        <TTKD12_x0020_UK_x0020_Accidents_x0020_DDS xmlns="" />
       </Schema>
     </DataSourceView>
   </DataSourceViews>
