@@ -139,7 +139,7 @@ BEGIN
 	END;
 END
 GO
-TRUNCATE TABLE Quarter
+
 -- Nam 2011
 EXEC Month31Day 1; -- thang 1 nam 2011
 EXEC Month28Day 2; -- thang 2 nam 2011
