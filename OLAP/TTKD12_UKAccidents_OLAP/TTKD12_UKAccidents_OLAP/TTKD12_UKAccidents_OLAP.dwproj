@@ -9,11 +9,11 @@
   <Cubes>
     <ProjectItem>
       <Name>Accident_Stats_Cube.cube</Name>
-      <FullPath>Accident_Stats_Cube.cube</FullPath>
+      <FullPath>Accident_Statistic_Cube.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Accident_Stats_Cube.partitions</Name>
-          <FullPath>Accident_Stats_Cube.partitions</FullPath>
+          <Name>Accident_Statistic_Cube.partitions</Name>
+          <FullPath>Accident_Statistic_Cube.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
@@ -28,22 +28,22 @@
       </Dependencies>
     </ProjectItem>
     <ProjectItem>
-      <Name>Variance_Statistic_Cube.cube</Name>
-      <FullPath>Variance_Statistic_Cube.cube</FullPath>
-      <Dependencies>
-        <ProjectItem>
-          <Name>Variance_Statistic_Cube.partitions</Name>
-          <FullPath>Variance_Statistic_Cube.partitions</FullPath>
-        </ProjectItem>
-      </Dependencies>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Vehicle_Statistic_Cube.cube</Name>
       <FullPath>Vehicle_Statistic_Cube.cube</FullPath>
       <Dependencies>
         <ProjectItem>
           <Name>Vehicle_Statistic_Cube.partitions</Name>
           <FullPath>Vehicle_Statistic_Cube.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Variance_Statistic_Cube.cube</Name>
+      <FullPath>Variance_Statistic_Cube.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Variance_Statistic_Cube.partitions</Name>
+          <FullPath>Variance_Statistic_Cube.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>

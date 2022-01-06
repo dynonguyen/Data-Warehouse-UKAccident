@@ -19,148 +19,148 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>+Xki7c8Qm/FSk1XGwLXXoVLVDNs=1/5/2022 3:13:01 PM1/5/2022 3:12:50 PM</TimeStamp>
+        <TimeStamp>v1u2OoVG9E2TZ0L9mvOLNaq2Tdo=1/6/2022 8:30:16 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>TTKD12 UK Accidents DDS DataSource</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>uxx1rA5AmkJE8lNiysM0HXpZiwA=1/5/2022 3:13:24 PM1/5/2022 3:13:13 PM</TimeStamp>
+        <TimeStamp>uxx1rA5AmkJE8lNiysM0HXpZiwA=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>TTKD12 UK Accidents DDS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>8NTCNedAWbusFizq9x/OXOmu8oQ=1/5/2022 3:15:10 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>8NTCNedAWbusFizq9x/OXOmu8oQ=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Urban Rural Area</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>01E4GxC96FkLtc+emp4FQvtCkhY=1/5/2022 3:15:10 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>01E4GxC96FkLtc+emp4FQvtCkhY=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Day</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>1oEQRZox/pwOwVHrHn9k4tZfT4g=1/5/2022 3:16:04 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>1oEQRZox/pwOwVHrHn9k4tZfT4g=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Builduproad</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>/wv/MIDW9VmtbO+0WALgEg7gPJs=1/5/2022 3:16:04 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>/wv/MIDW9VmtbO+0WALgEg7gPJs=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Time</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>VkqJhOU+2yI2n9RA3eHOYoW0av0=1/5/2022 3:16:04 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>VkqJhOU+2yI2n9RA3eHOYoW0av0=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Vehicle Type</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>AxZzCiBOtIGHSSsUz9P9PRIWYnI=1/5/2022 3:16:04 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>AxZzCiBOtIGHSSsUz9P9PRIWYnI=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Town</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>5asD/e0B6mBlyr8weRp86Iwm9bI=1/5/2022 3:16:20 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>5asD/e0B6mBlyr8weRp86Iwm9bI=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Road Type</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>qkvxFDbyx0A3NVpgdf+UNTvKa58=1/5/2022 3:28:32 PM1/5/2022 3:25:53 PM</TimeStamp>
+        <TimeStamp>qkvxFDbyx0A3NVpgdf+UNTvKa58=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Local Authority District</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>jQWnrc/bXMSYKdPYT0poZ4DVlRM=1/5/2022 3:28:32 PM1/5/2022 3:25:53 PM</TimeStamp>
+        <TimeStamp>jQWnrc/bXMSYKdPYT0poZ4DVlRM=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Sex Casualty</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>1rOWECXre8vmPGCIVH4eGdA/z/k=1/5/2022 3:28:32 PM1/5/2022 3:25:53 PM</TimeStamp>
+        <TimeStamp>1rOWECXre8vmPGCIVH4eGdA/z/k=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Casualty Severity</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>8O2sohY7jNjxozcsKjAaaVoriTk=1/5/2022 3:28:32 PM1/5/2022 3:25:53 PM</TimeStamp>
+        <TimeStamp>8O2sohY7jNjxozcsKjAaaVoriTk=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Age Band Casualty</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>W1O58VBYD2GcOmMBDgYHFE6t8Rw=1/5/2022 3:28:32 PM1/5/2022 3:25:53 PM</TimeStamp>
+        <TimeStamp>W1O58VBYD2GcOmMBDgYHFE6t8Rw=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Age Group Casualty</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>t/GDo/hYQTNukKEMdpK9EBG8/KE=1/5/2022 3:28:32 PM1/5/2022 3:25:53 PM</TimeStamp>
+        <TimeStamp>t/GDo/hYQTNukKEMdpK9EBG8/KE=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Casualty Type</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>INqYyxxCV/7riwOd2pYj2WrDaPU=1/5/2022 3:28:32 PM1/5/2022 3:27:12 PM</TimeStamp>
+        <TimeStamp>INqYyxxCV/7riwOd2pYj2WrDaPU=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Dim Journey Purpose Driver</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>Zl1rrG1+f3qPTE0f+aBU/bq7kLg=1/5/2022 3:16:20 PM1/5/2022 3:14:19 PMvONe1K2sOpZOhhdJc2aiWRopkdo=1/5/2022 3:14:20 PM1/5/2022 3:14:19 PM</TimeStamp>
+        <TimeStamp>Zl1rrG1+f3qPTE0f+aBU/bq7kLg=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AMvONe1K2sOpZOhhdJc2aiWRopkdo=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Accident_Stats_Cube</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>p7tdYt2R/sLPCtpXIHYubbMSsfY=1/5/2022 3:28:32 PM1/5/2022 3:25:52 PMsACVv2sOxB25nG04LbPX5qonZa4=1/5/2022 3:25:53 PM1/5/2022 3:25:52 PM</TimeStamp>
+        <TimeStamp>p7tdYt2R/sLPCtpXIHYubbMSsfY=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AMsACVv2sOxB25nG04LbPX5qonZa4=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
           <String>Casualty_Statistic_Cube</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>So8w8yWBLkPXDxfKIif9guAs4lk=1/5/2022 3:26:38 PM1/5/2022 3:26:38 PMsPO5JSDlAeAfbe2nLeFFwh75SP0=1/5/2022 3:26:38 PM1/5/2022 3:26:38 PM</TimeStamp>
+        <TimeStamp>BMWyqMNfA4ebNpB03f6IPkQUGfo=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM0QL+dZuI81dDVk4gkJW+OWq/jGE=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
         <ID>
-          <String>Variance_Statistic_Cube</String>
+          <String>Vehicle_Statistic_Cube</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>BMWyqMNfA4ebNpB03f6IPkQUGfo=1/5/2022 3:28:32 PM1/5/2022 3:27:12 PM0QL+dZuI81dDVk4gkJW+OWq/jGE=1/5/2022 3:27:12 PM1/5/2022 3:27:12 PM</TimeStamp>
+        <TimeStamp>pdOQkhvxcz3s5apWn5/ksIVT9Ds=1/6/2022 10:09:11 AM1/6/2022 8:31:34 AMJJZ2J/L0nOCEDVm1ZYF1+wMfScY=1/6/2022 8:31:34 AM1/6/2022 8:31:34 AM</TimeStamp>
         <ID>
-          <String>Vehicle_Statistic_Cube</String>
+          <String>Variance_Statistic_Cube</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>D0H8XY7+WFiPV4mIiD50L+40sSU=1/5/2022 3:09:06 PM1/5/2022 3:09:05 PM</TimeStamp>
+      <TimeStamp>D0H8XY7+WFiPV4mIiD50L+40sSU=1/6/2022 8:24:28 AM1/6/2022 8:24:28 AM</TimeStamp>
       <ID>
         <String>TTKD12_UKAccidents_OLAP</String>
       </ID>
@@ -169,5 +169,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-01-05T08:28:44.26Z</LastDeployed>
+  <LastDeployed>2022-01-06T03:09:14.903333Z</LastDeployed>
 </DeploymentSnapshot>

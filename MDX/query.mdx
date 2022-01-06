@@ -1,0 +1,49 @@
+﻿-- Test
+SELECT CROSSJOIN(
+			[Dim Road Type].[Road Type Detail].[Road Type Detail],
+			[Dim Town].[Country Name].[Country Name]
+		) ON COLUMNS,
+	FILTER(
+		CROSSJOIN(
+			ORDER([Dim Day].[Year].[Year], [Dim Day].[Year].CURRENTMEMBER.MEMBER_VALUE, ASC),
+			ORDER([Dim Day].[Month].[Month], [Dim Day].[Month].CURRENTMEMBER.MEMBER_VALUE, DESC)
+		),
+		([Dim Day].[Year].CURRENTMEMBER.MEMBER_VALUE > 2011)
+	) ON ROWS
+FROM [Accident_Stats_Cube];
+
+--- Câu 11: Tính độ tăng giảm cuar TNGT theo đơn vị phần trăm qua các năm
+WITH 
+	MEMBER [Measures].[Diff] AS 
+				IIF(
+					[Dim Day].[Year].CURRENTMEMBER.MEMBER_VALUE = 2011, 
+					0,
+					(
+						IIF(
+							[Measures].[Total] = null,
+							null,
+							([Dim Day].[Year].CURRENTMEMBER, [Measures].[Total]) - 
+							([Dim Day].[Year].CURRENTMEMBER.LAG(1), [Measures].[Total])
+						)
+					)
+				)
+	MEMBER [Measures].[Variance] AS 
+				IIF(
+					[Dim Day].[Year].CURRENTMEMBER.MEMBER_VALUE = 2011, 
+					0,
+					IIF(
+						[Measures].[Total] = NULL,
+						null,
+						(
+							([Dim Day].[Year].CURRENTMEMBER, [Measures].[Total]) - 
+							([Dim Day].[Year].CURRENTMEMBER.LAG(1), [Measures].[Total])
+						) / ([Dim Day].[Year].CURRENTMEMBER.LAG(1), [Measures].[Total])
+					)
+			), FORMAT_STRING = '#,###,###,##,0 %'
+SELECT {[Measures].[Total], [Measures].[Diff], [Measures].[Variance]} ON COLUMNS,
+	NON EMPTY(
+			[Dim Day].[Year].[Year]
+	)ON ROWS
+FROM [Variance_Statistic_Cube];
+
+---

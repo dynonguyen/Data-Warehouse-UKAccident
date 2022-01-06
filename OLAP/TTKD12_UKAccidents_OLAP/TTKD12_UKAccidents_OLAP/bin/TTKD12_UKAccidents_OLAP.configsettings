@@ -83,19 +83,6 @@
         </MeasureGroups>
       </Cube>
       <Cube>
-        <ID>Variance_Statistic_Cube</ID>
-        <MeasureGroups>
-          <MeasureGroup>
-            <ID>Fact Variance Statistic</ID>
-            <Partitions>
-              <Partition>
-                <ID>Fact Variance Statistic</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-        </MeasureGroups>
-      </Cube>
-      <Cube>
         <ID>Vehicle_Statistic_Cube</ID>
         <MeasureGroups>
           <MeasureGroup>
@@ -103,6 +90,19 @@
             <Partitions>
               <Partition>
                 <ID>Fact Vehicle Statistic</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Variance_Statistic_Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Variance Statistic</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Variance Statistic</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
