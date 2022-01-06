@@ -25,10 +25,13 @@
         <ID>Acident Severity Predict</ID>
       </MiningStructure>
       <MiningStructure>
-        <ID>Acident Severity Predict 1</ID>
+        <ID>Fact Accident Statistic</ID>
       </MiningStructure>
       <MiningStructure>
-        <ID>Fact Accident Statistic</ID>
+        <ID>Fact Accident Statistic 1</ID>
+      </MiningStructure>
+      <MiningStructure>
+        <ID>Fact Accident Statistic 2</ID>
       </MiningStructure>
     </MiningStructures>
     <DataSourceImpersonationInfo>
