@@ -166,7 +166,8 @@ CREATE TABLE Fact_Accident_Statistic (
 	TownId INT,
 	VehicleTypeId INT,
 	TimeId INT,
-	AccidentSeverityId INT
+	AccidentSeverityId INT,
+	LACodeId INT
 )
 GO
 
@@ -267,6 +268,11 @@ ADD CONSTRAINT FK_FCS_AgeGroup
 FOREIGN KEY (AgeGroupCasualtyId) REFERENCES Dim_AgeGroupCasualty(AgeGroupCasualtyId)
 GO
 
+ALTER TABLE Fact_Casualty_Statistic
+ADD CONSTRAINT FK_FCS_LACode
+FOREIGN KEY (LACodeId) REFERENCES Dim_LACode (LACodeId)
+GO 
+
 -- Fact_Accident_Statistic
 ALTER TABLE Fact_Accident_Statistic
 ADD CONSTRAINT FK_FAS_RT
@@ -307,6 +313,11 @@ ALTER TABLE Fact_Accident_Statistic
 ADD CONSTRAINT FK_FAS_AS
 FOREIGN KEY (AccidentSeverityId) REFERENCES Dim_AccidentSeverity (AccidentSeverityId)
 GO
+
+ALTER TABLE Fact_Accident_Statistic
+ADD CONSTRAINT FK_FAS_LACode
+FOREIGN KEY (LACodeId) REFERENCES Dim_LACode (LACodeId)
+GO 
 
 -- Fact_Vehicle_Statistic
 ALTER TABLE Fact_Vehicle_Statistic
