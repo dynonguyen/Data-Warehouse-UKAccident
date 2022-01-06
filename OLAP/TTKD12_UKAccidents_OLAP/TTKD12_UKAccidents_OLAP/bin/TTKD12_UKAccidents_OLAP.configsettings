@@ -6,7 +6,7 @@
         <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=TTKD12_UKAccidents_DDS</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
-          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Tuan</Account>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">MinhTri</Account>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
@@ -53,6 +53,12 @@
       </Dimension>
       <Dimension>
         <ID>Dim Journey Purpose Driver</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim LA Code</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Accident Severity</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

@@ -105,6 +105,14 @@
       <Name>Dim Journey Purpose Driver.dim</Name>
       <FullPath>Dim Journey Purpose Driver.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Dim LA Code.dim</Name>
+      <FullPath>Dim LA Code.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Accident Severity.dim</Name>
+      <FullPath>Dim Accident Severity.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
