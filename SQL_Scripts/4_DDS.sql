@@ -106,6 +106,12 @@ CREATE TABLE Dim_AgeGroupCasualty(
 )
 GO
 
+CREATE TABLE Dim_LACode (
+	LACodeId INT PRIMARY KEY,
+	LACodeDetail VARCHAR(30) NOT NULL
+)
+GO
+
 CREATE TABLE Fact_Casualty_Statistic(
 	FactCasualtyStatsId INT IDENTITY(1, 1) PRIMARY KEY,
 	DayId INT,
@@ -115,7 +121,8 @@ CREATE TABLE Fact_Casualty_Statistic(
 	CasualtySeverityId INT, 
 	LADId INT,
 	AgeCasualty INT,
-	AgeGroupCasualtyId INT
+	AgeGroupCasualtyId INT,
+	LACodeId INT
 )
 GO
 
@@ -138,9 +145,15 @@ CREATE TABLE Dim_UrbanRuralArea (
 )
 GO
 
-CREATE TABLE Dim_Time(
+CREATE TABLE Dim_Time (
 	TimeId INT PRIMARY KEY,
 	TimeDetail VARCHAR(30) NOT NULL
+)
+GO
+
+CREATE TABLE Dim_AccidentSeverity (
+	AccidentSeverityId INT PRIMARY KEY,
+	AccidentSeverityDetail VARCHAR(10) NOT NULL
 )
 GO
 
@@ -152,7 +165,8 @@ CREATE TABLE Fact_Accident_Statistic (
 	UrbanRuralAreaId INT,
 	TownId INT,
 	VehicleTypeId INT,
-	TimeId INT
+	TimeId INT,
+	AccidentSeverityId INT
 )
 GO
 
@@ -286,7 +300,12 @@ GO
 
 ALTER TABLE Fact_Accident_Statistic
 ADD CONSTRAINT FK_FAS_Time
-FOREIGN KEY (TimeId) REFERENCES Dim_Time(TimeId)
+FOREIGN KEY (TimeId) REFERENCES Dim_Time (TimeId)
+GO
+
+ALTER TABLE Fact_Accident_Statistic
+ADD CONSTRAINT FK_FAS_AS
+FOREIGN KEY (AccidentSeverityId) REFERENCES Dim_AccidentSeverity (AccidentSeverityId)
 GO
 
 -- Fact_Vehicle_Statistic

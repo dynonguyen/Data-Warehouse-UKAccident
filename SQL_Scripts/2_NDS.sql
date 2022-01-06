@@ -157,6 +157,11 @@ CREATE TABLE AccidentSeverity (
 	AccidentSeverityDetail VARCHAR(10) NOT NULL
 )
 GO
+
+CREATE TABLE LACode (
+	LACodeId INT PRIMARY KEY,
+	LACodeDetail VARCHAR(30) NOT NULL
+)
 ​
 CREATE TABLE Accident (
 	AccidentId INT PRIMARY KEY IDENTITY(1, 1),
@@ -176,6 +181,7 @@ CREATE TABLE Accident (
 	BuildUpRoadId INT,
 	TownId INT,
 	DayId INT,
+	LACodeId INT,
 ​
 	CONSTRAINT FK_Accident_LAD FOREIGN KEY(LocalAuthorityDistrictId)
 	REFERENCES dbo.LocalAuthorityDistrict(LocalAuthorityDistrictId),
@@ -196,7 +202,10 @@ CREATE TABLE Accident (
 	REFERENCES dbo.Day(DayId),
 
 	CONSTRAINT FK_Accident_AccidentSeverity FOREIGN KEY (AccidentSeverity) 
-	REFERENCES dbo.AccidentSeverity (AccidentSeverityId)
+	REFERENCES dbo.AccidentSeverity (AccidentSeverityId),
+
+	CONSTRAINT FK_Accident_LACode FOREIGN KEY (LACodeId)
+	REFERENCES LACode (LACodeId)
 )
 GO 
 ​

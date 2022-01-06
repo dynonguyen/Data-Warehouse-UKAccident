@@ -2,33 +2,33 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>TTKD-12-BI-Project-UKAccidents</Name>
-    <LastWriteTime>2022-01-05T07:22:20.5396417Z</LastWriteTime>
+    <LastWriteTime>2022-01-06T05:40:48.8337387Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>SourceToStage.dtsx</Name>
-      <LastWriteTime>2022-01-05T05:44:57.5049165Z</LastWriteTime>
+      <LastWriteTime>2022-01-05T10:17:49.9532612Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>StageToNDS.dtsx</Name>
-      <LastWriteTime>2022-01-05T05:44:57.5099147Z</LastWriteTime>
+      <LastWriteTime>2022-01-06T06:08:16.8618045Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>NDStoDDS.dtsx</Name>
-      <LastWriteTime>2022-01-05T08:01:33.5361865Z</LastWriteTime>
+      <LastWriteTime>2022-01-06T07:59:35.8954346Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Variance.dtsx</Name>
-      <LastWriteTime>2022-01-05T06:56:04.6456955Z</LastWriteTime>
+      <LastWriteTime>2022-01-05T10:17:49.9376361Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Main.dtsx</Name>
-      <LastWriteTime>2022-01-05T07:12:19.3366963Z</LastWriteTime>
+      <LastWriteTime>2022-01-05T10:17:49.9376361Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

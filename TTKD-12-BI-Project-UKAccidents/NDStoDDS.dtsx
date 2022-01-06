@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{4DF01915-CD82-44A5-8C3B-169FBFFFDEE4}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{1EE51E50-BA2C-4E04-A253-BF80D183143A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,553 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim AccidentSeverity"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{56546CF2-4CF6-43D4-BBE0-7910E4AA36F5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim AccidentSeverity"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim AccidentSeverity\AccidentSeverity NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="AccidentSeverity NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AccidentSeverity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].ExternalColumns[AccidentSeverityId]"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityId]"
+                      name="AccidentSeverityId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].ExternalColumns[AccidentSeverityDetail]"
+                      length="10"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityDetail]"
+                      name="AccidentSeverityDetail"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].ExternalColumns[AccidentSeverityId]"
+                      dataType="i4"
+                      name="AccidentSeverityId" />
+                    <externalMetadataColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].ExternalColumns[AccidentSeverityDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AccidentSeverityDetail" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[AccidentSeverityId]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[AccidentSeverityId]"
+                      name="AccidentSeverityId" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[AccidentSeverityDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[AccidentSeverityDetail]"
+                      name="AccidentSeverityDetail" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Insert AccidentSeverity DDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO dbo.Dim_AccidentSeverity
+(
+    AccidentSeverityId, 
+    AccidentSeverityDetail
+)
+VALUES
+(   ?,
+    ?
+)</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input].Columns[AccidentSeverityId]"
+                      cachedDataType="i4"
+                      cachedName="AccidentSeverityId"
+                      externalMetadataColumnId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityId]" />
+                    <inputColumn
+                      refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input].Columns[AccidentSeverityDetail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="AccidentSeverityDetail"
+                      externalMetadataColumnId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityDetail]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup AccidentSeverityId DDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select AccidentSeverityid from Dim_AccidentSeverity</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select AccidentSeverityid from Dim_AccidentSeverity) [refTable]
+where [refTable].[AccidentSeverityid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AccidentSeverityid" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Inputs[Lookup Input].Columns[AccidentSeverityId]"
+                      cachedDataType="i4"
+                      cachedName="AccidentSeverityId"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">AccidentSeverityid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update AccidentSeverity DDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Dim_AccidentSeverity SET AccidentSeverityDetail=? WHERE AccidentSeverityId=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input].Columns[AccidentSeverityId]"
+                      cachedDataType="i4"
+                      cachedName="AccidentSeverityId"
+                      externalMetadataColumnId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityId]" />
+                    <inputColumn
+                      refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input].Columns[AccidentSeverityDetail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="AccidentSeverityDetail"
+                      externalMetadataColumnId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output].Columns[AccidentSeverityDetail]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim AccidentSeverity.Paths[Lookup Error Output]"
+              endId="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS.Inputs[OLE DB Command Input]"
+              name="Lookup Error Output"
+              startId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Dim AccidentSeverity.Paths[Lookup Match Output]"
+              endId="Package\Dim AccidentSeverity\Update AccidentSeverity DDS.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dim AccidentSeverity.Paths[OLE DB Source Output]"
+              endId="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim AccidentSeverity\AccidentSeverity NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Dim AgeBandCasualty"
       DTS:CreationName="Microsoft.Pipeline"
@@ -4504,6 +5051,555 @@ where [refTable].[JourneyPurposeDriverid] = ?</property>
               endId="Package\Dim JourneyPurposeDriver\Lookup JourneyPurposeDriver id dds.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Dim JourneyPurposeDriver\JourneyPurposeDriver nds.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim LACode"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{751FCE9F-B117-4747-9B3F-4F668FF4F23E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim LACode"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim LACode\Insert LACode DDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Insert LACode DDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO dbo.Dim_LACode
+(
+   LACodeId,
+    LACodeDetail
+)
+VALUES
+(   ?,
+    ?
+)</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim LACode\Insert LACode DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input].Columns[LACodeId]"
+                      cachedDataType="i4"
+                      cachedName="LACodeId"
+                      externalMetadataColumnId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeId]" />
+                    <inputColumn
+                      refId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input].Columns[LACodeDetail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LACodeDetail"
+                      externalMetadataColumnId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeDetail]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim LACode\Insert LACode DDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim LACode\Insert LACode DDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim LACode\Insert LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\Insert LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim LACode\Insert LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\Insert LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim LACode\LACode NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="LACode NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[LACode]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim LACode\LACode NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].ExternalColumns[LACodeId]"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeId]"
+                      name="LACodeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].ExternalColumns[LACodeDetail]"
+                      length="30"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeDetail]"
+                      name="LACodeDetail"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].ExternalColumns[LACodeId]"
+                      dataType="i4"
+                      name="LACodeId" />
+                    <externalMetadataColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].ExternalColumns[LACodeDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="LACodeDetail" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[LACodeId]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[LACodeId]"
+                      name="LACodeId" />
+                    <outputColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[LACodeDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[LACodeDetail]"
+                      name="LACodeDetail" />
+                    <outputColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim LACode\Lookup LACodeId DDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup LACodeId DDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select LACodeId from Dim_LACode</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select LACodeId from Dim_LACode) [refTable]
+where [refTable].[LACodeId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LACodeId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim LACode\Lookup LACodeId DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim LACode\Lookup LACodeId DDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim LACode\Lookup LACodeId DDS.Inputs[Lookup Input].Columns[LACodeId]"
+                      cachedDataType="i4"
+                      cachedName="LACodeId"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">LACodeId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Dim LACode\Lookup LACodeId DDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Dim LACode\Lookup LACodeId DDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Dim LACode\Lookup LACodeId DDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim LACode\Update LACode DDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update LACode DDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_LACode]
+   SET [LACodeDetail] = ?
+ WHERE [LACodeId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim LACode\Update LACode DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_DDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input].Columns[LACodeId]"
+                      cachedDataType="i4"
+                      cachedName="LACodeId"
+                      externalMetadataColumnId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeId]" />
+                    <inputColumn
+                      refId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input].Columns[LACodeDetail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LACodeDetail"
+                      externalMetadataColumnId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output].Columns[LACodeDetail]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim LACode\Update LACode DDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim LACode\Update LACode DDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim LACode\Update LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\Update LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim LACode\Update LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim LACode\Update LACode DDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim LACode.Paths[Lookup Error Output]"
+              endId="Package\Dim LACode\Insert LACode DDS.Inputs[OLE DB Command Input]"
+              name="Lookup Error Output"
+              startId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Dim LACode.Paths[Lookup Match Output]"
+              endId="Package\Dim LACode\Update LACode DDS.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Dim LACode\Lookup LACodeId DDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dim LACode.Paths[OLE DB Source Output]"
+              endId="Package\Dim LACode\Lookup LACodeId DDS.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim LACode\LACode NDS.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -10375,6 +11471,15 @@ where [refTable].[YearId] = ?</property>
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[DayId]"
                       name="DayId"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[LACodeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].ExternalColumns[LACodeId]"
+                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[LACodeId]"
+                      name="LACodeId"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10450,6 +11555,10 @@ where [refTable].[YearId] = ?</property>
                       refId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].ExternalColumns[DayId]"
                       dataType="i4"
                       name="DayId" />
+                    <externalMetadataColumn
+                      refId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].ExternalColumns[LACodeId]"
+                      dataType="i4"
+                      name="LACodeId" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -10546,6 +11655,11 @@ where [refTable].[YearId] = ?</property>
                       dataType="i4"
                       lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Error Output].Columns[DayId]"
                       name="DayId" />
+                    <outputColumn
+                      refId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Error Output].Columns[LACodeId]"
+                      dataType="i4"
+                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Error Output].Columns[LACodeId]"
+                      name="LACodeId" />
                     <outputColumn
                       refId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -10663,10 +11777,10 @@ where [refTable].[YearId] = ?</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO dbo.Fact_Accident_Statistic
 (
- RoadTypeId, DayId, BuilduproadId, UrbanRuralAreaId, TownId, VehicleTypeId, TimeId
+ RoadTypeId, DayId, BuilduproadId, UrbanRuralAreaId, TownId, VehicleTypeId, TimeId, AccidentSeverityId
 )
 VALUES
-(   ?, ?,?,?,?,?,?
+(   ?, ?,?,?,?,?,?,?
 )</property>
                 <property
                   dataType="System.Int32"
@@ -10731,6 +11845,12 @@ VALUES
                       cachedName="TimeId"
                       externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output].Columns[TimeId]" />
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[AccidentSeverity]"
+                      cachedDataType="i4"
+                      cachedName="AccidentSeverity"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[AccidentSeverity]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10804,6 +11924,17 @@ VALUES
                       refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       dataType="i4"
                       name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -12080,7 +13211,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Accident_Statistic SET RoadTypeId=?, DayId=?, BuilduproadId=?, UrbanRuralAreaId=?, TownId=?, VehicleTypeId=?, TimeId=? WHERE FactAccidentStatsId=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Accident_Statistic SET RoadTypeId=?, DayId=?, BuilduproadId=?, UrbanRuralAreaId=?, TownId=?, VehicleTypeId=?, TimeId=?, AccidentSeverityId=? WHERE FactAccidentStatsId=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12150,6 +13281,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedName="TimeId"
                       externalMetadataColumnId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Fact AccidentStatistic\Add TimeId.Outputs[Derived Column Output].Columns[TimeId]" />
+                    <inputColumn
+                      refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].Columns[AccidentSeverity]"
+                      cachedDataType="i4"
+                      cachedName="AccidentSeverity"
+                      externalMetadataColumnId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Fact AccidentStatistic\Accident nds.Outputs[OLE DB Source Output].Columns[AccidentSeverity]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12234,6 +13371,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       dataType="i4"
                       name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact AccidentStatistic\update Fact_Accident_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="i4"
+                      name="Param_8">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -12730,11 +13878,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO dbo.Fact_Casualty_Statistic
 (
- DayId, SexCasualtyId, AgeBandCasualtyId, CasualtyTypeId, CasualtySeverityId, LADId, AgeCasualty, AgeGroupCasualtyId
+ DayId, SexCasualtyId, AgeBandCasualtyId, CasualtyTypeId, CasualtySeverityId, LADId, AgeCasualty, AgeGroupCasualtyId, LACodeId
 )
 VALUES
 ( 
-    ?,?,?,?,?,?,?,?
+    ?,?,?,?,?,?,?,?,?
 )</property>
                 <property
                   dataType="System.Int32"
@@ -12805,6 +13953,12 @@ VALUES
                       cachedName="AgeGroupCasualtyId"
                       externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output].Columns[AgeGroupCasualtyId]" />
+                    <inputColumn
+                      refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[LACodeId]"
+                      cachedDataType="i4"
+                      cachedName="LACodeId"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output].Columns[LACodeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12896,6 +14050,17 @@ VALUES
                           name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact CasualtyStatistic\insert Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="i4"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -12945,13 +14110,13 @@ VALUES
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select AccidentId, DayId, LocalAuthorityDistrictId from Accident</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select AccidentId, DayId, LocalAuthorityDistrictId, LACodeId from Accident</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select AccidentId, DayId, LocalAuthorityDistrictId from Accident) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select AccidentId, DayId, LocalAuthorityDistrictId, LACodeId from Accident) [refTable]
 where [refTable].[AccidentId] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -12983,7 +14148,7 @@ where [refTable].[AccidentId] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AccidentId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocalAuthorityDistrictId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AccidentId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocalAuthorityDistrictId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LACodeId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -13066,6 +14231,20 @@ where [refTable].[AccidentId] = ?</property>
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn">LocalAuthorityDistrictId</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output].Columns[LACodeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output].Columns[LACodeId]"
+                      name="LACodeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">LACodeId</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -13263,7 +14442,7 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Casualty_Statistic SET DayId=?, SexCasualtyId=?, AgeBandCasualtyId=?, CasualtyTypeId=?, CasualtySeverityId=?, LADId=?, AgeCasualty=?, AgeGroupCasualtyId = ? WHERE FactCasualtyStatsId=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Fact_Casualty_Statistic SET DayId=?, SexCasualtyId=?, AgeBandCasualtyId=?, CasualtyTypeId=?, CasualtySeverityId=?, LADId=?, AgeCasualty=?, AgeGroupCasualtyId = ?, LACodeId=? WHERE FactCasualtyStatsId=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13339,6 +14518,12 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
                       cachedName="AgeGroupCasualtyId"
                       externalMetadataColumnId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       lineageId="Package\Fact CasualtyStatistic\Add AgeGroupCasualtyId.Outputs[Derived Column Output].Columns[AgeGroupCasualtyId]" />
+                    <inputColumn
+                      refId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].Columns[LACodeId]"
+                      cachedDataType="i4"
+                      cachedName="LACodeId"
+                      externalMetadataColumnId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Fact CasualtyStatistic\Lookup Accident nds.Outputs[Lookup Match Output].Columns[LACodeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -13434,6 +14619,17 @@ where [refTable].[FactCasualtyStatsId] = ?</property>
                       refId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       dataType="i4"
                       name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Fact CasualtyStatistic\update Fact_Casualty_Statistic.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="i4"
+                      name="Param_9">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -14481,6 +15677,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Dim Day" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 20]"
+      DTS:CreationName=""
+      DTS:DTSID="{0EF08865-4276-47AD-A862-C3741D21E3EE}"
+      DTS:From="Package\Dim LACode"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 20"
+      DTS:To="Package\Fact CasualtyStatistic" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 21]"
+      DTS:CreationName=""
+      DTS:DTSID="{11286D2D-A163-46F1-8E7B-440EC15CB26A}"
+      DTS:From="Package\Dim LACode"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 21"
+      DTS:To="Package\Fact AccidentStatistic" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 22]"
+      DTS:CreationName=""
+      DTS:DTSID="{F64D9C25-959F-4D11-A0AC-E82A1FDD6AD3}"
+      DTS:From="Package\Dim AccidentSeverity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 22"
+      DTS:To="Package\Fact AccidentStatistic" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{FDC5D650-0B86-4F67-975A-4AA1A586DC60}"
@@ -14552,90 +15772,94 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <NodeLayout
           Size="182,42"
           Id="Package\Dim AgeBandCasualty"
-          TopLeft="24.1428574347983,372.694122237235" />
+          TopLeft="17.1428574347983,333.694122237235" />
         <NodeLayout
           Size="160,42"
           Id="Package\Dim BuildUpRoad"
-          TopLeft="702.714296881034,439.352945262585" />
+          TopLeft="695.714296881034,384.352945262585" />
         <NodeLayout
           Size="178,42"
           Id="Package\Dim CasualtySeverity"
-          TopLeft="30.000000340598,450.176475274934" />
+          TopLeft="23.000000340598,411.176475274934" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dim CasualtyType"
-          TopLeft="45.1428575199478,552.070592771847" />
+          TopLeft="34.1428575199478,504.070592771847" />
         <NodeLayout
           Size="137,42"
           Id="Package\Dim Country"
-          TopLeft="627.285724832087,153.470590401686" />
+          TopLeft="620.285724832087,114.470590401686" />
         <NodeLayout
           Size="134,42"
           Id="Package\Dim County"
-          TopLeft="451.142864417057,66.0588244839111" />
+          TopLeft="444.142864417057,27.0588244839111" />
         <NodeLayout
           Size="118,42"
           Id="Package\Dim Day"
-          TopLeft="228.571432463976,152.176472722453" />
+          TopLeft="221.571432463976,113.176472722453" />
         <NodeLayout
           Size="203,42"
           Id="Package\Dim JourneyPurposeDriver"
-          TopLeft="1025.5143026712,371.058826854072" />
+          TopLeft="1018.5143026712,332.058826854072" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Dim LACode"
+          TopLeft="448,502" />
         <NodeLayout
           Size="200,42"
           Id="Package\Dim LocalAuthorityDistrict"
-          TopLeft="269.000004002026,537.541179891771" />
+          TopLeft="218.000004002026,498.541179891771" />
         <NodeLayout
           Size="130,42"
           Id="Package\Dim Month"
-          TopLeft="37.8571435018462,151.411766829375" />
+          TopLeft="30.8571435018462,112.411766829375" />
         <NodeLayout
           Size="136,42"
           Id="Package\Dim Quarter"
-          TopLeft="33.5714291431467,66.5294126977558" />
+          TopLeft="26.5714291431467,27.5294126977558" />
         <NodeLayout
           Size="133,42"
           Id="Package\Dim Region"
-          TopLeft="632.285724917237,64.7647068046781" />
+          TopLeft="625.285724917237,25.7647068046781" />
         <NodeLayout
           Size="147,42"
           Id="Package\Dim RoadType"
-          TopLeft="702.714296881034,358.294120596355" />
+          TopLeft="712.714296881034,310.294120596355" />
         <NodeLayout
           Size="157,42"
           Id="Package\Dim SexCasualty"
-          TopLeft="27.1428576050972,237.058826854072" />
+          TopLeft="20.1428576050972,198.058826854072" />
         <NodeLayout
           Size="126,42"
           Id="Package\Dim Town"
-          TopLeft="453.285721596407,154.000002187841" />
+          TopLeft="446.285721596407,115.000002187841" />
         <NodeLayout
           Size="174,42"
           Id="Package\Dim UrbanRuralArea"
-          TopLeft="697.000011069434,518.705886149489" />
+          TopLeft="831.000011069434,470.705886149489" />
         <NodeLayout
           Size="157,42"
           Id="Package\Dim VehicleType"
-          TopLeft="1026.54287403895,154.058825213191" />
+          TopLeft="1019.54287403895,115.058825213191" />
         <NodeLayout
           Size="122,42"
           Id="Package\Dim Year"
-          TopLeft="227.857146737527,60.4117655531346" />
+          TopLeft="220.857146737527,21.4117655531346" />
         <NodeLayout
           Size="194,61"
           Id="Package\Fact AccidentStatistic"
-          TopLeft="465.000007748604,406.882356866421" />
+          TopLeft="458.000007748604,367.882356866421" />
         <NodeLayout
           Size="185,63"
           Id="Package\Fact CasualtyStatistic"
-          TopLeft="251.428575710375,387.376473634053" />
+          TopLeft="244.428575710375,348.376473634053" />
         <NodeLayout
           Size="191,62"
           Id="Package\Fact VehicleStatistic"
-          TopLeft="763.428584395623,218.82353274715" />
+          TopLeft="756.428584395623,179.82353274715" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="227.857146737527,84.2705891254452">
+          TopLeft="220.857146737527,45.2705891254452">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14657,7 +15881,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="102.114286322496,108.129412697756">
+          TopLeft="95.114286322496,69.129412697756">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14679,30 +15903,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="126.642857519948,552.070592771847">
+          TopLeft="115.642857519948,504.070592771847">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="187.785718190427,-101.694119137794"
+              EndConnector="191.785718190427,-92.694119137794"
               Start="0,0"
-              End="187.785718190427,-94.194119137794">
+              End="191.785718190427,-85.194119137794">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-56.4932863038325" />
+                    End="0,-33.1395885546363" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-56.4932863038325"
-                    Point2="0,-60.4932863038325"
-                    Point3="4,-60.4932863038325" />
+                    Point1="0,-33.1395885546363"
+                    Point2="0,-37.1395885546363"
+                    Point3="4,-37.1395885546363" />
                   <mssgle:LineSegment
-                    End="183.785718190427,-60.4932863038325" />
+                    End="187.785718190427,-37.1395885546363" />
                   <mssgle:CubicBezierSegment
-                    Point1="183.785718190427,-60.4932863038325"
-                    Point2="187.785718190427,-60.4932863038325"
-                    Point3="187.785718190427,-64.4932863038325" />
+                    Point1="187.785718190427,-37.1395885546363"
+                    Point2="191.785718190427,-37.1395885546363"
+                    Point3="191.785718190427,-41.1395885546363" />
                   <mssgle:LineSegment
-                    End="187.785718190427,-94.194119137794" />
+                    End="191.785718190427,-85.194119137794" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14713,18 +15937,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="371.2142898562,537.541179891771">
+          TopLeft="318.000004002026,498.541179891771">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-87.164706257718"
+              EndConnector="48.428571708349,-87.164706257718"
               Start="0,0"
-              End="0,-79.664706257718">
+              End="48.428571708349,-79.664706257718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-79.664706257718" />
+                    End="0,-47.8503879668097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-47.8503879668097"
+                    Point2="0,-51.8503879668097"
+                    Point3="4,-51.8503879668097" />
+                  <mssgle:LineSegment
+                    End="44.428571708349,-51.8503879668097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.428571708349,-51.8503879668097"
+                    Point2="48.428571708349,-51.8503879668097"
+                    Point3="48.428571708349,-55.8503879668097" />
+                  <mssgle:LineSegment
+                    End="48.428571708349,-79.664706257718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14735,30 +15971,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="702.714296881034,379.294120596355">
+          TopLeft="712.714296881034,331.294120596355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-43.7142891324299,49.2549029367327"
+              EndConnector="-60.7142891324299,58.2549029367327"
               Start="0,0"
-              End="-36.2142891324299,49.2549029367327">
+              End="-53.2142891324299,58.2549029367327">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-21.5581946045836,0" />
+                    End="-31.4974917291843,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21.5581946045836,0"
-                    Point2="-25.5581946045836,0"
-                    Point3="-25.5581946045836,4" />
+                    Point1="-31.4974917291843,0"
+                    Point2="-35.4974917291843,0"
+                    Point3="-35.4974917291843,4" />
                   <mssgle:LineSegment
-                    End="-25.5581946045836,45.2549029367327" />
+                    End="-35.4974917291843,54.2549029367327" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25.5581946045836,45.2549029367327"
-                    Point2="-25.5581946045836,49.2549029367327"
-                    Point3="-29.5581946045836,49.2549029367327" />
+                    Point1="-35.4974917291843,54.2549029367327"
+                    Point2="-35.4974917291843,58.2549029367327"
+                    Point3="-39.4974917291843,58.2549029367327" />
                   <mssgle:LineSegment
-                    End="-36.2142891324299,49.2549029367327" />
+                    End="-53.2142891324299,58.2549029367327" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14769,30 +16005,18 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="702.714296881034,460.352945262585">
+          TopLeft="695.714296881034,401.867651064503">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-43.7142891324299,-14.1372550628307"
+              EndConnector="-43.7142891324299,0"
               Start="0,0"
-              End="-36.2142891324299,-14.1372550628307">
+              End="-36.2142891324299,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-21.5581946045836,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21.5581946045836,0"
-                    Point2="-25.5581946045836,0"
-                    Point3="-25.5581946045836,-4" />
-                  <mssgle:LineSegment
-                    End="-25.5581946045836,-10.1372550628307" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25.5581946045836,-10.1372550628307"
-                    Point2="-25.5581946045836,-14.1372550628307"
-                    Point3="-29.5581946045836,-14.1372550628307" />
-                  <mssgle:LineSegment
-                    End="-36.2142891324299,-14.1372550628307" />
+                    End="-36.2142891324299,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14803,30 +16027,30 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="784.000011069434,518.705886149489">
+          TopLeft="918.000011069434,470.705886149489">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-222.00000332083,-50.8235292830681"
+              EndConnector="-332.00000332083,-41.823529283068"
               Start="0,0"
-              End="-222.00000332083,-43.3235292830681">
+              End="-332.00000332083,-34.323529283068">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-21.411764641534" />
+                    End="0,-20.8888487144638" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-21.411764641534"
-                    Point2="0,-25.411764641534"
-                    Point3="-4,-25.411764641534" />
+                    Point1="0,-20.8888487144638"
+                    Point2="0,-24.8888487144638"
+                    Point3="-4,-24.8888487144638" />
                   <mssgle:LineSegment
-                    End="-218.00000332083,-25.411764641534" />
+                    End="-328.00000332083,-24.8888487144638" />
                   <mssgle:CubicBezierSegment
-                    Point1="-218.00000332083,-25.411764641534"
-                    Point2="-222.00000332083,-25.411764641534"
-                    Point3="-222.00000332083,-29.411764641534" />
+                    Point1="-328.00000332083,-24.8888487144638"
+                    Point2="-332.00000332083,-24.8888487144638"
+                    Point3="-332.00000332083,-28.8888487144638" />
                   <mssgle:LineSegment
-                    End="-222.00000332083,-43.3235292830681" />
+                    End="-332.00000332083,-34.323529283068" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14837,7 +16061,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="496.61905492974,196.000002187841">
+          TopLeft="489.61905492974,157.000002187841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14871,7 +16095,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="1129.87620737228,196.058825213191">
+          TopLeft="1122.87620737228,157.058825213191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14882,9 +16106,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.40757946381994" />
+                    End="0,7.4075794638199" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,7.40757946381994"
+                    Point1="0,7.4075794638199"
                     Point2="0,11.4075794638199"
                     Point3="-4,11.4075794638199" />
                   <mssgle:LineSegment
@@ -14905,7 +16129,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="1127.0143026712,371.058826854072">
+          TopLeft="1120.0143026712,332.058826854072">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14939,7 +16163,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 18]"
-          TopLeft="535.952388263074,196.000002187841">
+          TopLeft="528.952388263074,157.000002187841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14950,9 +16174,9 @@ where [refTable].[FactVehicleStatsId] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.47182720217901" />
+                    End="0,7.47182720217899" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,7.47182720217901"
+                    Point1="0,7.47182720217899"
                     Point2="0,11.471827202179"
                     Point3="4,11.471827202179" />
                   <mssgle:LineSegment
@@ -14973,7 +16197,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 19]"
-          TopLeft="1080.20954070562,196.058825213191">
+          TopLeft="1073.20954070562,157.058825213191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15007,7 +16231,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="167.457143501846,172.594119775914">
+          TopLeft="160.457143501846,133.594119775914">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15028,8 +16252,76 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 20]"
+          TopLeft="494.666666666667,502">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.488090956292,-90.623526365947"
+              Start="0,0"
+              End="-113.488090956292,-83.123526365947">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-47.4883809256795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-47.4883809256795"
+                    Point2="0,-51.4883809256795"
+                    Point3="-4,-51.4883809256795" />
+                  <mssgle:LineSegment
+                    End="-109.488090956292,-51.4883809256795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.488090956292,-51.4883809256795"
+                    Point2="-113.488090956292,-51.4883809256795"
+                    Point3="-113.488090956292,-55.4883809256795" />
+                  <mssgle:LineSegment
+                    End="-113.488090956292,-83.123526365947" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 21]"
+          TopLeft="537.333333333333,502">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.3333255847293,-73.117643133579"
+              Start="0,0"
+              End="-13.3333255847293,-65.617643133579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-32.7156335510281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-32.7156335510281"
+                    Point2="0,-36.7156335510281"
+                    Point3="-4,-36.7156335510281" />
+                  <mssgle:LineSegment
+                    End="-9.33332558472932,-36.7156335510281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.33332558472932,-36.7156335510281"
+                    Point2="-13.3333255847293,-36.7156335510281"
+                    Point3="-13.3333255847293,-40.7156335510281" />
+                  <mssgle:LineSegment
+                    End="-13.3333255847293,-65.617643133579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="697.185724874662,153.470590401686">
+          TopLeft="690.185724874662,114.470590401686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15051,7 +16343,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="632.285724917237,86.4117656442946">
+          TopLeft="625.285724917237,47.4117656442946">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15073,7 +16365,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="517.214293006732,107.658824483911">
+          TopLeft="510.214293006732,68.658824483911">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15095,7 +16387,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="287.571432463976,194.176472722453">
+          TopLeft="280.571432463976,155.176472722453">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15129,7 +16421,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="105.642857605097,279.058826854072">
+          TopLeft="98.642857605097,240.058826854072">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15163,7 +16455,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="206.142857434798,393.694122237235">
+          TopLeft="199.142857434798,354.694122237235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15197,7 +16489,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="208.000000340598,471.176475274934">
+          TopLeft="201.000000340598,432.176475274934">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15221,6 +16513,44 @@ where [refTable].[FactVehicleStatsId] = ?</property>
                     Point3="29.4117670120367,-43.1333349742143" />
                   <mssgle:LineSegment
                     End="35.928575369777,-43.1333349742143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Dim AccidentSeverity"
+          TopLeft="624,511" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 22]"
+          TopLeft="713,511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-157.999992251396,-82.117643133579"
+              Start="0,0"
+              End="-157.999992251396,-74.617643133579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-37.0588215667895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-37.0588215667895"
+                    Point2="0,-41.0588215667895"
+                    Point3="-4,-41.0588215667895" />
+                  <mssgle:LineSegment
+                    End="-153.999992251396,-41.0588215667895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-153.999992251396,-41.0588215667895"
+                    Point2="-157.999992251396,-41.0588215667895"
+                    Point3="-157.999992251396,-45.0588215667895" />
+                  <mssgle:LineSegment
+                    End="-157.999992251396,-74.617643133579" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15742,19 +17072,19 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="196.8,41.6"
+          Size="197,42"
           Id="Package\Dim CasualtyType\update CasualtyType dds"
           TopLeft="99,298" />
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Dim CasualtyType\Lookup CasualtyTypeid dds"
           TopLeft="310,162" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Dim CasualtyType\insert CasualtyType dds"
           TopLeft="409,300.6" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\Dim CasualtyType\CasualtyType nds"
           TopLeft="290,40" />
         <EdgeLayout
@@ -15788,9 +17118,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16577,24 +17905,178 @@ where [refTable].[FactVehicleStatsId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Dim LACode">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Dim LACode\Lookup LACodeId DDS"
+          TopLeft="380,218" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Dim LACode\LACode NDS"
+          TopLeft="404,78" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Dim LACode\Update LACode DDS"
+          TopLeft="156,357" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Dim LACode\Insert LACode DDS"
+          TopLeft="611,359" />
+        <EdgeLayout
+          Id="Package\Dim LACode.Paths[OLE DB Source Output]"
+          TopLeft="472.75,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,98"
+              Start="0,0"
+              End="0,90.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim LACode.Paths[Lookup Match Output]"
+          TopLeft="472.5,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229,97"
+              Start="0,0"
+              End="-229,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.5"
+                    Point2="0,48.5"
+                    Point3="-4,48.5" />
+                  <mssgle:LineSegment
+                    End="-225,48.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225,48.5"
+                    Point2="-229,48.5"
+                    Point3="-229,52.5" />
+                  <mssgle:LineSegment
+                    End="-229,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-162.69138671875,53.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim LACode.Paths[Lookup Error Output]"
+          TopLeft="502,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="193.5,99"
+              Start="0,0"
+              End="193.5,91.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1093247588424" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.1093247588424"
+                    Point2="0,40.1093247588424"
+                    Point3="4,40.1093247588424" />
+                  <mssgle:LineSegment
+                    End="189.5,40.1093247588424" />
+                  <mssgle:CubicBezierSegment
+                    Point1="189.5,40.1093247588424"
+                    Point2="193.5,40.1093247588424"
+                    Point3="193.5,44.1093247588424" />
+                  <mssgle:LineSegment
+                    End="193.5,91.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.88361328125,45.1093247588424,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim LACode\Lookup LACodeId DDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim LACode\LACode NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Dim LocalAuthorityDistrict">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="233.6,41.6"
+          Size="234,42"
           Id="Package\Dim LocalAuthorityDistrict\update LocalAuthorityDistrict dds"
           TopLeft="198,286" />
         <NodeLayout
-          Size="197.6,41.6"
+          Size="198,42"
           Id="Package\Dim LocalAuthorityDistrict\LocalAuthorityDistrict nds"
           TopLeft="350,79" />
         <NodeLayout
-          Size="227.2,41.6"
+          Size="227,42"
           Id="Package\Dim LocalAuthorityDistrict\insert LocalAuthorityDistrict dds"
           TopLeft="466,288.4" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,42"
           Id="Package\Dim LocalAuthorityDistrict\Lookup LocalAuthorityDistrictid dds"
           TopLeft="334,185" />
         <EdgeLayout
@@ -16616,9 +18098,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16689,7 +18169,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-3.73305338541665,29.9615635179153,91.7327734375,11.609375"
+              BoundingBox="-3.73305338541666,29.9615635179153,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17902,19 +19382,19 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Dim VehicleType\update VehicleType dds"
           TopLeft="264,277" />
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Dim VehicleType\Lookup VehicleTypeid dds"
           TopLeft="387,171" />
         <NodeLayout
-          Size="184,41.6"
+          Size="184,42"
           Id="Package\Dim VehicleType\insert VehicleType dds"
           TopLeft="513,288" />
         <NodeLayout
-          Size="154.4,41.6"
+          Size="154,42"
           Id="Package\Dim VehicleType\VehicleType nds"
           TopLeft="355,52" />
         <EdgeLayout
@@ -18317,7 +19797,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.4453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,16.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -18353,7 +19833,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-96.0247200520833,51.4607679465776,96.3827734375,11.609375"
+              BoundingBox="-94.5247200520833,43.3806343906511,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -18389,7 +19869,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="29.9669466145835,50.5719532554258,91.7327734375,11.609375"
+              BoundingBox="31.4669466145834,42.4918196994992,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -18515,7 +19995,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.9669466145834,33.7843276936777,91.7327734375,11.609375"
+              BoundingBox="22.9669466145835,33.7843276936777,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -18538,9 +20018,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18562,9 +20040,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18636,7 +20112,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -18646,7 +20122,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -18733,9 +20209,7 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18857,6 +20331,160 @@ where [refTable].[FactVehicleStatsId] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim AccidentSeverity">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Dim AccidentSeverity\AccidentSeverity NDS"
+          TopLeft="499,74" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS"
+          TopLeft="477,190" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Dim AccidentSeverity\Update AccidentSeverity DDS"
+          TopLeft="212,309" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Dim AccidentSeverity\Insert AccidentSeverity DDS"
+          TopLeft="721,304" />
+        <EdgeLayout
+          Id="Package\Dim AccidentSeverity.Paths[OLE DB Source Output]"
+          TopLeft="589.75,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74"
+              Start="0,0"
+              End="0,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim AccidentSeverity.Paths[Lookup Match Output]"
+          TopLeft="590.5,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-270,77"
+              Start="0,0"
+              End="-270,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="-4,38.5" />
+                  <mssgle:LineSegment
+                    End="-266,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-266,38.5"
+                    Point2="-270,38.5"
+                    Point3="-270,42.5" />
+                  <mssgle:LineSegment
+                    End="-270,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-183.19138671875,43.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim AccidentSeverity.Paths[Lookup Error Output]"
+          TopLeft="627,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="199.5,72"
+              Start="0,0"
+              End="199.5,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1023622047244" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.1023622047244"
+                    Point2="0,29.1023622047244"
+                    Point3="4,29.1023622047244" />
+                  <mssgle:LineSegment
+                    End="195.5,29.1023622047244" />
+                  <mssgle:CubicBezierSegment
+                    Point1="195.5,29.1023622047244"
+                    Point2="199.5,29.1023622047244"
+                    Point3="199.5,33.1023622047244" />
+                  <mssgle:LineSegment
+                    End="199.5,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="53.88361328125,34.1023622047244,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim AccidentSeverity\AccidentSeverity NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim AccidentSeverity\Lookup AccidentSeverityId DDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

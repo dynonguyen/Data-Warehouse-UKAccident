@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{9D70F2FF-82E7-4CAB-8AAD-2182B6B12CE7}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{0A5F3967-3815-4ED5-8B4D-71FB2EB57842}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -283,6 +283,44 @@
               DTS:TextQualified="True"
               DTS:ObjectName="label"
               DTS:DTSID="{1CA9BED4-A7C9-43F4-9766-73F08FDE2AB4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LACode csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8643464D-F935-449A-AA61-1E4144124E7B}"
+      DTS:ObjectName="LACode csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\K18-FIT-HCMUS-18120609\Nam04(HK1)\HTTT-PV-TTKD\ThucHanh\_NopLan03\Accident\LACode.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LACodeId"
+              DTS:DTSID="{AE7C0934-D179-4112-A722-678DD9D92433}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LACodeDetail"
+              DTS:DTSID="{42DE4D4C-6F9E-428A-BF12-238AAA875F66}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -4090,6 +4128,166 @@ where [refTable].[Day] = ? and [refTable].[Month] = ? and [refTable].[Year] = ? 
               </outputs>
             </component>
             <component
+              refId="Package\Accident\Lookup LACodeId in LACode NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup LACodeId in LACode NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select LACodeId, LACodeDetail from LACode</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select LACodeId, LACodeDetail from LACode) [refTable]
+where [refTable].[LACodeDetail] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LACodeId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LACodeDetail" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Accident\Accident Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Accident\Lookup LACodeId in LACode NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Accident\Lookup LACodeId in LACode NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Accident\Lookup LACodeId in LACode NDS.Inputs[Lookup Input].Columns[LSOA_of_Accident_Location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LSOA_of_Accident_Location"
+                      lineageId="Package\Accident\Accident Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">LACodeDetail</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Accident\Lookup LACodeId in LACode NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Match Output].Columns[LACodeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Match Output].Columns[LACodeId]"
+                      name="LACodeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">LACodeId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Accident\Lookup LACodeId in LACode NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Accident\Lookup LACodeId in LACode NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Accident\Lookup PCD to get postcode"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -4873,6 +5071,12 @@ where [refTable].[TownName] = ? and [refTable].[CountyName] = ? and [refTable].[
                       cachedName="BuiltupRoad"
                       externalMetadataColumnId="Package\Accident\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BuildUpRoadId]"
                       lineageId="Package\Accident\Get BuildUpRoad Value.Outputs[Output 0].Columns[BuiltupRoad]" />
+                    <inputColumn
+                      refId="Package\Accident\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LACodeId]"
+                      cachedDataType="i4"
+                      cachedName="LACodeId"
+                      externalMetadataColumnId="Package\Accident\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LACodeId]"
+                      lineageId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Match Output].Columns[LACodeId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4948,6 +5152,10 @@ where [refTable].[TownName] = ? and [refTable].[CountyName] = ? and [refTable].[
                       refId="Package\Accident\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayId]"
                       dataType="i4"
                       name="DayId" />
+                    <externalMetadataColumn
+                      refId="Package\Accident\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LACodeId]"
+                      dataType="i4"
+                      name="LACodeId" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5912,14 +6120,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Accident\Lookup TownID in Town NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Accident.Paths[Lookup Match Output2]"
-              endId="Package\Accident\Get BuildUpRoad Value.Inputs[Input 0]"
-              name="Lookup Match Output"
-              startId="Package\Accident\Lookup DateID in Day NDS.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Accident.Paths[Lookup Match Output3]"
               endId="Package\Accident\Greater London Exception.Inputs[Input 0]"
               name="Lookup Match Output"
               startId="Package\Accident\Lookup Postcode for city county region country.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Accident.Paths[Lookup Match Output3]"
+              endId="Package\Accident\Lookup LACodeId in LACode NDS.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Accident\Lookup DateID in Day NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Accident.Paths[Lookup Match Output4]"
+              endId="Package\Accident\Get BuildUpRoad Value.Inputs[Input 0]"
+              name="Lookup Match Output"
+              startId="Package\Accident\Lookup LACodeId in LACode NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Accident.Paths[OLE DB Source Output]"
               endId="Package\Accident\Lookup PCD to get postcode.Inputs[Lookup Input]"
@@ -6495,6 +6708,281 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               endId="Package\Built_Up_Road\BuiltupRoad NDS.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Built_Up_Road\BuiltupRoad csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LACode"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83E164D7-9F14-4EAD-A513-F06F28D142BB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LACode"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\LACode\LACode csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="LACode csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LACode\LACode csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LACode csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[LACode csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\LACode\LACode csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Output].Columns[LACodeId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LACode\LACode csv.Outputs[Flat File Source Output].ExternalColumns[LACodeId]"
+                      length="50"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Output].Columns[LACodeId]"
+                      name="LACodeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Output].Columns[LACodeDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LACode\LACode csv.Outputs[Flat File Source Output].ExternalColumns[LACodeDetail]"
+                      length="50"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Output].Columns[LACodeDetail]"
+                      name="LACodeDetail"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Output].ExternalColumns[LACodeId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LACodeId" />
+                    <externalMetadataColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Output].ExternalColumns[LACodeDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LACodeDetail" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LACode\LACode NDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="LACode NDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[LACode]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LACode\LACode NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input].Columns[LACodeId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LACodeId"
+                      externalMetadataColumnId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input].ExternalColumns[LACodeId]"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Output].Columns[LACodeId]" />
+                    <inputColumn
+                      refId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input].Columns[LACodeDetail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LACodeDetail"
+                      externalMetadataColumnId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input].ExternalColumns[LACodeDetail]"
+                      lineageId="Package\LACode\LACode csv.Outputs[Flat File Source Output].Columns[LACodeDetail]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input].ExternalColumns[LACodeId]"
+                      dataType="i4"
+                      name="LACodeId" />
+                    <externalMetadataColumn
+                      refId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input].ExternalColumns[LACodeDetail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="LACodeDetail" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\LACode\LACode NDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LACode\LACode NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LACode\LACode NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LACode\LACode NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LACode\LACode NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\LACode.Paths[Flat File Source Output]"
+              endId="Package\LACode\LACode NDS.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\LACode\LACode csv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -13635,6 +14123,14 @@ WHERE VehicleId=?</property>
       DTS:ObjectName="Constraint 16"
       DTS:To="Package\toVehicle" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 17]"
+      DTS:CreationName=""
+      DTS:DTSID="{37AFEE86-0F96-497F-A7BF-CB8DBF5326DC}"
+      DTS:From="Package\LACode"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 17"
+      DTS:To="Package\Accident" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{841AA0DE-0CCC-4ED8-8491-BC21C7581CC0}"
@@ -13685,11 +14181,11 @@ WHERE VehicleId=?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{FDDF5A40-90EE-40F2-83BB-9B8A7EB32C9F}"
+      DTS:DTSID="{2595AB36-5F06-4C8E-B057-BB8E7814CD70}"
       DTS:From="Package\Built_Up_Road"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Accident" />
+      DTS:To="Package\LACode" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
@@ -13711,18 +14207,86 @@ WHERE VehicleId=?</property>
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="743,274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133,42"
+              Start="0,0"
+              End="125.5,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.5,0"
+                    Point2="66.5,0"
+                    Point3="66.5,4" />
+                  <mssgle:LineSegment
+                    End="66.5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.5,38"
+                    Point2="66.5,42"
+                    Point3="70.5,42" />
+                  <mssgle:LineSegment
+                    End="125.5,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="677.5,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-351.5,130"
+              Start="0,0"
+              End="-351.5,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50"
+                    Point2="0,54"
+                    Point3="-4,54" />
+                  <mssgle:LineSegment
+                    End="-347.5,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-347.5,54"
+                    Point2="-351.5,54"
+                    Point3="-351.5,58" />
+                  <mssgle:LineSegment
+                    End="-351.5,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="138,42"
+          Size="131,42"
           Id="Package\Accident"
           TopLeft="588.5,188.5" />
         <NodeLayout
-          Size="187,42"
+          Size="163,42"
           Id="Package\Accident_Severity"
-          TopLeft="76.5,197.5" />
+          TopLeft="14.5,195.5" />
         <NodeLayout
-          Size="160,42"
+          Size="148,42"
           Id="Package\Built_Up_Road"
-          TopLeft="349.5,191.5" />
+          TopLeft="230.5,193.5" />
         <NodeLayout
           Size="142,42"
           Id="Package\Road_type"
@@ -13746,7 +14310,7 @@ WHERE VehicleId=?</property>
         <NodeLayout
           Size="147,42"
           Id="Package\Urban_rural"
-          TopLeft="93.5,109.5" />
+          TopLeft="20.5,112.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="143.5,27.5">
@@ -13815,18 +14379,18 @@ WHERE VehicleId=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="310.5,130">
+          TopLeft="310.5,131.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-70,0"
+              EndConnector="-143,0"
               Start="0,0"
-              End="-62.5,0">
+              End="-135.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-62.5,0" />
+                    End="-135.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13837,18 +14401,18 @@ WHERE VehicleId=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="168.5,151.5">
+          TopLeft="95,154.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="0,41"
               Start="0,0"
-              End="0,38.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13859,40 +14423,18 @@ WHERE VehicleId=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="263.5,215.5">
+          TopLeft="177.5,215.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86,0"
+              EndConnector="53,0"
               Start="0,0"
-              End="78.5,0">
+              End="45.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="78.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="509.5,211">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="79,0"
-              Start="0,0"
-              End="71.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="71.5,0" />
+                    End="45.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13949,13 +14491,61 @@ WHERE VehicleId=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\LACode"
+          TopLeft="427,191" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="378.5,213.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.5,0"
+              Start="0,0"
+              End="41,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="546,210.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.5,0"
+              Start="0,0"
+              End="35,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <GroupLayout
           Text="Accident NDS"
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="732,294"
-          Size="732,337"
+          PanelSize="732,267"
+          Size="732,310"
           Id="c02d719f-facb-4918-9b1d-e7af0bf9018d"
           TopLeft="23.5,21.5">
           <GroupLayout.ChildrenIds>
@@ -13974,34 +14564,14 @@ WHERE VehicleId=?</property>
             <s:String>Package.PrecedenceConstraints[Constraint 5]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 6]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 7]</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 8]</s:String>
             <s:String>Package\Local_Au_Dis</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 3]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 4]</s:String>
+            <s:String>Package\LACode</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 8]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 17]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="750,271">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="126,0"
-              Start="0,0"
-              End="118.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="118.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="155,42"
           Id="Package\toCasualtyType"
@@ -14017,7 +14587,7 @@ WHERE VehicleId=?</property>
         <NodeLayout
           Size="150,42"
           Id="Package\toSexCasualty"
-          TopLeft="47,313" />
+          TopLeft="45,286" />
         <NodeLayout
           Size="131,42"
           Id="Package\toCasualty"
@@ -14126,18 +14696,18 @@ WHERE VehicleId=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="123.5,313">
+          TopLeft="122.5,286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-102.5"
+              EndConnector="0,-75.5"
               Start="0,0"
-              End="0,-95">
+              End="0,-68">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-95" />
+                    End="0,-68" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14151,10 +14721,10 @@ WHERE VehicleId=?</property>
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="464,410"
-          Size="464,453"
+          PanelSize="464,351"
+          Size="464,394"
           Id="ba528641-392c-47bc-b317-6b7b981ca131"
-          TopLeft="816.5,35.5">
+          TopLeft="816.5,84.5">
           <GroupLayout.ChildrenIds>
             <s:String>Package\toCasualtyType</s:String>
             <s:String>Package\toAgeBandCasualty</s:String>
@@ -14167,40 +14737,6 @@ WHERE VehicleId=?</property>
             <s:String>Package.PrecedenceConstraints[Constraint 12]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="681,295">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-359,162"
-              Start="0,0"
-              End="-359,154.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,77" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,77"
-                    Point2="0,81"
-                    Point3="-4,81" />
-                  <mssgle:LineSegment
-                    End="-355,81" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-355,81"
-                    Point2="-359,81"
-                    Point3="-359,85" />
-                  <mssgle:LineSegment
-                    End="-359,154.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="149,42"
           Id="Package\toVehicelType"
@@ -14286,10 +14822,10 @@ WHERE VehicleId=?</property>
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="635,174"
-          Size="635,217"
+          PanelSize="635,139"
+          Size="635,182"
           Id="defd7cfc-3472-4703-ae19-c2ef929f0ab1"
-          TopLeft="26.5,394.5">
+          TopLeft="30.5,361.5">
           <GroupLayout.ChildrenIds>
             <s:String>Package\toVehicelType</s:String>
             <s:String>Package\toJourneyPurposeDriver</s:String>
@@ -14311,9 +14847,9 @@ WHERE VehicleId=?</property>
           Id="Package\Accident\Lookup Postcode for city county region country"
           TopLeft="170.873018782966,312.930722939074" />
         <NodeLayout
-          Size="187,42"
+          Size="188,42"
           Id="Package\Accident\Get BuildUpRoad Value"
-          TopLeft="239.523813602876,757.988238093267" />
+          TopLeft="244.523813602876,906.988238093267" />
         <NodeLayout
           Size="218,42"
           Id="Package\Accident\Lookup TownID in Town NDS"
@@ -14331,6 +14867,10 @@ WHERE VehicleId=?</property>
           Id="Package\Accident\Get column Q"
           TopLeft="257.482997582188,583.913730563495" />
         <NodeLayout
+          Size="144,42"
+          Id="Package\Accident\Split postcode"
+          TopLeft="244.365083526592,231.960787566888" />
+        <NodeLayout
           Size="200,42"
           Id="Package\Accident\Greater London Exception"
           TopLeft="530,379.4" />
@@ -14341,59 +14881,11 @@ WHERE VehicleId=?</property>
         <NodeLayout
           Size="142,42"
           Id="Package\Accident\OLE DB Destination"
-          TopLeft="255.04989084558,850.050986633429" />
+          TopLeft="260.04989084558,999.050986633429" />
         <NodeLayout
           Size="148,42"
           Id="Package\Accident\Accident Stage"
           TopLeft="243.571432719426,42.8235300123485" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Accident\Split postcode"
-          TopLeft="244.365083526592,231.960787566888" />
-        <EdgeLayout
-          Id="Package\Accident.Paths[Output 02]"
-          TopLeft="336.686852224228,799.588238093267">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.462748540162"
-              Start="0,0"
-              End="0,42.962748540162">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.962748540162" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accident.Paths[Output 01]"
-          TopLeft="331.814516637416,625.513730563495">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.8155015725445"
-              Start="0,0"
-              End="0,32.3155015725445">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.3155015725445" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Accident.Paths[Output 0]"
           TopLeft="318.619051154779,273.560787566888">
@@ -14439,7 +14931,7 @@ WHERE VehicleId=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Accident.Paths[Lookup Match Output3]"
+          Id="Package\Accident.Paths[Lookup Match Output2]"
           TopLeft="320.873018782966,354.530722939074">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14471,30 +14963,6 @@ WHERE VehicleId=?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="106.372103889767,17.434638530463,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accident.Paths[Lookup Match Output2]"
-          TopLeft="333.834924647759,706.92923213604">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.0590059572278"
-              Start="0,0"
-              End="0,43.5590059572278">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5590059572278" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,15.9748154786139,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14602,6 +15070,102 @@ WHERE VehicleId=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accident.Paths[Output 02]"
+          TopLeft="334.786852224228,948.988238093267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.062748540162"
+              Start="0,0"
+              End="0,42.562748540162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.562748540162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accident.Paths[Output 01]"
+          TopLeft="331.814516637416,625.513730563495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.8155015725445"
+              Start="0,0"
+              End="0,32.3155015725445">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.3155015725445" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Accident\Lookup LACodeId in LACode NDS"
+          TopLeft="222,773" />
+        <EdgeLayout
+          Id="Package\Accident.Paths[Lookup Match Output3]"
+          TopLeft="337.373017846321,707.32923213604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.67076786396"
+              Start="0,0"
+              End="0,58.17076786396">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.17076786396" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.28069643198,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accident.Paths[Lookup Match Output4]"
+          TopLeft="339.261906801438,815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91.988238093267"
+              Start="0,0"
+              End="0,84.488238093267">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.488238093267" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,36.4394315466335,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -14611,7 +15175,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14621,7 +15185,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14634,7 +15198,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14644,7 +15208,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14657,7 +15221,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14667,7 +15231,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14680,7 +15244,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14690,7 +15254,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14727,7 +15291,7 @@ WHERE VehicleId=?</property>
     design-time-name="Package\Accident_Severity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Accident_Severity\AcciSeve NDS"
@@ -14767,7 +15331,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14790,7 +15356,7 @@ WHERE VehicleId=?</property>
     design-time-name="Package\Built_Up_Road">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158,42"
           Id="Package\Built_Up_Road\BuiltupRoad NDS"
@@ -14830,7 +15396,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14850,10 +15418,124 @@ WHERE VehicleId=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Road_type">
+    design-time-name="Package\LACode">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138,42"
+          Id="Package\LACode\LACode NDS"
+          TopLeft="494,257" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\LACode\LACode csv"
+          TopLeft="309,97" />
+        <EdgeLayout
+          Id="Package\LACode.Paths[Flat File Source Output]"
+          TopLeft="375.5,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187.5,118"
+              Start="0,0"
+              End="187.5,110.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55"
+                    Point2="0,59"
+                    Point3="4,59" />
+                  <mssgle:LineSegment
+                    End="183.5,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183.5,59"
+                    Point2="187.5,59"
+                    Point3="187.5,63" />
+                  <mssgle:LineSegment
+                    End="187.5,110.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\LACode\LACode NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Local_Au_Dis">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Local_Au_Dis\Local_auth_Dis nds"
+          TopLeft="353,198" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Local_Au_Dis\Local_Auth_Dis csv"
+          TopLeft="349,95" />
+        <EdgeLayout
+          Id="Package\Local_Au_Dis.Paths[Flat File Source Output]"
+          TopLeft="438.75,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Local_Au_Dis\Local_auth_Dis nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Road_type">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="187,42"
           Id="Package\Road_type\RoadType NDS"
@@ -14893,7 +15575,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14901,6 +15585,408 @@ WHERE VehicleId=?</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Road_type\RoadType NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\toAgeBandCasualty">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\toAgeBandCasualty\AgeBandCasualty nds"
+          TopLeft="220,267" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\toAgeBandCasualty\AgeBandCasualty csv"
+          TopLeft="337,100" />
+        <EdgeLayout
+          Id="Package\toAgeBandCasualty.Paths[Flat File Source Output]"
+          TopLeft="430.5,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116.5,125"
+              Start="0,0"
+              End="-116.5,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.5"
+                    Point2="0,62.5"
+                    Point3="-4,62.5" />
+                  <mssgle:LineSegment
+                    End="-112.5,62.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112.5,62.5"
+                    Point2="-116.5,62.5"
+                    Point3="-116.5,66.5" />
+                  <mssgle:LineSegment
+                    End="-116.5,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\toAgeBandCasualty\AgeBandCasualty nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\toCasualty">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\toCasualty\Insert Casualty"
+          TopLeft="273,390" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\toCasualty\Lookup CasualtyId"
+          TopLeft="153,277" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\toCasualty\Update Casualty"
+          TopLeft="31,393" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\toCasualty\Lookup AccidentId"
+          TopLeft="150,159" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\toCasualty\Casualty Stage"
+          TopLeft="156,50" />
+        <EdgeLayout
+          Id="Package\toCasualty.Paths[Lookup Error Output]"
+          TopLeft="265,319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,71"
+              Start="0,0"
+              End="84,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7972027972028" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7972027972028"
+                    Point2="0,28.7972027972028"
+                    Point3="4,28.7972027972028" />
+                  <mssgle:LineSegment
+                    End="80,28.7972027972028" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80,28.7972027972028"
+                    Point2="84,28.7972027972028"
+                    Point3="84,32.7972027972028" />
+                  <mssgle:LineSegment
+                    End="84,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-3.86638671875001,33.7972027972028,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\toCasualty.Paths[OLE DB Source Output]"
+          TopLeft="233.75,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\toCasualty.Paths[Lookup Match Output1]"
+          TopLeft="238,319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-127,74"
+              Start="0,0"
+              End="-127,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="-4,37" />
+                  <mssgle:LineSegment
+                    End="-123,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-123,37"
+                    Point2="-127,37"
+                    Point3="-127,41" />
+                  <mssgle:LineSegment
+                    End="-127,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-111.69138671875,42,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\toCasualty.Paths[Lookup Match Output]"
+          TopLeft="236.25,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,28.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\toCasualty\Lookup AccidentId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\toCasualty\Casualty Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\toCasualty\Lookup CasualtyId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\toCasualtySeverity">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\toCasualtySeverity\CasualtySeverity nds"
+          TopLeft="489,239" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\toCasualtySeverity\CasualtySeverity csv"
+          TopLeft="382,86" />
+        <EdgeLayout
+          Id="Package\toCasualtySeverity.Paths[Flat File Source Output]"
+          TopLeft="472.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.5,111"
+              Start="0,0"
+              End="107.5,103.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.5"
+                    Point2="0,55.5"
+                    Point3="4,55.5" />
+                  <mssgle:LineSegment
+                    End="103.5,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.5,55.5"
+                    Point2="107.5,55.5"
+                    Point3="107.5,59.5" />
+                  <mssgle:LineSegment
+                    End="107.5,103.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\toCasualtySeverity\CasualtySeverity nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\toCasualtyType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\toCasualtyType\CasualtyType nds"
+          TopLeft="670,315" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\toCasualtyType\CasualtyType csv"
+          TopLeft="597,149" />
+        <EdgeLayout
+          Id="Package\toCasualtyType.Paths[Flat File Source Output]"
+          TopLeft="680,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.5,124"
+              Start="0,0"
+              End="73.5,116.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58"
+                    Point2="0,62"
+                    Point3="4,62" />
+                  <mssgle:LineSegment
+                    End="69.5,62" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.5,62"
+                    Point2="73.5,62"
+                    Point3="73.5,66" />
+                  <mssgle:LineSegment
+                    End="73.5,116.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\toCasualtyType\CasualtyType nds">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14960,7 +16046,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15008,7 +16096,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15018,7 +16106,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15050,7 +16138,7 @@ WHERE VehicleId=?</property>
     design-time-name="Package\toCountry">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="139,42"
           Id="Package\toCountry\Country NDS"
@@ -15090,7 +16178,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15169,7 +16259,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15203,7 +16295,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15251,7 +16345,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15261,7 +16355,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15286,6 +16380,71 @@ WHERE VehicleId=?</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\toJourneyPurposeDriver">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="209,42"
+          Id="Package\toJourneyPurposeDriver\JourneyPurposeDriver nds"
+          TopLeft="347,248" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\toJourneyPurposeDriver\JourneyPurposeDriver csv"
+          TopLeft="180,67" />
+        <EdgeLayout
+          Id="Package\toJourneyPurposeDriver.Paths[Flat File Source Output]"
+          TopLeft="284,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.5,139"
+              Start="0,0"
+              End="167.5,131.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.5"
+                    Point2="0,69.5"
+                    Point3="4,69.5" />
+                  <mssgle:LineSegment
+                    End="163.5,69.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.5,69.5"
+                    Point2="167.5,69.5"
+                    Point3="167.5,73.5" />
+                  <mssgle:LineSegment
+                    End="167.5,131.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\toJourneyPurposeDriver\JourneyPurposeDriver nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -15337,7 +16496,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15393,7 +16554,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15403,7 +16564,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15424,270 +16585,18 @@ WHERE VehicleId=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Urban_rural">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Urban_rural\UrbanRural NDS"
-          TopLeft="272,192" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Urban_rural\UrbanRural csv"
-          TopLeft="329,68" />
-        <EdgeLayout
-          Id="Package\Urban_rural.Paths[Flat File Source Output]"
-          TopLeft="406.5,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,82"
-              Start="0,0"
-              End="-42,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37"
-                    Point2="0,41"
-                    Point3="-4,41" />
-                  <mssgle:LineSegment
-                    End="-38,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,41"
-                    Point2="-42,41"
-                    Point3="-42,45" />
-                  <mssgle:LineSegment
-                    End="-42,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Urban_rural\UrbanRural NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\toCasualtyType">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="166,42"
-          Id="Package\toCasualtyType\CasualtyType csv"
-          TopLeft="597,149" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\toCasualtyType\CasualtyType nds"
-          TopLeft="670,315" />
-        <EdgeLayout
-          Id="Package\toCasualtyType.Paths[Flat File Source Output]"
-          TopLeft="680,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.5,124"
-              Start="0,0"
-              End="73.5,116.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,58"
-                    Point2="0,62"
-                    Point3="4,62" />
-                  <mssgle:LineSegment
-                    End="69.5,62" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.5,62"
-                    Point2="73.5,62"
-                    Point3="73.5,66" />
-                  <mssgle:LineSegment
-                    End="73.5,116.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\toCasualtyType\CasualtyType nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\toAgeBandCasualty">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="187,42"
-          Id="Package\toAgeBandCasualty\AgeBandCasualty csv"
-          TopLeft="337,100" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\toAgeBandCasualty\AgeBandCasualty nds"
-          TopLeft="220,267" />
-        <EdgeLayout
-          Id="Package\toAgeBandCasualty.Paths[Flat File Source Output]"
-          TopLeft="430.5,142">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-116.5,125"
-              Start="0,0"
-              End="-116.5,117.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,58.5"
-                    Point2="0,62.5"
-                    Point3="-4,62.5" />
-                  <mssgle:LineSegment
-                    End="-112.5,62.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-112.5,62.5"
-                    Point2="-116.5,62.5"
-                    Point3="-116.5,66.5" />
-                  <mssgle:LineSegment
-                    End="-116.5,117.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\toAgeBandCasualty\AgeBandCasualty nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\toCasualtySeverity">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\toCasualtySeverity\CasualtySeverity csv"
-          TopLeft="382,86" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\toCasualtySeverity\CasualtySeverity nds"
-          TopLeft="489,239" />
-        <EdgeLayout
-          Id="Package\toCasualtySeverity.Paths[Flat File Source Output]"
-          TopLeft="472.5,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107.5,111"
-              Start="0,0"
-              End="107.5,103.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.5"
-                    Point2="0,55.5"
-                    Point3="4,55.5" />
-                  <mssgle:LineSegment
-                    End="103.5,55.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.5,55.5"
-                    Point2="107.5,55.5"
-                    Point3="107.5,59.5" />
-                  <mssgle:LineSegment
-                    End="107.5,103.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\toCasualtySeverity\CasualtySeverity nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\toSexCasualty">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="160,42"
-          Id="Package\toSexCasualty\SexCasualty csv"
-          TopLeft="296,56" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="161,42"
           Id="Package\toSexCasualty\SexCasualty nds"
           TopLeft="190,237" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\toSexCasualty\SexCasualty csv"
+          TopLeft="296,56" />
         <EdgeLayout
           Id="Package\toSexCasualty.Paths[Flat File Source Output]"
           TopLeft="376,98">
@@ -15719,7 +16628,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15739,215 +16650,10 @@ WHERE VehicleId=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\toCasualty">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="160,42"
-          Id="Package\toCasualty\Update Casualty"
-          TopLeft="31,393" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\toCasualty\Lookup AccidentId"
-          TopLeft="150,159" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\toCasualty\Casualty Stage"
-          TopLeft="156,50" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\toCasualty\Insert Casualty"
-          TopLeft="273,390" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\toCasualty\Lookup CasualtyId"
-          TopLeft="153,277" />
-        <EdgeLayout
-          Id="Package\toCasualty.Paths[Lookup Error Output]"
-          TopLeft="265,319">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84,71"
-              Start="0,0"
-              End="84,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.7972027972028" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.7972027972028"
-                    Point2="0,28.7972027972028"
-                    Point3="4,28.7972027972028" />
-                  <mssgle:LineSegment
-                    End="80,28.7972027972028" />
-                  <mssgle:CubicBezierSegment
-                    Point1="80,28.7972027972028"
-                    Point2="84,28.7972027972028"
-                    Point3="84,32.7972027972028" />
-                  <mssgle:LineSegment
-                    End="84,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.86638671875001,33.7972027972028,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\toCasualty.Paths[OLE DB Source Output]"
-          TopLeft="233.75,92">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67"
-              Start="0,0"
-              End="0,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\toCasualty.Paths[Lookup Match Output1]"
-          TopLeft="238,319">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-127,74"
-              Start="0,0"
-              End="-127,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="-4,37" />
-                  <mssgle:LineSegment
-                    End="-123,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-123,37"
-                    Point2="-127,37"
-                    Point3="-127,41" />
-                  <mssgle:LineSegment
-                    End="-127,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-111.69138671875,42,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\toCasualty.Paths[Lookup Match Output]"
-          TopLeft="236.25,201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76"
-              Start="0,0"
-              End="0,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\toCasualty\Lookup AccidentId">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\toCasualty\Casualty Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\toCasualty\Lookup CasualtyId">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\toVehicelType">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="159,42"
           Id="Package\toVehicelType\VehicleType csv"
@@ -15987,7 +16693,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16007,73 +16715,14 @@ WHERE VehicleId=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\toJourneyPurposeDriver">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="208,42"
-          Id="Package\toJourneyPurposeDriver\JourneyPurposeDriver csv"
-          TopLeft="180,67" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\toJourneyPurposeDriver\JourneyPurposeDriver nds"
-          TopLeft="347,248" />
-        <EdgeLayout
-          Id="Package\toJourneyPurposeDriver.Paths[Flat File Source Output]"
-          TopLeft="284,109">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="167.5,139"
-              Start="0,0"
-              End="167.5,131.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,65.5"
-                    Point2="0,69.5"
-                    Point3="4,69.5" />
-                  <mssgle:LineSegment
-                    End="163.5,69.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="163.5,69.5"
-                    Point2="167.5,69.5"
-                    Point3="167.5,73.5" />
-                  <mssgle:LineSegment
-                    End="167.5,131.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\toJourneyPurposeDriver\JourneyPurposeDriver nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\toVehicle">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\toVehicle\Lookup VehicleId"
+          TopLeft="205,268" />
         <NodeLayout
           Size="147,42"
           Id="Package\toVehicle\Vehicle Stage"
@@ -16090,10 +16739,6 @@ WHERE VehicleId=?</property>
           Size="146,42"
           Id="Package\toVehicle\Insert Vehicle"
           TopLeft="343,393" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\toVehicle\Lookup VehicleId"
-          TopLeft="205,268" />
         <EdgeLayout
           Id="Package\toVehicle.Paths[OLE DB Source Output]"
           TopLeft="282,81">
@@ -16113,7 +16758,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16234,7 +16881,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -16244,7 +16891,7 @@ WHERE VehicleId=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16253,6 +16900,94 @@ WHERE VehicleId=?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\toVehicle\Lookup VehicleId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Urban_rural">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Urban_rural\UrbanRural NDS"
+          TopLeft="272,192" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Urban_rural\UrbanRural csv"
+          TopLeft="329,68" />
+        <EdgeLayout
+          Id="Package\Urban_rural.Paths[Flat File Source Output]"
+          TopLeft="406.5,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,82"
+              Start="0,0"
+              End="-42,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="-4,41" />
+                  <mssgle:LineSegment
+                    End="-38,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,41"
+                    Point2="-42,41"
+                    Point3="-42,45" />
+                  <mssgle:LineSegment
+                    End="-42,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Urban_rural\UrbanRural NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accident\Lookup LACodeId in LACode NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -16271,57 +17006,6 @@ WHERE VehicleId=?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Local_Au_Dis">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Local_Au_Dis\Local_Auth_Dis csv"
-          TopLeft="349,95" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Local_Au_Dis\Local_auth_Dis nds"
-          TopLeft="353,198" />
-        <EdgeLayout
-          Id="Package\Local_Au_Dis.Paths[Flat File Source Output]"
-          TopLeft="438.75,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Local_Au_Dis\Local_auth_Dis nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
