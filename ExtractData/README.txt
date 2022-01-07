@@ -1,0 +1,1 @@
+Folder ExtractData chứa các file trích ra từ dữ liệu gốc --> Được sử dụng để nạp ở NDS

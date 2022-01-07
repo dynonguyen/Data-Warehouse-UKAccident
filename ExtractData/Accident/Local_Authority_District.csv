@@ -118,7 +118,7 @@
 211,Doncaster
 213,Rotherham
 215,Sheffield
-228,"Kingston upon Hull, City of"
+228,Kingston upon Hull City of
 231,East Riding of Yorkshire
 232,North Lincolnshire
 233,North East Lincolnshire
@@ -147,7 +147,7 @@
 282,Shrewsbury and Atcham
 283,South Shropshire
 284,Telford and Wrekin
-285,"Herefordshire, County of "
+285,Herefordshire County of 
 286,Shropshire
 290,North Warwickshire
 291,Nuneaton and Bedworth
@@ -332,7 +332,7 @@
 594,Penwith
 595,Restormel
 596,Cornwall
-601,"Bristol, City of"
+601,Bristol City of
 605,North Somerset
 606,Mendip
 607,Sedgemoor
@@ -376,7 +376,7 @@
 741,Cardiff
 742,Merthyr Tydfil
 743,Neath Port Talbot
-744,"Rhondda, Cynon, Taff"
+744,Rhondda Cynon Taff
 745,Swansea
 746,The Vale of Glamorgan
 750,Ceredigion
@@ -396,7 +396,7 @@
 920,East Dunbartonshire
 921,East Lothian
 922,East Renfrewshire
-923,"Edinburgh, City of"
+923,Edinburgh City of
 924,Falkirk
 925,Fife
 926,Glasgow City
