@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{5292ABD0-CDC3-4D8D-9D55-06A3D603DBDF}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{760CC646-20DE-4868-9271-E88D89C07EE8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -212,500 +212,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{579ADEC4-59E2-4A09-9FF0-9278A3879BEB}"
-      DTS:ObjectName="Flat File Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Accident\LACode.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="LACodeId"
-              DTS:DTSID="{2FFBA415-0CC4-4BC1-BEFE-C508FFAE64CB}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="LACodeDetail"
-              DTS:DTSID="{9F43BE01-6136-49F7-BD54-4F2949A650EB}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{8BACB3E4-8294-4C09-81D8-D55B6254CE28}"
-      DTS:ObjectName="Flat File Connection Manager 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Accident\Local_Authority_District.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{E07BF02E-B221-403A-8B3C-BF777016BEBA}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{1C2DEEE3-3049-4A38-92EA-AF08706BB140}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 10]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{1DF81A48-81ED-4CFC-85DD-0F072B2A21B9}"
-      DTS:ObjectName="Flat File Connection Manager 10">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Vehicle\VehicleType.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{3F035979-669A-4A58-8A99-C867B1DC4357}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{07502D72-8873-448B-91AD-75DEE6807AF3}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 11]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{56238483-60D4-46C0-A7FA-C88A75345915}"
-      DTS:ObjectName="Flat File Connection Manager 11">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="D:\K18-FIT-HCMUS-18120609\Nam04(HK1)\HTTT-PV-TTKD\ThucHanh\_NopLan03\Accident\Local_Authority_District.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{9A7500A3-2704-474A-A46A-734F43CBF271}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{B565773A-B026-42B5-911A-B7933BB63B45}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 12]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{1E3CE85E-662B-4338-9843-6724D3F47188}"
-      DTS:ObjectName="Flat File Connection Manager 12">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Vehicle\JourneyPurpose.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{3E242C76-23DA-4A67-8BF7-BBBF34B58E93}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{4A1D3CB2-0972-4811-951A-1FBC137A6345}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{09567576-9B1C-4AC0-B397-44BED34AA0E4}"
-      DTS:ObjectName="Flat File Connection Manager 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Accident\Road_Type.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{C0F8A269-C107-4CAC-B453-D95B04B1F580}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{FF29DFDD-B665-47C8-A97A-A5444CD2D383}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{4FD7B28F-7DD2-4CBF-A175-CC16222E7693}"
-      DTS:ObjectName="Flat File Connection Manager 3">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Accident\urban_rural.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{299A6B4B-B0F1-4960-849D-2419DFEFE706}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{95BF922F-AC60-471C-99F5-B5B350B159EE}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 4]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{587D4DF7-C712-4DAD-A028-164587E2ED46}"
-      DTS:ObjectName="Flat File Connection Manager 4">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Accident\Accident_Severity.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{13A36362-E16F-4027-9877-FAA4DA35E3B1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{3AB2B46F-CC11-4ECA-8BF1-47BEAB3239BA}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 5]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{EBF02A68-165C-4F92-99E7-93A5DEE40617}"
-      DTS:ObjectName="Flat File Connection Manager 5">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Accident\BuildUpRoad.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{7050DF22-FB6D-4DAB-9F2B-BD46875B999F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{4DF233D8-BC2A-4328-B044-AD1B801B5EED}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 6]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{332516F8-77CC-4B97-8C76-298B4916EB76}"
-      DTS:ObjectName="Flat File Connection Manager 6">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Casualty\CasualtyType.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{68B4CE56-5092-41C7-8FF3-355A995DFC41}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{2DEDFC5B-6731-447F-B98E-C1FEB09152CE}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 7]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{28F8E005-E67F-43F9-BB27-3BBC2340643B}"
-      DTS:ObjectName="Flat File Connection Manager 7">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Casualty\AgeBandCasualty.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{6458474E-368F-4E99-80FE-0351F89D06BF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{D47E085C-BC1B-4440-A7DD-D990DE94100F}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 8]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{677944CA-D15C-4557-B67D-6DE72D9E3148}"
-      DTS:ObjectName="Flat File Connection Manager 8">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Casualty\CasualtySeverity.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{2332ACF2-0B4C-4BAC-ABF7-36BEA79AEAE0}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{4C23FDB4-D99F-4783-A3E7-AAE15053DAD4}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 9]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{5B5FE9C9-8936-4427-80DC-651AD6183C78}"
-      DTS:ObjectName="Flat File Connection Manager 9">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="2057"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Thanh\OneDrive\Desktop\TTKD-12-BI-Project-UKAccidents\resources\Casualty\SexCasualty.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="code"
-              DTS:DTSID="{8D721D55-D2FD-4D56-807A-9133DEDC9285}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="label"
-              DTS:DTSID="{7EF79CD4-33F0-4163-9C09-A4C103758B67}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JourneyPurposeDriver csv]"
       DTS:CreationName="FLATFILE"
       DTS:Description="JourneyPurposeDriver csv"
@@ -799,18 +305,6 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{1029CB6E-01D8-4879-84AF-987BACC9BDD4}"
       DTS:ObjectName="LocalHost.TTKD12_UKAccidents_NDS">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=TTKD12_UKAccidents_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8925912D-25FB-467D-BAD1-F5C390017A02}"
-      DTS:ObjectName="LocalHost.TTKD12_UKAccidents_NDS 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -6649,7 +6143,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="AcciSeve csv"
               usesDispositions="true"
               version="1">
@@ -6666,8 +6160,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Accident_Severity\AcciSeve csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 4]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  connectionManagerID="Package.ConnectionManagers[AcciSeve csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[AcciSeve csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -6924,7 +6418,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="BuiltupRoad csv"
               usesDispositions="true"
               version="1">
@@ -6941,8 +6435,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Built_Up_Road\BuiltupRoad csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 5]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 5]"
+                  connectionManagerID="Package.ConnectionManagers[BuiltupRoad csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[BuiltupRoad csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -7199,7 +6693,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="LACode csv"
               usesDispositions="true"
               version="1">
@@ -7216,8 +6710,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\LACode\LACode csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[LACode csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[LACode csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -7374,8 +6868,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\LACode\LACode NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS 1]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7474,7 +6968,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="Local_Auth_Dis csv"
               usesDispositions="true"
               version="1">
@@ -7491,8 +6985,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Local_Au_Dis\Local_Auth_Dis csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Local_Auth_Dis csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Local_Auth_Dis csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -7749,7 +7243,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="RoadType csv"
               usesDispositions="true"
               version="1">
@@ -7766,8 +7260,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\Road_type\RoadType csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerID="Package.ConnectionManagers[RoadType csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[RoadType csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -8024,7 +7518,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="AgeBandCasualty csv"
               usesDispositions="true"
               version="1">
@@ -8041,8 +7535,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\toAgeBandCasualty\AgeBandCasualty csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 7]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 7]"
+                  connectionManagerID="Package.ConnectionManagers[AgeBandCasualty csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[AgeBandCasualty csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -9426,7 +8920,7 @@ WHERE CasualtyId=?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="CasualtySeverity csv"
               usesDispositions="true"
               version="1">
@@ -9443,8 +8937,8 @@ WHERE CasualtyId=?</property>
               <connections>
                 <connection
                   refId="Package\toCasualtySeverity\CasualtySeverity csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 8]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 8]"
+                  connectionManagerID="Package.ConnectionManagers[CasualtySeverity csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[CasualtySeverity csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -9701,7 +9195,7 @@ WHERE CasualtyId=?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="CasualtyType csv"
               usesDispositions="true"
               version="1">
@@ -9718,8 +9212,8 @@ WHERE CasualtyId=?</property>
               <connections>
                 <connection
                   refId="Package\toCasualtyType\CasualtyType csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 6]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 6]"
+                  connectionManagerID="Package.ConnectionManagers[CasualtyType csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[CasualtyType csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -12078,7 +11572,7 @@ where [refTable].[RegionName] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="JourneyPurposeDriver csv"
               usesDispositions="true"
               version="1">
@@ -12095,8 +11589,8 @@ where [refTable].[RegionName] = ?</property>
               <connections>
                 <connection
                   refId="Package\toJourneyPurposeDriver\JourneyPurposeDriver csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 12]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 12]"
+                  connectionManagerID="Package.ConnectionManagers[JourneyPurposeDriver csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[JourneyPurposeDriver csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -12810,7 +12304,7 @@ where [refTable].[CountryName] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="SexCasualty csv"
               usesDispositions="true"
               version="1">
@@ -12827,8 +12321,8 @@ where [refTable].[CountryName] = ?</property>
               <connections>
                 <connection
                   refId="Package\toSexCasualty\SexCasualty csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 9]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 9]"
+                  connectionManagerID="Package.ConnectionManagers[SexCasualty csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[SexCasualty csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -13214,7 +12708,7 @@ where [refTable].[CountryName] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="VehicleType csv"
               usesDispositions="true"
               version="1">
@@ -13231,8 +12725,8 @@ where [refTable].[CountryName] = ?</property>
               <connections>
                 <connection
                   refId="Package\toVehicelType\VehicleType csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 10]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 10]"
+                  connectionManagerID="Package.ConnectionManagers[VehicleType csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[VehicleType csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -14260,7 +13754,7 @@ WHERE VehicleId=?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="1033"
               name="UrbanRural csv"
               usesDispositions="true"
               version="1">
@@ -14277,8 +13771,8 @@ WHERE VehicleId=?</property>
               <connections>
                 <connection
                   refId="Package\Urban_rural\UrbanRural csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 3]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+                  connectionManagerID="Package.ConnectionManagers[UrbanRural csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[UrbanRural csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -14744,39 +14238,39 @@ WHERE VehicleId=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="131.2,41.6"
+          Size="131,42"
           Id="Package\Accident"
           TopLeft="588.5,188.5" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\Accident_Severity"
           TopLeft="14.5,195.5" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\Built_Up_Road"
           TopLeft="230.5,193.5" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\Road_type"
           TopLeft="310.5,108.5" />
         <NodeLayout
-          Size="124,41.6"
+          Size="124,42"
           Id="Package\toCity"
           TopLeft="590.5,5.5" />
         <NodeLayout
-          Size="137.6,41.6"
+          Size="138,42"
           Id="Package\toCountry"
           TopLeft="5.5,7.5" />
         <NodeLayout
-          Size="131.2,41.6"
+          Size="131,42"
           Id="Package\toCounty"
           TopLeft="408.5,6.5" />
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\toRegion"
           TopLeft="195.5,5.5" />
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\Urban_rural"
           TopLeft="20.5,112.5" />
         <EdgeLayout
@@ -14912,7 +14406,7 @@ WHERE VehicleId=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\Local_Au_Dis"
           TopLeft="575,110" />
         <EdgeLayout
@@ -14960,7 +14454,7 @@ WHERE VehicleId=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="119.2,41.6"
+          Size="119,42"
           Id="Package\LACode"
           TopLeft="427,191" />
         <EdgeLayout
@@ -15012,8 +14506,8 @@ WHERE VehicleId=?</property>
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="732,267.2"
-          Size="732,310.4"
+          PanelSize="732,267"
+          Size="732,310"
           Id="c02d719f-facb-4918-9b1d-e7af0bf9018d"
           TopLeft="23.5,21.5">
           <GroupLayout.ChildrenIds>
@@ -15041,23 +14535,23 @@ WHERE VehicleId=?</property>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\toCasualtyType"
           TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\toAgeBandCasualty"
           TopLeft="274,63" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\toCasualtySeverity"
           TopLeft="288,223" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\toSexCasualty"
           TopLeft="45,286" />
         <NodeLayout
-          Size="131.2,41.6"
+          Size="131,42"
           Id="Package\toCasualty"
           TopLeft="59.5,168.5" />
         <EdgeLayout
@@ -15189,8 +14683,8 @@ WHERE VehicleId=?</property>
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="464,351.2"
-          Size="464,393.6"
+          PanelSize="464,351"
+          Size="464,394"
           Id="ba528641-392c-47bc-b317-6b7b981ca131"
           TopLeft="816.5,84.5">
           <GroupLayout.ChildrenIds>
@@ -15206,15 +14700,15 @@ WHERE VehicleId=?</property>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\toVehicelType"
           TopLeft="9.5,37.5" />
         <NodeLayout
-          Size="198.4,41.6"
+          Size="198,42"
           Id="Package\toJourneyPurposeDriver"
           TopLeft="432,77" />
         <NodeLayout
-          Size="124,41.6"
+          Size="124,42"
           Id="Package\toVehicle"
           TopLeft="234,20" />
         <EdgeLayout
@@ -15290,8 +14784,8 @@ WHERE VehicleId=?</property>
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="635.2,139.2"
-          Size="635.2,182.4"
+          PanelSize="635,139"
+          Size="635,182"
           Id="defd7cfc-3472-4703-ae19-c2ef929f0ab1"
           TopLeft="30.5,361.5">
           <GroupLayout.ChildrenIds>
@@ -15311,51 +14805,51 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="217.6,41.6"
+          Size="218,42"
           Id="Package\Accident\Lookup TownID in Town NDS"
           TopLeft="213.628121551898,410.82689128641" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\Accident\OLE DB Destination"
           TopLeft="260.04989084558,999.050986633429" />
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Accident\Lookup DateID in Day NDS"
           TopLeft="231.746035692643,665.32923213604" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,42"
           Id="Package\Accident\Lookup LACodeId in LACode NDS"
           TopLeft="222,773" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Accident\Get column D, M, Y"
           TopLeft="238.43537821019,502.389922428791" />
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Accident\Greater London Exception"
           TopLeft="530,379.4" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Accident\Split postcode"
           TopLeft="244.365083526592,231.960787566888" />
         <NodeLayout
-          Size="188,41.6"
+          Size="188,42"
           Id="Package\Accident\Get BuildUpRoad Value"
           TopLeft="244.523813602876,906.988238093267" />
         <NodeLayout
-          Size="300,41.6"
+          Size="300,42"
           Id="Package\Accident\Lookup Postcode for city county region country"
           TopLeft="170.873018782966,312.930722939074" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\Accident\Accident Stage"
           TopLeft="243.571432719426,42.8235300123485" />
         <NodeLayout
-          Size="212,41.6"
+          Size="212,42"
           Id="Package\Accident\Lookup PCD to get postcode"
           TopLeft="214.626987688396,132.526145572343" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\Accident\Get column Q"
           TopLeft="257.482997582188,583.913730563495" />
         <EdgeLayout
@@ -15389,7 +14883,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15411,7 +14907,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15433,7 +14931,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15455,7 +14955,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15477,7 +14979,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15631,7 +15135,9 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15784,11 +15290,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Accident_Severity\AcciSeve NDS"
           TopLeft="270.714290324523,185.058826124792" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Accident_Severity\AcciSeve csv"
           TopLeft="332.571433230322,51.4705889431251" />
         <EdgeLayout
@@ -15849,11 +15355,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\Built_Up_Road\BuiltupRoad NDS"
           TopLeft="273,185" />
         <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\Built_Up_Road\BuiltupRoad csv"
           TopLeft="282,81" />
         <EdgeLayout
@@ -15912,13 +15418,13 @@ WHERE VehicleId=?</property>
     design-time-name="Package\LACode">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="137.6,41.6"
+          Size="138,42"
           Id="Package\LACode\LACode NDS"
           TopLeft="494,257" />
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\LACode\LACode csv"
           TopLeft="309,97" />
         <EdgeLayout
@@ -15952,9 +15458,7 @@ WHERE VehicleId=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15979,11 +15483,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Local_Au_Dis\Local_auth_Dis nds"
           TopLeft="353,198" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Local_Au_Dis\Local_Auth_Dis csv"
           TopLeft="349,95" />
         <EdgeLayout
@@ -16032,11 +15536,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\Road_type\RoadType NDS"
           TopLeft="309,230" />
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\Road_type\RoadType csv"
           TopLeft="371,85" />
         <EdgeLayout
@@ -16097,11 +15601,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="188,41.6"
+          Size="188,42"
           Id="Package\toAgeBandCasualty\AgeBandCasualty nds"
           TopLeft="220,267" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\toAgeBandCasualty\AgeBandCasualty csv"
           TopLeft="337,100" />
         <EdgeLayout
@@ -16369,11 +15873,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\toCasualtySeverity\CasualtySeverity nds"
           TopLeft="489,239" />
         <NodeLayout
-          Size="180.8,41.6"
+          Size="181,42"
           Id="Package\toCasualtySeverity\CasualtySeverity csv"
           TopLeft="382,86" />
         <EdgeLayout
@@ -16434,11 +15938,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\toCasualtyType\CasualtyType nds"
           TopLeft="670,315" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\toCasualtyType\CasualtyType csv"
           TopLeft="597,149" />
         <EdgeLayout
@@ -16635,11 +16139,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\toCountry\Country NDS"
           TopLeft="394,229" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\toCountry\Postcode Stage"
           TopLeft="354,82" />
         <EdgeLayout
@@ -16884,11 +16388,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\toJourneyPurposeDriver\JourneyPurposeDriver nds"
           TopLeft="347,248" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\toJourneyPurposeDriver\JourneyPurposeDriver csv"
           TopLeft="180,67" />
         <EdgeLayout
@@ -17085,11 +16589,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\toSexCasualty\SexCasualty nds"
           TopLeft="190,237" />
         <NodeLayout
-          Size="160,41.6"
+          Size="160,42"
           Id="Package\toSexCasualty\SexCasualty csv"
           TopLeft="296,56" />
         <EdgeLayout
@@ -17150,11 +16654,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\toVehicelType\VehicleType csv"
           TopLeft="229,58" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\toVehicelType\OLE DB Destination"
           TopLeft="406,256" />
         <EdgeLayout
@@ -17422,11 +16926,11 @@ WHERE VehicleId=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184.8,41.6"
+          Size="185,42"
           Id="Package\Urban_rural\UrbanRural NDS"
           TopLeft="272,192" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Urban_rural\UrbanRural csv"
           TopLeft="329,68" />
         <EdgeLayout
