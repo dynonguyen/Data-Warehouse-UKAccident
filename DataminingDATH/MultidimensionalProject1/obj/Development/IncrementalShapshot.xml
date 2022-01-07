@@ -40,30 +40,37 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>InAyYlEHSaFiBDBkxI5VjgkziJU=06/01/2022 00:28:0806/01/2022 00:28:06</TimeStamp>
+        <TimeStamp>nK2Hdy4vwNYObizRehcgp/sfrVo=07/01/2022 01:22:3707/01/2022 01:22:37</TimeStamp>
         <ID>
           <String>TTKD12 UK Accidents DDS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>tbao4VAlLvQZcVdSA21NxxozFok=04/01/2022 22:03:4104/01/2022 23:14:48</TimeStamp>
+        <TimeStamp>wW+uvIOTWNHbMgFCC34xNGRHBcA=07/01/2022 01:09:0007/01/2022 01:08:23</TimeStamp>
         <ID>
           <String>Acident Severity Predict</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>qQpMBhjN9Z+3pwDwhBN5ldPALLo=04/01/2022 22:49:4804/01/2022 23:14:48</TimeStamp>
+        <TimeStamp>CE09hWJoYIj2aYqCMZaKF9G1UUo=07/01/2022 01:24:2307/01/2022 01:23:48</TimeStamp>
         <ID>
-          <String>Acident Severity Predict 1</String>
+          <String>Fact Accident Statistic</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>GtgDqIdGtxn2622Iwc/Ctnb2MIQ=06/01/2022 00:35:5906/01/2022 00:29:10</TimeStamp>
+        <TimeStamp>rU8Gsa0VHvNocoOKWyUYpiKALSU=07/01/2022 01:42:3007/01/2022 01:32:44</TimeStamp>
         <ID>
-          <String>Fact Accident Statistic</String>
+          <String>Fact Accident Statistic 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>IX3pv19WQELTj+8QIvvHJB9OyGU=07/01/2022 02:43:0907/01/2022 02:39:39</TimeStamp>
+        <ID>
+          <String>Fact Accident Statistic 2</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -78,5 +85,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-01-05T17:41:35.593333Z</LastDeployed>
+  <LastDeployed>2022-01-06T19:43:12.526667Z</LastDeployed>
 </DeploymentSnapshot>

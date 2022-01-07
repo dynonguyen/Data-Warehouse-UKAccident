@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{F92C629C-53BB-487D-A374-9C18C672B662}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{C3556DB5-843C-4A55-B6CD-DC971D0151C3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,6 +33,18 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{B36AFD96-0238-4BDE-834A-BE69F04537AC}"
       DTS:ObjectName="LocalHost.TTKD12_UKAccidents_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=TTKD12_UKAccidents_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.TTKD12_UKAccidents_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{49C8FBD1-A484-41B9-8DB0-CB19EED02A66}"
+      DTS:ObjectName="LocalHost.TTKD12_UKAccidents_NDS 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -15804,95 +15816,95 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\Dim AccidentSeverity"
           TopLeft="624,511" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Dim AgeBandCasualty"
           TopLeft="17.1428574347983,333.694122237235" />
         <NodeLayout
-          Size="160,42"
+          Size="160,41.6"
           Id="Package\Dim BuildUpRoad"
           TopLeft="695.714296881034,384.352945262585" />
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\Dim CasualtySeverity"
           TopLeft="23.000000340598,411.176475274934" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Dim CasualtyType"
           TopLeft="34.1428575199478,504.070592771847" />
         <NodeLayout
-          Size="137,42"
+          Size="136.8,41.6"
           Id="Package\Dim Country"
           TopLeft="620.285724832087,114.470590401686" />
         <NodeLayout
-          Size="134,42"
+          Size="134.4,41.6"
           Id="Package\Dim County"
           TopLeft="444.142864417057,27.0588244839111" />
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Dim Day"
           TopLeft="221.571432463976,113.176472722453" />
         <NodeLayout
-          Size="203,42"
+          Size="203.2,41.6"
           Id="Package\Dim JourneyPurposeDriver"
           TopLeft="1018.5143026712,332.058826854072" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\Dim LACode"
           TopLeft="448,502" />
         <NodeLayout
-          Size="200,42"
+          Size="200,41.6"
           Id="Package\Dim LocalAuthorityDistrict"
           TopLeft="218.000004002026,498.541179891771" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Dim Month"
           TopLeft="30.8571435018462,112.411766829375" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\Dim Quarter"
           TopLeft="26.5714291431467,27.5294126977558" />
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Dim Region"
           TopLeft="625.285724917237,25.7647068046781" />
         <NodeLayout
-          Size="147,42"
+          Size="147.2,41.6"
           Id="Package\Dim RoadType"
           TopLeft="712.714296881034,310.294120596355" />
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Dim SexCasualty"
           TopLeft="20.1428576050972,198.058826854072" />
         <NodeLayout
-          Size="126,42"
+          Size="126.4,41.6"
           Id="Package\Dim Town"
           TopLeft="446.285721596407,115.000002187841" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Dim UrbanRuralArea"
           TopLeft="831.000011069434,470.705886149489" />
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Dim VehicleType"
           TopLeft="1019.54287403895,115.058825213191" />
         <NodeLayout
-          Size="122,42"
+          Size="121.6,41.6"
           Id="Package\Dim Year"
           TopLeft="220.857146737527,21.4117655531346" />
         <NodeLayout
-          Size="187,60"
+          Size="187.2,60"
           Id="Package\Fact AccidentStatistic"
           TopLeft="458.000007748604,349.882356866421" />
         <NodeLayout
-          Size="185,63"
+          Size="184.8,63.2"
           Id="Package\Fact CasualtyStatistic"
           TopLeft="254.428575710375,344.376473634053" />
         <NodeLayout
-          Size="191,62"
+          Size="191.2,62.4"
           Id="Package\Fact VehicleStatistic"
           TopLeft="756.428584395623,179.82353274715" />
         <EdgeLayout
@@ -16258,17 +16270,17 @@ where [refTable].[FactVehicleStatsId] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,92.6042877406031" />
+                    End="0,100.25134667138" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,92.6042877406031"
-                    Point2="0,96.6042877406031"
-                    Point3="-4,96.6042877406031" />
+                    Point1="0,100.25134667138"
+                    Point2="0,104.25134667138"
+                    Point3="-4,104.25134667138" />
                   <mssgle:LineSegment
-                    End="-487.876199623679,96.6042877406031" />
+                    End="-487.876199623679,104.25134667138" />
                   <mssgle:CubicBezierSegment
-                    Point1="-487.876199623679,96.6042877406031"
-                    Point2="-491.876199623679,96.6042877406031"
-                    Point3="-491.876199623679,100.604287740603" />
+                    Point1="-487.876199623679,104.25134667138"
+                    Point2="-491.876199623679,104.25134667138"
+                    Point3="-491.876199623679,108.25134667138" />
                   <mssgle:LineSegment
                     End="-491.876199623679,185.32353165323" />
                 </mssgle:SegmentCollection>
@@ -18108,21 +18120,21 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="185,42"
-          Id="Package\Dim LACode\Lookup LACodeId DDS"
-          TopLeft="380,218" />
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Dim LACode\LACode NDS"
-          TopLeft="404,78" />
-        <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Dim LACode\Update LACode DDS"
           TopLeft="156,357" />
         <NodeLayout
-          Size="169,42"
+          Size="137.6,41.6"
+          Id="Package\Dim LACode\LACode NDS"
+          TopLeft="404,78" />
+        <NodeLayout
+          Size="168.8,41.6"
           Id="Package\Dim LACode\Insert LACode DDS"
           TopLeft="611,359" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Dim LACode\Lookup LACodeId DDS"
+          TopLeft="380,218" />
         <EdgeLayout
           Id="Package\Dim LACode.Paths[OLE DB Source Output]"
           TopLeft="472.75,120">
@@ -19904,77 +19916,33 @@ where [refTable].[FactVehicleStatsId] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Fact AccidentStatistic\Lookup Fact_Accident_Statistic id"
           TopLeft="427,457" />
         <NodeLayout
-          Size="128,42"
-          Id="Package\Fact AccidentStatistic\Split Time"
-          TopLeft="478,269" />
-        <NodeLayout
-          Size="216,42"
+          Size="216,41.6"
           Id="Package\Fact AccidentStatistic\insert Fact_Accident_Statistic"
           TopLeft="628,611.8" />
         <NodeLayout
-          Size="222,42"
+          Size="128,41.6"
+          Id="Package\Fact AccidentStatistic\Split Time"
+          TopLeft="478,269" />
+        <NodeLayout
+          Size="222.4,41.6"
           Id="Package\Fact AccidentStatistic\update Fact_Accident_Statistic"
           TopLeft="301,614" />
         <NodeLayout
-          Size="195,42"
+          Size="195.2,41.6"
           Id="Package\Fact AccidentStatistic\Lookup Vehicle NDS"
           TopLeft="452,173" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\Fact AccidentStatistic\Add TimeId"
-          TopLeft="477,368" />
-        <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Fact AccidentStatistic\Accident nds"
           TopLeft="469,70" />
-        <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[Ouput]"
-          TopLeft="543.5,311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
-          TopLeft="551.75,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Fact AccidentStatistic\Add TimeId"
+          TopLeft="477,368" />
         <EdgeLayout
           Id="Package\Fact AccidentStatistic.Paths[Lookup Match Output1]"
           TopLeft="545.75,215">
@@ -20031,43 +19999,43 @@ where [refTable].[FactVehicleStatsId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-94.5247200520833,43.3806343906511,96.3827734375,11.609375"
+              BoundingBox="-96.0247200520833,51.4607679465776,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact AccidentStatistic.Paths[Lookup Error Output]"
-          TopLeft="584.333333333333,499">
+          TopLeft="584.6,498.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.666666666667,112.8"
+              EndConnector="151.4,113.2"
               Start="0,0"
-              End="151.666666666667,105.3">
+              End="151.4,105.7">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5719532554258" />
+                    End="0,41.7328" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.5719532554258"
-                    Point2="0,45.5719532554258"
-                    Point3="4,45.5719532554258" />
+                    Point1="0,41.7328"
+                    Point2="0,45.7328"
+                    Point3="4,45.7328" />
                   <mssgle:LineSegment
-                    End="147.666666666667,45.5719532554258" />
+                    End="147.4,45.7328" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.666666666667,45.5719532554258"
-                    Point2="151.666666666667,45.5719532554258"
-                    Point3="151.666666666667,49.5719532554258" />
+                    Point1="147.4,45.7328"
+                    Point2="151.4,45.7328"
+                    Point3="151.4,49.7328" />
                   <mssgle:LineSegment
-                    End="151.666666666667,105.3" />
+                    End="151.4,105.7" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="31.4669466145834,42.4918196994992,91.7327734375,11.609375"
+              BoundingBox="29.83361328125,50.7328,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -20093,9 +20061,89 @@ where [refTable].[FactVehicleStatsId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[Ouput]"
+          TopLeft="543.5,311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact AccidentStatistic.Paths[OLE DB Source Output]"
+          TopLeft="551.75,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact AccidentStatistic\Lookup Vehicle NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact AccidentStatistic\Accident nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Fact CasualtyStatistic">
     <LayoutInfo>

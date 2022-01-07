@@ -1,4 +1,4 @@
-﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="74c73d4c-b416-466c-a9be-b3d3658d620b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b6039268-79ed-43d9-b629-7c8f1ef18625" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Acident Severity Predict</ID>
   <Name>Acident Severity Predict</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -14,6 +14,32 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7388" scrolltop="-3725" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="18711" y="11197" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="AcidentSeverityPredict" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3895" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000370f0000a30e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_AcidentSeverityPredict" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
@@ -25,15 +51,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-7388</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-3725</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -46,133 +72,133 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bb23dbf7-71fa-40ed-9fee-c1d90b354690">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="93e5a082-e151-4a6c-8639-4c943f39ec4e">
     <DataSourceViewID>TTKD12 UK Accidents NDS</DataSourceViewID>
   </Source>
   <Columns>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c11458ce-8bee-4e30-891a-c7af265ab9e9">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ba73d5d3-31bc-4786-a49c-2209cf5d2555">
       <ID>Accident Index</ID>
       <Name>Accident Index</Name>
       <IsKey>true</IsKey>
       <Type>Text</Type>
       <Content>Key</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="654ea107-725f-4090-8fc6-5ffc89f84fea">
+        <KeyColumn dwd:design-time-name="1d43acc5-50ef-4fcf-b808-2ea4e9e7f7d6">
           <DataType>WChar</DataType>
-          <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e112966-07d5-4ea0-8b33-d6fd5f560114">
+          <DataSize>13</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f73b1379-aaeb-4194-b8d5-4e20159d61a5">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>AccidentIndex</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="509ce274-87fb-4ff7-addc-edfd985779e1">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b2582b9e-29ae-47b5-af9c-8ef756effcfc">
       <ID>Accident Severity</ID>
       <Name>Accident Severity</Name>
-      <Type>Long</Type>
+      <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="db07686c-4ec2-4560-91bf-6b041da68aee">
-          <DataType>Integer</DataType>
-          <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a7e26385-363f-4105-9193-133f064b83df">
+        <KeyColumn dwd:design-time-name="1d63f33d-6918-4153-861a-9b68e0aa7a05">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d1686e2-8f27-45de-8c21-61d0d7e59bbe">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>AccidentSeverity</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="fcfeef4d-90e5-485b-98e4-55fed1c8b767">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="2253ea9c-00e9-4d43-a541-bfc8be6fe149">
       <ID>Local Authority District</ID>
       <Name>Local Authority District</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="bf3345a5-32c9-4b51-a248-732263012150">
+        <KeyColumn dwd:design-time-name="ea616339-3d28-4a8e-bb09-dead87197be2">
           <DataType>WChar</DataType>
-          <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="970f5b9c-9c01-43fb-a4be-0424e793c40f">
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c08682b2-610a-4595-85af-74e0f6a9bb0d">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>LocalAuthorityDistrict</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="5175fcd0-eda9-4a11-bfee-4741e6659fd4">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e0ad1192-b852-4a7b-a9e0-c81559e86d63">
       <ID>Number Casualties</ID>
       <Name>Number Casualties</Name>
       <Type>Long</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6e06e663-951a-4e05-89d6-373d64c4bcae">
+        <KeyColumn dwd:design-time-name="d627fcdc-f1ae-4902-8b41-9ecdeaa189ba">
           <DataType>Integer</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="868b12fa-5ce3-45ca-bc68-941c24e32b06">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a63f01ff-ba42-4d8c-9c60-bbc2b3c974b0">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>NumberCasualties</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="70519f28-3ebb-4ead-b707-cf619cf515e9">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="973e7ecf-7ebf-41e8-b189-b06fa58e6dae">
       <ID>Number Vehicles</ID>
       <Name>Number Vehicles</Name>
       <Type>Long</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="56d0baf7-0785-4943-9c18-637598a3b24c">
+        <KeyColumn dwd:design-time-name="05be1eb4-f473-47ab-85a3-6c5c4d467abc">
           <DataType>Integer</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="95f40482-94ec-4f75-a4fb-84bcb076fc38">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cab5bf5a-ced4-4ee0-be2d-f7145c02ef31">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>NumberVehicles</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="992ff6d0-84ee-4d14-9d2e-15f2658a6567">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b2c4ca85-94b1-430c-bed9-5df249b9994e">
       <ID>Road Type</ID>
       <Name>Road Type</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c5cf9fb9-d256-43a8-84f3-5ec9f8a6f747">
+        <KeyColumn dwd:design-time-name="9f23af10-2a62-4728-987d-fd0e464232cb">
           <DataType>WChar</DataType>
           <DataSize>30</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a32a6b06-d815-45ae-abcf-bfd51413dd69">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bb96b607-cab8-4431-8fdf-dc4b3d0b469c">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>RoadType</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="99050384-ed35-4c8f-a117-665178dc7c5b">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f5ba209f-207a-49f8-9274-e9398cb72263">
       <ID>Speed Limit</ID>
       <Name>Speed Limit</Name>
       <Type>Long</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a0f60c0d-bfdd-42e4-a06d-7a5a5a89a276">
+        <KeyColumn dwd:design-time-name="c349490f-fc60-4ccc-aa60-1ac2e23ed190">
           <DataType>Integer</DataType>
           <DataSize>-1</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="55bfab5a-4225-4603-9e9f-5f1e87020dfa">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="55017687-efda-4e2a-ad69-07d1b4a8ca64">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>SpeedLimit</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="71a836bb-4af3-41ec-a6c7-341d189a6e1f">
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d9ed1487-482c-48c2-95d8-cb73ca70f0cf">
       <ID>Urban Rural</ID>
       <Name>Urban Rural</Name>
       <Type>Text</Type>
       <Content>Discrete</Content>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="de936a61-7735-4bd0-9e1d-2c8f07c51f02">
+        <KeyColumn dwd:design-time-name="734d35c3-d8ba-430c-b3d9-63432c33085b">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e1a0372e-45f2-40eb-8f4b-e533ba09d30e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e5197ebc-421f-4142-9a10-e605b27dd033">
             <TableID>dbo_AcidentSeverityPredict</TableID>
             <ColumnID>UrbanRural</ColumnID>
           </Source>
@@ -181,7 +207,7 @@
     </Column>
   </Columns>
   <MiningModels>
-    <MiningModel dwd:design-time-name="17ed6f05-0b5f-405c-8de6-4f1a5829d978">
+    <MiningModel dwd:design-time-name="a7519a36-b4ef-464b-ac4a-2ae604df33c3">
       <ID>Acident Severity Predict</ID>
       <Name>Acident Severity Predict</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -190,44 +216,97 @@
       <State>Unprocessed</State>
       <Algorithm>Microsoft_Decision_Trees</Algorithm>
       <Columns>
-        <Column dwd:design-time-name="2a3fd579-b50d-41b0-8e4d-0bd5cc76fa5d">
+        <Column dwd:design-time-name="9e99040e-39b3-49ea-9359-bf8f9308228d">
           <ID>Accident Index</ID>
           <Name>Accident Index</Name>
           <SourceColumnID>Accident Index</SourceColumnID>
           <Usage>Key</Usage>
         </Column>
-        <Column dwd:design-time-name="c36e9a2f-bad0-4977-9976-d3f2de571bc9">
+        <Column dwd:design-time-name="84427025-bb13-4625-8972-0a2325fff0d9">
           <ID>Accident Severity</ID>
           <Name>Accident Severity</Name>
           <SourceColumnID>Accident Severity</SourceColumnID>
           <Usage>PredictOnly</Usage>
         </Column>
-        <Column dwd:design-time-name="b211b1de-5928-41cd-8d7c-1086000fcc9a">
+        <Column dwd:design-time-name="cb8971b8-34e0-4018-bba4-f12343fe4386">
           <ID>Local Authority District</ID>
           <Name>Local Authority District</Name>
           <SourceColumnID>Local Authority District</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="9e78bcba-14fd-4b17-a587-bc366cf5db99">
+        <Column dwd:design-time-name="356c51d1-d8f8-475d-87f1-8b188ba67a27">
           <ID>Number Casualties</ID>
           <Name>Number Casualties</Name>
           <SourceColumnID>Number Casualties</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="8aa4df95-751f-4e09-813e-4747d04297e1">
+        <Column dwd:design-time-name="372e833b-0048-4230-baaf-50ca3cab0b98">
           <ID>Number Vehicles</ID>
           <Name>Number Vehicles</Name>
           <SourceColumnID>Number Vehicles</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="4b63ddcb-1224-4943-81b6-71f522169d58">
+        <Column dwd:design-time-name="915a8ed1-edfa-4980-97ff-ec3baf181ea6">
           <ID>Road Type</ID>
           <Name>Road Type</Name>
           <SourceColumnID>Road Type</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="cc481142-de87-46af-a3d8-fefeea457f18">
+        <Column dwd:design-time-name="53f6836e-f446-488c-ac40-b03bd5066324">
           <ID>Speed Limit</ID>
           <Name>Speed Limit</Name>
           <SourceColumnID>Speed Limit</SourceColumnID>
         </Column>
-        <Column dwd:design-time-name="69ba230f-6bd2-47ad-bc17-9a0afc7fe2c3">
+        <Column dwd:design-time-name="eb800ee1-3d00-413a-8a0b-04e6a1bc54f7">
+          <ID>Urban Rural</ID>
+          <Name>Urban Rural</Name>
+          <SourceColumnID>Urban Rural</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="9b5dc0cc-a56f-40ec-a795-3962bf66b96f">
+      <ID>ACSPreCluster</ID>
+      <Name>ACSPreCluster</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="3217ddd6-e2c0-4ef0-a5a8-dd058bbd01f4">
+          <ID>Accident Index</ID>
+          <Name>Accident Index</Name>
+          <SourceColumnID>Accident Index</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="a851b444-2910-493b-94eb-12ba2d37831c">
+          <ID>Accident Severity</ID>
+          <Name>Accident Severity</Name>
+          <SourceColumnID>Accident Severity</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="a30fa312-0518-44d9-894b-d5c2d1b64aa6">
+          <ID>Local Authority District</ID>
+          <Name>Local Authority District</Name>
+          <SourceColumnID>Local Authority District</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="bc0753e3-81eb-44cc-a132-b9fd5d1653cd">
+          <ID>Number Casualties</ID>
+          <Name>Number Casualties</Name>
+          <SourceColumnID>Number Casualties</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="22ea0fd9-2080-43a8-90d7-9e7089342cc5">
+          <ID>Number Vehicles</ID>
+          <Name>Number Vehicles</Name>
+          <SourceColumnID>Number Vehicles</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="4787a66a-359a-4876-ac93-e55e12be72eb">
+          <ID>Road Type</ID>
+          <Name>Road Type</Name>
+          <SourceColumnID>Road Type</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="76f713e2-e42b-4a04-bd71-4b161427e319">
+          <ID>Speed Limit</ID>
+          <Name>Speed Limit</Name>
+          <SourceColumnID>Speed Limit</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="bbdb268e-df66-4d72-a1b1-5cdb7777adf6">
           <ID>Urban Rural</ID>
           <Name>Urban Rural</Name>
           <SourceColumnID>Urban Rural</SourceColumnID>

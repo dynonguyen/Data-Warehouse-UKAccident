@@ -32,12 +32,16 @@
       <FullPath>Acident Severity Predict.dmm</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Acident Severity Predict 1.dmm</Name>
-      <FullPath>Acident Severity Predict 1.dmm</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Fact Accident Statistic.dmm</Name>
       <FullPath>Fact Accident Statistic.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact Accident Statistic 1.dmm</Name>
+      <FullPath>Fact Accident Statistic 1.dmm</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact Accident Statistic 2.dmm</Name>
+      <FullPath>Fact Accident Statistic 2.dmm</FullPath>
     </ProjectItem>
   </MiningModels>
   <Configurations>
